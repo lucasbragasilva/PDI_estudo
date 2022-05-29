@@ -1,0 +1,21 @@
+id;Data;origem_país;Origem _UF;destino_país;destino_uf;transporte;diarias;missao
+3;2019/01/11 00:00:00.000000000;Brasil;Paraná           ;Brasil;Distrito Federal ;Aéreo          ;0,0;Não
+2;2019/01/10 00:00:00.000000000;Brasil;Rio Grande do Sul;Brasil;Paraná           ;Aéreo          ;0,0;Sim
+1;2019/01/08 00:00:00.000000000;Brasil;Distrito Federal ;Brasil;Rio Grande do Sul;Aéreo          ;0,0;Sim
+1;2019/01/14 00:00:00.000000000;Brasil;Distrito Federal ;Brasil;Rio de Janeiro   ;Aéreo          ;1,0;Sim
+2;2019/01/15 00:00:00.000000000;Brasil;Rio de Janeiro   ;Brasil;Distrito Federal ;Aéreo          ;0,5;Não
+2;2019/01/17 00:00:00.000000000;Brasil;Pernambuco       ;Brasil;Distrito Federal ;Aéreo          ;0,5;Não
+1;2019/01/16 00:00:00.000000000;Brasil;Distrito Federal ;Brasil;Pernambuco       ;Aéreo          ;1,0;Sim
+6;2019/02/01 00:00:00.000000000;Brasil;Paraná           ;Brasil;Paraná           ;Veículo Próprio;0,5;Não
+2;2019/01/26 00:00:00.000000000;Brasil;Paraná           ;Brasil;São Paulo        ;Aéreo          ;0,0;Não
+1;2019/01/26 00:00:00.000000000;Brasil;Paraná           ;Brasil;Paraná           ;Veículo Próprio;0,0;Não
+5;2019/02/01 00:00:00.000000000;Brasil;São Paulo        ;Brasil;Paraná           ;Aéreo          ;0,0;Não
+3;2019/01/26 00:00:00.000000000;Brasil;São Paulo        ;Brasil;Bahia            ;Aéreo          ;6,0;Sim
+4;2019/02/01 00:00:00.000000000;Brasil;Bahia            ;Brasil;São Paulo        ;Aéreo          ;0,0;Não
+1;2019/02/18 00:00:00.000000000;Brasil;Pernambuco       ;Brasil;Distrito Federal ;Aéreo          ;0,0;Sim
+2;2019/02/20 00:00:00.000000000;Brasil;Distrito Federal ;Brasil;Pernambuco       ;Aéreo          ;0,0;Não
+2;2019/01/20 00:00:00.000000000;Brasil;Alagoas          ;Brasil;Espírito Santo   ;Aéreo          ;0,0;Não
+1;2019/01/13 00:00:00.000000000;Brasil;Espírito Santo   ;Brasil;Alagoas          ;Aéreo          ;0,0;Sim
+1;2019/01/07 00:00:00.000000000;Brasil;Paraná           ;Itália;                 ;Aéreo          ;0,0;Não
+2;2019/01/07 00:00:00.000000000;Itália;                 ;Itália;                 ;Inválido       ;0,0;Sim
+3;2019/01/26 00:00:00.000000000;Itália;                 ;Brasil;Paraná           ;Aéreo          ;0,0;Não
