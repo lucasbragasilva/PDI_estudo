@@ -1,0 +1,30 @@
+https://docs.oracle.com/javase/7/docs/api/java/lang/String.html
+
+boolean	startsWith(String prefix)
+Testa se essa sequência começa com o prefixo especificado.
+
+boolean	contains(CharSequence s)
+Retorna true se e somente se essa sequência contém a sequência especificada de valores de caracteres.
+
+boolean	equals(Object anObject)
+Compara essa sequência com o objeto especificado.
+
+boolean	isEmpty()
+Retorna true se, e somente se, length() for 0.
+
+boolean	endsWith(String suffix)
+Testa se essa sequência termina com o sufixo especificado.
+
+boolean	startsWith(String prefix, int toffset)
+Testa se a subseqüência dessa sequência iniciada no índice especificado começa com o prefixo especificado.
+
+boolean	equalsIgnoreCase(String anotherString)
+Compara isso Stringcom outro String, ignorando as considerações de caso.
+
+boolean	contentEquals(StringBuffer sb)
+Compara essa sequência com a especificada StringBuffer.
+
+
+
+
+

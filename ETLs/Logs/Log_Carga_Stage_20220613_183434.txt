@@ -1,0 +1,506 @@
+2022/06/13 18:34:34 - JobCargas_Stage - Using run configuration [Pentaho local]
+2022/06/13 18:34:34 - plus_stage - New database connection defined
+2022/06/13 18:34:36 - plus_stage - Auto commit off
+2022/06/13 18:34:36 - plus_stage - Auto commit off
+2022/06/13 18:34:36 - plus_stage - launch DDL statement: 
+2022/06/13 18:34:36 - plus_stage - LOCK TABLE "public".Logs_etls IN ACCESS EXCLUSIVE MODE
+2022/06/13 18:34:36 - plus_stage - 1 statement executed
+2022/06/13 18:34:36 - plus_stage - Preparing statement: 
+2022/06/13 18:34:36 - plus_stage - INSERT INTO "public".Logs_etls (ID_JOB, CHANNEL_ID, JOBNAME, STATUS, LINES_READ, LINES_WRITTEN, LINES_UPDATED, LINES_INPUT, LINES_OUTPUT, LINES_REJECTED, ERRORS, STARTDATE, ENDDATE, LOGDATE, DEPDATE, REPLAYDATE, LOG_FIELD) VALUES ( ?,  ?,  ?,  ?,  ?,  ?,  ?,  ?,  ?,  ?,  ?,  ?,  ?,  ?,  ?,  ?,  ?)
+2022/06/13 18:34:36 - plus_stage - Connection to database closed!
+2022/06/13 18:34:36 - JobCargas_Stage - exec(3, 0, Start.0)
+2022/06/13 18:34:36 - Start - Starting job entry
+2022/06/13 18:34:36 - JobCargas_Stage - Starting entry [Categoria_Stage]
+2022/06/13 18:34:36 - JobCargas_Stage - Launched job entry [Categoria_Stage] in parallel.
+2022/06/13 18:34:36 - JobCargas_Stage - Starting entry [Subcategoria_Stage]
+2022/06/13 18:34:36 - JobCargas_Stage - Launched job entry [Subcategoria_Stage] in parallel.
+2022/06/13 18:34:36 - JobCargas_Stage - Starting entry [Cliente_Stage]
+2022/06/13 18:34:36 - JobCargas_Stage - Launched job entry [Cliente_Stage] in parallel.
+2022/06/13 18:34:36 - JobCargas_Stage - Starting entry [Regiao_Stage]
+2022/06/13 18:34:36 - JobCargas_Stage - Launched job entry [Regiao_Stage] in parallel.
+2022/06/13 18:34:36 - JobCargas_Stage - Starting entry [Territorio_Stage]
+2022/06/13 18:34:36 - JobCargas_Stage - Launched job entry [Territorio_Stage] in parallel.
+2022/06/13 18:34:36 - JobCargas_Stage - Starting entry [Produto_Stage]
+2022/06/13 18:34:36 - JobCargas_Stage - Launched job entry [Produto_Stage] in parallel.
+2022/06/13 18:34:37 - JobCargas_Stage - Starting entry [VendasInternet_Stage]
+2022/06/13 18:34:37 - JobCargas_Stage - Launched job entry [VendasInternet_Stage] in parallel.
+2022/06/13 18:34:37 - JobCargas_Stage - exec(4, 0, Categoria_Stage.0)
+2022/06/13 18:34:37 - Categoria_Stage - Starting job entry
+2022/06/13 18:34:37 - Categoria_Stage - Opening transformation: [null] in directory [/]
+2022/06/13 18:34:37 - Categoria_Stage - Starting transformation...(file=null, name=Categoria_Stage, repinfo=null)
+2022/06/13 18:34:37 - Categoria_Stage - Using run configuration [Pentaho local]
+2022/06/13 18:34:37 - Categoria_Stage - Running transformation using the Kettle execution engine
+2022/06/13 18:34:37 - Categoria_Stage - Transforma??o ? pr?-carregada do reposit?rio.
+2022/06/13 18:34:37 - Categoria_Stage - Expedindo in?cio para transforma??o [Categoria_Stage]
+2022/06/13 18:34:37 - Categoria_Stage - Nr de argumentos detectados:0 
+2022/06/13 18:34:37 - Categoria_Stage - Esta n?o ? uma repeti??o de transforma??o
+2022/06/13 18:34:37 - Categoria_Stage - Foram encotrados 2 steps diferentes para executar.
+2022/06/13 18:34:37 - Categoria_Stage - Alocando rowsets...
+2022/06/13 18:34:37 - Categoria_Stage -  Alocando rowsets para o step 0 --> Categoria
+2022/06/13 18:34:37 - Categoria_Stage -   c?pias pr?vias = 1, pr?ximas c?pias=1
+2022/06/13 18:34:37 - Categoria_Stage - Transforma??o alocou novo rowset [Categoria.0 - Categoria_Stage.0]
+2022/06/13 18:34:37 - Categoria_Stage -  Foram alocados 1 rowsets por step 0 --> Categoria  
+2022/06/13 18:34:37 - Categoria_Stage -  Alocando rowsets para o step 1 --> Categoria_Stage
+2022/06/13 18:34:37 - Categoria_Stage -  Foram alocados 1 rowsets por step 1 --> Categoria_Stage  
+2022/06/13 18:34:37 - Categoria_Stage - Alocando Steps & StepData...
+2022/06/13 18:34:37 - Categoria_Stage -  Transforma??o ir? alocar o step [Categoria] do tipe [TableInput]
+2022/06/13 18:34:37 - Categoria.0 - distribution de-activated
+2022/06/13 18:34:37 - Categoria.0 - Starting allocation of buffers & new threads...
+2022/06/13 18:34:37 - Categoria.0 - Step info: nrinput=0 nroutput=1
+2022/06/13 18:34:37 - Categoria.0 - output rel. is  1:1
+2022/06/13 18:34:37 - Categoria.0 - Found output rowset [Categoria.0 - Categoria_Stage.0]
+2022/06/13 18:34:37 - Categoria.0 - Finished dispatching
+2022/06/13 18:34:37 - Categoria_Stage -  Transforma??o alocou um novo step: [Categoria].0
+2022/06/13 18:34:37 - Categoria_Stage -  Transforma??o ir? alocar o step [Categoria_Stage] do tipe [InsertUpdate]
+2022/06/13 18:34:37 - Categoria_Stage.0 - distribution activated
+2022/06/13 18:34:37 - Categoria_Stage.0 - Starting allocation of buffers & new threads...
+2022/06/13 18:34:37 - Categoria_Stage.0 - Step info: nrinput=1 nroutput=0
+2022/06/13 18:34:37 - Categoria_Stage.0 - Got previous step from [Categoria_Stage] #0 --> Categoria
+2022/06/13 18:34:37 - Categoria_Stage.0 - input rel is 1:1
+2022/06/13 18:34:37 - Categoria_Stage.0 - Found input rowset [Categoria.0 - Categoria_Stage.0]
+2022/06/13 18:34:37 - Categoria_Stage.0 - Finished dispatching
+2022/06/13 18:34:37 - Categoria_Stage -  Transforma??o alocou um novo step: [Categoria_Stage].0
+2022/06/13 18:34:37 - Categoria_Stage - Esta transforma??o pode ser repetida com a data de repeti??o : 2022/06/13 18:34:37
+2022/06/13 18:34:37 - Categoria_Stage - Inicializando 2 steps...
+2022/06/13 18:34:37 - Categoria.0 - Released server socket on port 0
+2022/06/13 18:34:37 - Categoria_Stage.0 - Released server socket on port 0
+2022/06/13 18:34:37 - plus_SQLSERVER - New database connection defined
+2022/06/13 18:34:37 - plus_stage - New database connection defined
+2022/06/13 18:34:38 - plus_stage - Auto commit off
+2022/06/13 18:34:38 - plus_SQLSERVER - Auto commit off
+2022/06/13 18:34:38 - Categoria.0 - !TableInput.Log.ConnectedToDatabase!
+2022/06/13 18:34:38 - Categoria_Stage - Step [Categoria.0] inicializado sem falhas.
+2022/06/13 18:34:38 - Categoria_Stage - Step [Categoria_Stage.0] inicializado sem falhas.
+2022/06/13 18:34:39 - Categoria_Stage - Transforma??o alocou 2 threads e 1 rowsets.
+2022/06/13 18:34:39 - Categoria_Stage.0 - Iniciando execução...
+2022/06/13 18:34:39 - Categoria.0 - Iniciando execução...
+2022/06/13 18:34:39 - Categoria.0 - !TableInput.Log.SqlQuery!
+2022/06/13 18:34:39 - JobCargas_Stage - exec(4, 0, Produto_Stage.0)
+2022/06/13 18:34:39 - JobCargas_Stage - exec(4, 0, VendasInternet_Stage.0)
+2022/06/13 18:34:39 - JobCargas_Stage - exec(4, 0, Territorio_Stage.0)
+2022/06/13 18:34:39 - JobCargas_Stage - exec(4, 0, Regiao_Stage.0)
+2022/06/13 18:34:39 - VendasInternet_Stage - Starting job entry
+2022/06/13 18:34:39 - Produto_Stage - Starting job entry
+2022/06/13 18:34:39 - Regiao_Stage - Starting job entry
+2022/06/13 18:34:39 - Produto_Stage - Opening transformation: [null] in directory [/]
+2022/06/13 18:34:39 - Regiao_Stage - Opening transformation: [null] in directory [/]
+2022/06/13 18:34:39 - Territorio_Stage - Starting job entry
+2022/06/13 18:34:39 - Territorio_Stage - Opening transformation: [null] in directory [/]
+2022/06/13 18:34:39 - VendasInternet_Stage - Opening transformation: [null] in directory [/]
+2022/06/13 18:34:39 - JobCargas_Stage - exec(4, 0, Subcategoria_Stage.0)
+2022/06/13 18:34:39 - Subcategoria_Stage - Starting job entry
+2022/06/13 18:34:39 - Subcategoria_Stage - Opening transformation: [null] in directory [/]
+2022/06/13 18:34:39 - JobCargas_Stage - exec(4, 0, Cliente_Stage.0)
+2022/06/13 18:34:39 - Cliente_Stage - Starting job entry
+2022/06/13 18:34:39 - Cliente_Stage - Opening transformation: [null] in directory [/]
+2022/06/13 18:34:39 - Regiao_Stage - Starting transformation...(file=null, name=Regiao_Stage, repinfo=null)
+2022/06/13 18:34:39 - Regiao_Stage - Using run configuration [Pentaho local]
+2022/06/13 18:34:39 - Regiao_Stage - Running transformation using the Kettle execution engine
+2022/06/13 18:34:39 - Regiao_Stage - Transforma??o ? pr?-carregada do reposit?rio.
+2022/06/13 18:34:39 - Regiao_Stage - Expedindo in?cio para transforma??o [Regiao_Stage]
+2022/06/13 18:34:39 - Regiao_Stage - Nr de argumentos detectados:0 
+2022/06/13 18:34:39 - Regiao_Stage - Esta n?o ? uma repeti??o de transforma??o
+2022/06/13 18:34:39 - Regiao_Stage - Foram encotrados 2 steps diferentes para executar.
+2022/06/13 18:34:39 - Regiao_Stage - Alocando rowsets...
+2022/06/13 18:34:39 - Regiao_Stage -  Alocando rowsets para o step 0 --> Regiao
+2022/06/13 18:34:39 - Regiao_Stage -   c?pias pr?vias = 1, pr?ximas c?pias=1
+2022/06/13 18:34:39 - Regiao_Stage - Transforma??o alocou novo rowset [Regiao.0 - Regiao_Stage.0]
+2022/06/13 18:34:39 - Regiao_Stage -  Foram alocados 1 rowsets por step 0 --> Regiao  
+2022/06/13 18:34:39 - Regiao_Stage -  Alocando rowsets para o step 1 --> Regiao_Stage
+2022/06/13 18:34:39 - Regiao_Stage -  Foram alocados 1 rowsets por step 1 --> Regiao_Stage  
+2022/06/13 18:34:39 - Regiao_Stage - Alocando Steps & StepData...
+2022/06/13 18:34:39 - Regiao_Stage -  Transforma??o ir? alocar o step [Regiao] do tipe [TableInput]
+2022/06/13 18:34:39 - Regiao.0 - distribution de-activated
+2022/06/13 18:34:39 - Regiao.0 - Starting allocation of buffers & new threads...
+2022/06/13 18:34:39 - Regiao.0 - Step info: nrinput=0 nroutput=1
+2022/06/13 18:34:39 - Regiao.0 - output rel. is  1:1
+2022/06/13 18:34:39 - Regiao.0 - Found output rowset [Regiao.0 - Regiao_Stage.0]
+2022/06/13 18:34:39 - Produto_Stage - Starting transformation...(file=null, name=Produto_Stage, repinfo=null)
+2022/06/13 18:34:39 - Regiao.0 - Finished dispatching
+2022/06/13 18:34:39 - Produto_Stage - Using run configuration [Pentaho local]
+2022/06/13 18:34:39 - Regiao_Stage -  Transforma??o alocou um novo step: [Regiao].0
+2022/06/13 18:34:39 - Produto_Stage - Running transformation using the Kettle execution engine
+2022/06/13 18:34:39 - Regiao_Stage -  Transforma??o ir? alocar o step [Regiao_Stage] do tipe [InsertUpdate]
+2022/06/13 18:34:39 - Produto_Stage - Transforma??o ? pr?-carregada do reposit?rio.
+2022/06/13 18:34:39 - Regiao_Stage.0 - distribution activated
+2022/06/13 18:34:39 - Produto_Stage - Expedindo in?cio para transforma??o [Produto_Stage]
+2022/06/13 18:34:39 - Produto_Stage - Nr de argumentos detectados:0 
+2022/06/13 18:34:39 - Produto_Stage - Esta n?o ? uma repeti??o de transforma??o
+2022/06/13 18:34:39 - Regiao_Stage.0 - Starting allocation of buffers & new threads...
+2022/06/13 18:34:39 - Produto_Stage - Foram encotrados 2 steps diferentes para executar.
+2022/06/13 18:34:39 - Regiao_Stage.0 - Step info: nrinput=1 nroutput=0
+2022/06/13 18:34:39 - Produto_Stage - Alocando rowsets...
+2022/06/13 18:34:39 - Regiao_Stage.0 - Got previous step from [Regiao_Stage] #0 --> Regiao
+2022/06/13 18:34:39 - Produto_Stage -  Alocando rowsets para o step 0 --> Produto
+2022/06/13 18:34:39 - Regiao_Stage.0 - input rel is 1:1
+2022/06/13 18:34:39 - Produto_Stage -   c?pias pr?vias = 1, pr?ximas c?pias=1
+2022/06/13 18:34:39 - Regiao_Stage.0 - Found input rowset [Regiao.0 - Regiao_Stage.0]
+2022/06/13 18:34:39 - Produto_Stage - Transforma??o alocou novo rowset [Produto.0 - Produto_Stage.0]
+2022/06/13 18:34:39 - Regiao_Stage.0 - Finished dispatching
+2022/06/13 18:34:39 - Produto_Stage -  Foram alocados 1 rowsets por step 0 --> Produto  
+2022/06/13 18:34:39 - Produto_Stage -  Alocando rowsets para o step 1 --> Produto_Stage
+2022/06/13 18:34:39 - Regiao_Stage -  Transforma??o alocou um novo step: [Regiao_Stage].0
+2022/06/13 18:34:39 - Produto_Stage -  Foram alocados 1 rowsets por step 1 --> Produto_Stage  
+2022/06/13 18:34:39 - Produto_Stage - Alocando Steps & StepData...
+2022/06/13 18:34:39 - Produto_Stage -  Transforma??o ir? alocar o step [Produto] do tipe [TableInput]
+2022/06/13 18:34:39 - Regiao_Stage - Esta transforma??o pode ser repetida com a data de repeti??o : 2022/06/13 18:34:39
+2022/06/13 18:34:39 - Subcategoria_Stage - Starting transformation...(file=null, name=Subcategoria_Stage, repinfo=null)
+2022/06/13 18:34:39 - Subcategoria_Stage - Using run configuration [Pentaho local]
+2022/06/13 18:34:39 - Subcategoria_Stage - Running transformation using the Kettle execution engine
+2022/06/13 18:34:39 - Produto.0 - distribution activated
+2022/06/13 18:34:39 - Produto.0 - Starting allocation of buffers & new threads...
+2022/06/13 18:34:39 - Produto.0 - Step info: nrinput=0 nroutput=1
+2022/06/13 18:34:39 - Produto.0 - output rel. is  1:1
+2022/06/13 18:34:39 - Regiao_Stage - Inicializando 2 steps...
+2022/06/13 18:34:39 - Produto.0 - Found output rowset [Produto.0 - Produto_Stage.0]
+2022/06/13 18:34:39 - Produto.0 - Finished dispatching
+2022/06/13 18:34:39 - Produto_Stage -  Transforma??o alocou um novo step: [Produto].0
+2022/06/13 18:34:39 - Subcategoria_Stage - Transforma??o ? pr?-carregada do reposit?rio.
+2022/06/13 18:34:39 - Produto_Stage -  Transforma??o ir? alocar o step [Produto_Stage] do tipe [InsertUpdate]
+2022/06/13 18:34:39 - Subcategoria_Stage - Expedindo in?cio para transforma??o [Subcategoria_Stage]
+2022/06/13 18:34:39 - Produto_Stage.0 - distribution activated
+2022/06/13 18:34:39 - Produto_Stage.0 - Starting allocation of buffers & new threads...
+2022/06/13 18:34:39 - Produto_Stage.0 - Step info: nrinput=1 nroutput=0
+2022/06/13 18:34:39 - Produto_Stage.0 - Got previous step from [Produto_Stage] #0 --> Produto
+2022/06/13 18:34:39 - Produto_Stage.0 - input rel is 1:1
+2022/06/13 18:34:39 - Produto_Stage.0 - Found input rowset [Produto.0 - Produto_Stage.0]
+2022/06/13 18:34:39 - Subcategoria_Stage - Nr de argumentos detectados:0 
+2022/06/13 18:34:39 - Produto_Stage.0 - Finished dispatching
+2022/06/13 18:34:39 - Produto_Stage -  Transforma??o alocou um novo step: [Produto_Stage].0
+2022/06/13 18:34:39 - Produto_Stage - Esta transforma??o pode ser repetida com a data de repeti??o : 2022/06/13 18:34:39
+2022/06/13 18:34:39 - Produto_Stage - Inicializando 2 steps...
+2022/06/13 18:34:39 - Subcategoria_Stage - Esta n?o ? uma repeti??o de transforma??o
+2022/06/13 18:34:39 - Subcategoria_Stage - Foram encotrados 2 steps diferentes para executar.
+2022/06/13 18:34:39 - Subcategoria_Stage - Alocando rowsets...
+2022/06/13 18:34:39 - Subcategoria_Stage -  Alocando rowsets para o step 0 --> Subcategoria
+2022/06/13 18:34:39 - Subcategoria_Stage -   c?pias pr?vias = 1, pr?ximas c?pias=1
+2022/06/13 18:34:39 - Subcategoria_Stage - Transforma??o alocou novo rowset [Subcategoria.0 - Subcategoria_Stage.0]
+2022/06/13 18:34:39 - Subcategoria_Stage -  Foram alocados 1 rowsets por step 0 --> Subcategoria  
+2022/06/13 18:34:39 - Subcategoria_Stage -  Alocando rowsets para o step 1 --> Subcategoria_Stage
+2022/06/13 18:34:39 - Subcategoria_Stage -  Foram alocados 1 rowsets por step 1 --> Subcategoria_Stage  
+2022/06/13 18:34:39 - Subcategoria_Stage - Alocando Steps & StepData...
+2022/06/13 18:34:39 - Subcategoria_Stage -  Transforma??o ir? alocar o step [Subcategoria] do tipe [TableInput]
+2022/06/13 18:34:39 - Subcategoria.0 - distribution activated
+2022/06/13 18:34:39 - Subcategoria.0 - Starting allocation of buffers & new threads...
+2022/06/13 18:34:39 - Subcategoria.0 - Step info: nrinput=0 nroutput=1
+2022/06/13 18:34:39 - Subcategoria.0 - output rel. is  1:1
+2022/06/13 18:34:39 - Subcategoria.0 - Found output rowset [Subcategoria.0 - Subcategoria_Stage.0]
+2022/06/13 18:34:39 - Subcategoria.0 - Finished dispatching
+2022/06/13 18:34:39 - Subcategoria_Stage -  Transforma??o alocou um novo step: [Subcategoria].0
+2022/06/13 18:34:39 - Subcategoria_Stage -  Transforma??o ir? alocar o step [Subcategoria_Stage] do tipe [InsertUpdate]
+2022/06/13 18:34:39 - Subcategoria_Stage.0 - distribution activated
+2022/06/13 18:34:39 - Subcategoria_Stage.0 - Starting allocation of buffers & new threads...
+2022/06/13 18:34:39 - Subcategoria_Stage.0 - Step info: nrinput=1 nroutput=0
+2022/06/13 18:34:39 - Subcategoria_Stage.0 - Got previous step from [Subcategoria_Stage] #0 --> Subcategoria
+2022/06/13 18:34:39 - Subcategoria_Stage.0 - input rel is 1:1
+2022/06/13 18:34:39 - Subcategoria_Stage.0 - Found input rowset [Subcategoria.0 - Subcategoria_Stage.0]
+2022/06/13 18:34:39 - Subcategoria_Stage.0 - Finished dispatching
+2022/06/13 18:34:39 - Subcategoria_Stage -  Transforma??o alocou um novo step: [Subcategoria_Stage].0
+2022/06/13 18:34:39 - Subcategoria_Stage - Esta transforma??o pode ser repetida com a data de repeti??o : 2022/06/13 18:34:39
+2022/06/13 18:34:39 - Subcategoria_Stage - Inicializando 2 steps...
+2022/06/13 18:34:39 - VendasInternet_Stage - Starting transformation...(file=null, name=VendasInternet_Stage, repinfo=null)
+2022/06/13 18:34:39 - VendasInternet_Stage - Using run configuration [Pentaho local]
+2022/06/13 18:34:39 - VendasInternet_Stage - Running transformation using the Kettle execution engine
+2022/06/13 18:34:39 - VendasInternet_Stage - Transforma??o ? pr?-carregada do reposit?rio.
+2022/06/13 18:34:39 - VendasInternet_Stage - Expedindo in?cio para transforma??o [VendasInternet_Stage]
+2022/06/13 18:34:39 - VendasInternet_Stage - Nr de argumentos detectados:0 
+2022/06/13 18:34:39 - VendasInternet_Stage - Esta n?o ? uma repeti??o de transforma??o
+2022/06/13 18:34:39 - VendasInternet_Stage - Foram encotrados 2 steps diferentes para executar.
+2022/06/13 18:34:39 - VendasInternet_Stage - Alocando rowsets...
+2022/06/13 18:34:39 - VendasInternet_Stage -  Alocando rowsets para o step 0 --> Vendas_Internet
+2022/06/13 18:34:39 - VendasInternet_Stage -   c?pias pr?vias = 1, pr?ximas c?pias=1
+2022/06/13 18:34:39 - VendasInternet_Stage - Transforma??o alocou novo rowset [Vendas_Internet.0 - VendasInternet_Stage.0]
+2022/06/13 18:34:39 - VendasInternet_Stage -  Foram alocados 1 rowsets por step 0 --> Vendas_Internet  
+2022/06/13 18:34:39 - VendasInternet_Stage -  Alocando rowsets para o step 1 --> VendasInternet_Stage
+2022/06/13 18:34:39 - VendasInternet_Stage -  Foram alocados 1 rowsets por step 1 --> VendasInternet_Stage  
+2022/06/13 18:34:39 - VendasInternet_Stage - Alocando Steps & StepData...
+2022/06/13 18:34:39 - VendasInternet_Stage -  Transforma??o ir? alocar o step [Vendas_Internet] do tipe [TableInput]
+2022/06/13 18:34:39 - Vendas_Internet.0 - distribution activated
+2022/06/13 18:34:39 - Vendas_Internet.0 - Starting allocation of buffers & new threads...
+2022/06/13 18:34:39 - Vendas_Internet.0 - Step info: nrinput=0 nroutput=1
+2022/06/13 18:34:39 - Vendas_Internet.0 - output rel. is  1:1
+2022/06/13 18:34:39 - Vendas_Internet.0 - Found output rowset [Vendas_Internet.0 - VendasInternet_Stage.0]
+2022/06/13 18:34:39 - Subcategoria_Stage.0 - Released server socket on port 0
+2022/06/13 18:34:39 - Subcategoria.0 - Released server socket on port 0
+2022/06/13 18:34:39 - Vendas_Internet.0 - Finished dispatching
+2022/06/13 18:34:39 - Produto_Stage.0 - Released server socket on port 0
+2022/06/13 18:34:39 - Produto.0 - Released server socket on port 0
+2022/06/13 18:34:39 - Regiao_Stage.0 - Released server socket on port 0
+2022/06/13 18:34:39 - plus_stage - New database connection defined
+2022/06/13 18:34:39 - plus_SQLSERVER - New database connection defined
+2022/06/13 18:34:39 - Regiao.0 - Released server socket on port 0
+2022/06/13 18:34:39 - Cliente_Stage - Starting transformation...(file=null, name=Cliente_Stage, repinfo=null)
+2022/06/13 18:34:39 - Cliente_Stage - Using run configuration [Pentaho local]
+2022/06/13 18:34:39 - Cliente_Stage - Running transformation using the Kettle execution engine
+2022/06/13 18:34:39 - Cliente_Stage - Transforma??o ? pr?-carregada do reposit?rio.
+2022/06/13 18:34:39 - Cliente_Stage - Expedindo in?cio para transforma??o [Cliente_Stage]
+2022/06/13 18:34:39 - Cliente_Stage - Nr de argumentos detectados:0 
+2022/06/13 18:34:39 - Cliente_Stage - Esta n?o ? uma repeti??o de transforma??o
+2022/06/13 18:34:39 - Cliente_Stage - Foram encotrados 2 steps diferentes para executar.
+2022/06/13 18:34:39 - Cliente_Stage - Alocando rowsets...
+2022/06/13 18:34:39 - Cliente_Stage -  Alocando rowsets para o step 0 --> Cliente
+2022/06/13 18:34:39 - Cliente_Stage -   c?pias pr?vias = 1, pr?ximas c?pias=1
+2022/06/13 18:34:39 - Cliente_Stage - Transforma??o alocou novo rowset [Cliente.0 - Cliente_Stage.0]
+2022/06/13 18:34:39 - Cliente_Stage -  Foram alocados 1 rowsets por step 0 --> Cliente  
+2022/06/13 18:34:39 - Cliente_Stage -  Alocando rowsets para o step 1 --> Cliente_Stage
+2022/06/13 18:34:39 - Cliente_Stage -  Foram alocados 1 rowsets por step 1 --> Cliente_Stage  
+2022/06/13 18:34:39 - Cliente_Stage - Alocando Steps & StepData...
+2022/06/13 18:34:39 - Cliente_Stage -  Transforma??o ir? alocar o step [Cliente] do tipe [TableInput]
+2022/06/13 18:34:39 - Cliente.0 - distribution activated
+2022/06/13 18:34:39 - Cliente.0 - Starting allocation of buffers & new threads...
+2022/06/13 18:34:39 - Cliente.0 - Step info: nrinput=0 nroutput=1
+2022/06/13 18:34:39 - Cliente.0 - output rel. is  1:1
+2022/06/13 18:34:39 - Cliente.0 - Found output rowset [Cliente.0 - Cliente_Stage.0]
+2022/06/13 18:34:39 - Cliente.0 - Finished dispatching
+2022/06/13 18:34:39 - Cliente_Stage -  Transforma??o alocou um novo step: [Cliente].0
+2022/06/13 18:34:39 - Cliente_Stage -  Transforma??o ir? alocar o step [Cliente_Stage] do tipe [InsertUpdate]
+2022/06/13 18:34:39 - Cliente_Stage.0 - distribution activated
+2022/06/13 18:34:39 - Cliente_Stage.0 - Starting allocation of buffers & new threads...
+2022/06/13 18:34:39 - Cliente_Stage.0 - Step info: nrinput=1 nroutput=0
+2022/06/13 18:34:39 - Cliente_Stage.0 - Got previous step from [Cliente_Stage] #0 --> Cliente
+2022/06/13 18:34:39 - Cliente_Stage.0 - input rel is 1:1
+2022/06/13 18:34:39 - Cliente_Stage.0 - Found input rowset [Cliente.0 - Cliente_Stage.0]
+2022/06/13 18:34:39 - Cliente_Stage.0 - Finished dispatching
+2022/06/13 18:34:39 - Cliente_Stage -  Transforma??o alocou um novo step: [Cliente_Stage].0
+2022/06/13 18:34:39 - Cliente_Stage - Esta transforma??o pode ser repetida com a data de repeti??o : 2022/06/13 18:34:39
+2022/06/13 18:34:39 - Cliente_Stage - Inicializando 2 steps...
+2022/06/13 18:34:39 - plus_SQLSERVER - New database connection defined
+2022/06/13 18:34:39 - plus_stage - New database connection defined
+2022/06/13 18:34:39 - plus_SQLSERVER - New database connection defined
+2022/06/13 18:34:39 - Territorio_Stage - Starting transformation...(file=null, name=Territorio_Stage, repinfo=null)
+2022/06/13 18:34:39 - VendasInternet_Stage -  Transforma??o alocou um novo step: [Vendas_Internet].0
+2022/06/13 18:34:39 - VendasInternet_Stage -  Transforma??o ir? alocar o step [VendasInternet_Stage] do tipe [TableOutput]
+2022/06/13 18:34:39 - Cliente_Stage.0 - Released server socket on port 0
+2022/06/13 18:34:39 - plus_stage - New database connection defined
+2022/06/13 18:34:39 - plus_stage - New database connection defined
+2022/06/13 18:34:39 - Cliente.0 - Released server socket on port 0
+2022/06/13 18:34:39 - Territorio_Stage - Using run configuration [Pentaho local]
+2022/06/13 18:34:39 - Territorio_Stage - Running transformation using the Kettle execution engine
+2022/06/13 18:34:39 - Territorio_Stage - Transforma??o ? pr?-carregada do reposit?rio.
+2022/06/13 18:34:39 - Territorio_Stage - Expedindo in?cio para transforma??o [Territorio_Stage]
+2022/06/13 18:34:39 - Territorio_Stage - Nr de argumentos detectados:0 
+2022/06/13 18:34:39 - Territorio_Stage - Esta n?o ? uma repeti??o de transforma??o
+2022/06/13 18:34:39 - Territorio_Stage - Foram encotrados 2 steps diferentes para executar.
+2022/06/13 18:34:39 - Territorio_Stage - Alocando rowsets...
+2022/06/13 18:34:39 - Territorio_Stage -  Alocando rowsets para o step 0 --> Territorio
+2022/06/13 18:34:39 - Territorio_Stage -   c?pias pr?vias = 1, pr?ximas c?pias=1
+2022/06/13 18:34:39 - Territorio_Stage - Transforma??o alocou novo rowset [Territorio.0 - Territorio_Stage.0]
+2022/06/13 18:34:39 - Territorio_Stage -  Foram alocados 1 rowsets por step 0 --> Territorio  
+2022/06/13 18:34:39 - Territorio_Stage -  Alocando rowsets para o step 1 --> Territorio_Stage
+2022/06/13 18:34:39 - Territorio_Stage -  Foram alocados 1 rowsets por step 1 --> Territorio_Stage  
+2022/06/13 18:34:39 - Territorio_Stage - Alocando Steps & StepData...
+2022/06/13 18:34:39 - VendasInternet_Stage.0 - distribution activated
+2022/06/13 18:34:39 - VendasInternet_Stage.0 - Starting allocation of buffers & new threads...
+2022/06/13 18:34:39 - Territorio_Stage -  Transforma??o ir? alocar o step [Territorio] do tipe [TableInput]
+2022/06/13 18:34:39 - VendasInternet_Stage.0 - Step info: nrinput=1 nroutput=0
+2022/06/13 18:34:39 - Territorio.0 - distribution de-activated
+2022/06/13 18:34:39 - Territorio.0 - Starting allocation of buffers & new threads...
+2022/06/13 18:34:39 - Territorio.0 - Step info: nrinput=0 nroutput=1
+2022/06/13 18:34:39 - Territorio.0 - output rel. is  1:1
+2022/06/13 18:34:39 - Territorio.0 - Found output rowset [Territorio.0 - Territorio_Stage.0]
+2022/06/13 18:34:39 - Territorio.0 - Finished dispatching
+2022/06/13 18:34:39 - VendasInternet_Stage.0 - Got previous step from [VendasInternet_Stage] #0 --> Vendas_Internet
+2022/06/13 18:34:39 - VendasInternet_Stage.0 - input rel is 1:1
+2022/06/13 18:34:39 - VendasInternet_Stage.0 - Found input rowset [Vendas_Internet.0 - VendasInternet_Stage.0]
+2022/06/13 18:34:39 - VendasInternet_Stage.0 - Finished dispatching
+2022/06/13 18:34:39 - VendasInternet_Stage -  Transforma??o alocou um novo step: [VendasInternet_Stage].0
+2022/06/13 18:34:39 - VendasInternet_Stage - Esta transforma??o pode ser repetida com a data de repeti??o : 2022/06/13 18:34:39
+2022/06/13 18:34:39 - VendasInternet_Stage - Inicializando 2 steps...
+2022/06/13 18:34:39 - Territorio_Stage -  Transforma??o alocou um novo step: [Territorio].0
+2022/06/13 18:34:39 - plus_SQLSERVER - New database connection defined
+2022/06/13 18:34:39 - Territorio_Stage -  Transforma??o ir? alocar o step [Territorio_Stage] do tipe [InsertUpdate]
+2022/06/13 18:34:40 - Territorio_Stage.0 - distribution activated
+2022/06/13 18:34:40 - Territorio_Stage.0 - Starting allocation of buffers & new threads...
+2022/06/13 18:34:40 - Territorio_Stage.0 - Step info: nrinput=1 nroutput=0
+2022/06/13 18:34:40 - Territorio_Stage.0 - Got previous step from [Territorio_Stage] #0 --> Territorio
+2022/06/13 18:34:40 - Territorio_Stage.0 - input rel is 1:1
+2022/06/13 18:34:40 - Territorio_Stage.0 - Found input rowset [Territorio.0 - Territorio_Stage.0]
+2022/06/13 18:34:40 - Territorio_Stage.0 - Finished dispatching
+2022/06/13 18:34:40 - Territorio_Stage -  Transforma??o alocou um novo step: [Territorio_Stage].0
+2022/06/13 18:34:40 - Territorio_Stage - Esta transforma??o pode ser repetida com a data de repeti??o : 2022/06/13 18:34:40
+2022/06/13 18:34:40 - Territorio_Stage - Inicializando 2 steps...
+2022/06/13 18:34:40 - Vendas_Internet.0 - Released server socket on port 0
+2022/06/13 18:34:40 - plus_SQLSERVER - New database connection defined
+2022/06/13 18:34:40 - Territorio.0 - Released server socket on port 0
+2022/06/13 18:34:40 - Territorio_Stage.0 - Released server socket on port 0
+2022/06/13 18:34:40 - plus_stage - New database connection defined
+2022/06/13 18:34:40 - VendasInternet_Stage.0 - Released server socket on port 0
+2022/06/13 18:34:40 - plus_stage - New database connection defined
+2022/06/13 18:34:40 - plus_SQLSERVER - New database connection defined
+2022/06/13 18:34:40 - plus_stage - Auto commit off
+2022/06/13 18:34:40 - plus_stage - Auto commit off
+2022/06/13 18:34:40 - plus_stage - Auto commit off
+2022/06/13 18:34:40 - plus_stage - Auto commit off
+2022/06/13 18:34:40 - plus_stage - Auto commit off
+2022/06/13 18:34:40 - VendasInternet_Stage.0 - Connected to database [plus_stage] (commit=1000)
+2022/06/13 18:34:40 - plus_stage - Auto commit off
+2022/06/13 18:34:40 - plus_SQLSERVER - Auto commit off
+2022/06/13 18:34:40 - Regiao.0 - !TableInput.Log.ConnectedToDatabase!
+2022/06/13 18:34:40 - Regiao_Stage - Step [Regiao.0] inicializado sem falhas.
+2022/06/13 18:34:40 - Regiao_Stage - Step [Regiao_Stage.0] inicializado sem falhas.
+2022/06/13 18:34:40 - Regiao_Stage - Transforma??o alocou 2 threads e 1 rowsets.
+2022/06/13 18:34:40 - Regiao.0 - Iniciando execução...
+2022/06/13 18:34:40 - Regiao.0 - !TableInput.Log.SqlQuery!
+2022/06/13 18:34:40 - Regiao_Stage.0 - Iniciando execução...
+2022/06/13 18:34:40 - plus_SQLSERVER - Auto commit off
+2022/06/13 18:34:40 - Subcategoria.0 - !TableInput.Log.ConnectedToDatabase!
+2022/06/13 18:34:40 - Subcategoria_Stage - Step [Subcategoria.0] inicializado sem falhas.
+2022/06/13 18:34:40 - Subcategoria_Stage - Step [Subcategoria_Stage.0] inicializado sem falhas.
+2022/06/13 18:34:40 - Subcategoria_Stage - Transforma??o alocou 2 threads e 1 rowsets.
+2022/06/13 18:34:40 - Subcategoria.0 - Iniciando execução...
+2022/06/13 18:34:40 - Subcategoria_Stage.0 - Iniciando execução...
+2022/06/13 18:34:40 - Subcategoria.0 - !TableInput.Log.SqlQuery!
+2022/06/13 18:34:40 - plus_SQLSERVER - Auto commit off
+2022/06/13 18:34:40 - Cliente.0 - !TableInput.Log.ConnectedToDatabase!
+2022/06/13 18:34:40 - Cliente_Stage - Step [Cliente.0] inicializado sem falhas.
+2022/06/13 18:34:40 - Cliente_Stage - Step [Cliente_Stage.0] inicializado sem falhas.
+2022/06/13 18:34:40 - Cliente_Stage - Transforma??o alocou 2 threads e 1 rowsets.
+2022/06/13 18:34:40 - Cliente.0 - Iniciando execução...
+2022/06/13 18:34:40 - Cliente.0 - !TableInput.Log.SqlQuery!
+2022/06/13 18:34:40 - Cliente_Stage.0 - Iniciando execução...
+2022/06/13 18:34:40 - plus_SQLSERVER - Auto commit off
+2022/06/13 18:34:40 - Produto.0 - !TableInput.Log.ConnectedToDatabase!
+2022/06/13 18:34:40 - Produto_Stage - Step [Produto.0] inicializado sem falhas.
+2022/06/13 18:34:40 - Produto_Stage - Step [Produto_Stage.0] inicializado sem falhas.
+2022/06/13 18:34:40 - Produto_Stage - Transforma??o alocou 2 threads e 1 rowsets.
+2022/06/13 18:34:40 - Produto.0 - Iniciando execução...
+2022/06/13 18:34:40 - Produto.0 - !TableInput.Log.SqlQuery!
+2022/06/13 18:34:40 - Produto_Stage.0 - Iniciando execução...
+2022/06/13 18:34:41 - plus_SQLSERVER - Auto commit off
+2022/06/13 18:34:41 - plus_SQLSERVER - Auto commit off
+2022/06/13 18:34:41 - Territorio.0 - !TableInput.Log.ConnectedToDatabase!
+2022/06/13 18:34:41 - Vendas_Internet.0 - !TableInput.Log.ConnectedToDatabase!
+2022/06/13 18:34:41 - Territorio_Stage - Step [Territorio.0] inicializado sem falhas.
+2022/06/13 18:34:41 - VendasInternet_Stage - Step [Vendas_Internet.0] inicializado sem falhas.
+2022/06/13 18:34:41 - Territorio_Stage - Step [Territorio_Stage.0] inicializado sem falhas.
+2022/06/13 18:34:41 - VendasInternet_Stage - Step [VendasInternet_Stage.0] inicializado sem falhas.
+2022/06/13 18:34:41 - VendasInternet_Stage - Transforma??o alocou 2 threads e 1 rowsets.
+2022/06/13 18:34:41 - Vendas_Internet.0 - Iniciando execução...
+2022/06/13 18:34:41 - Territorio_Stage.0 - Iniciando execução...
+2022/06/13 18:34:41 - Vendas_Internet.0 - !TableInput.Log.SqlQuery!
+2022/06/13 18:34:41 - Territorio.0 - Iniciando execução...
+2022/06/13 18:34:41 - Territorio.0 - !TableInput.Log.SqlQuery!
+2022/06/13 18:34:41 - Territorio_Stage - Transforma??o alocou 2 threads e 1 rowsets.
+2022/06/13 18:34:41 - VendasInternet_Stage.0 - Iniciando execução...
+2022/06/13 18:34:41 - Categoria.0 - !TableInput.Log.FinishedReadingQuery!
+2022/06/13 18:34:41 - Subcategoria.0 - !TableInput.Log.FinishedReadingQuery!
+2022/06/13 18:34:41 - Subcategoria_Stage.0 - Setting preparedStatement to [SELECT idSubcategoria, subcategoria, idCategoria FROM subcategoria WHERE  ( ( idSubcategoria = ?  ) ) ]
+2022/06/13 18:34:41 - Regiao_Stage.0 - Setting preparedStatement to [SELECT idRegiao, cidade, estado, pais, idVendasTerritorio FROM regiao WHERE  ( ( idRegiao = ?  ) ) ]
+2022/06/13 18:34:41 - Categoria_Stage.0 - Setting preparedStatement to [SELECT idCategoria, categoria FROM categoria WHERE  ( ( idCategoria = ?  ) ) ]
+2022/06/13 18:34:41 - plus_stage - Preparing statement: 
+2022/06/13 18:34:41 - plus_stage - INSERT INTO categoria (idCategoria, categoria) VALUES ( ?,  ?)
+2022/06/13 18:34:41 - Categoria_Stage.0 - Setting update preparedStatement to [UPDATE categoria
+2022/06/13 18:34:41 - Categoria_Stage.0 - SET categoria = ?
+2022/06/13 18:34:41 - Categoria_Stage.0 - WHERE  ( ( idCategoria = ?  ) ) ]
+2022/06/13 18:34:41 - Produto_Stage.0 - Setting preparedStatement to [SELECT idProduto, idSubcategoria, produto, cor FROM produto WHERE  ( ( idProduto = ?  ) ) ]
+2022/06/13 18:34:41 - plus_stage - Preparing statement: 
+2022/06/13 18:34:41 - plus_stage - INSERT INTO regiao (idRegiao, cidade, estado, pais, idVendasTerritorio) VALUES ( ?,  ?,  ?,  ?,  ?)
+2022/06/13 18:34:41 - Regiao_Stage.0 - Setting update preparedStatement to [UPDATE regiao
+2022/06/13 18:34:41 - Regiao_Stage.0 - SET cidade = ?
+2022/06/13 18:34:41 - Regiao_Stage.0 - ,   estado = ?
+2022/06/13 18:34:41 - Regiao_Stage.0 - ,   pais = ?
+2022/06/13 18:34:41 - Regiao_Stage.0 - ,   idVendasTerritorio = ?
+2022/06/13 18:34:41 - Regiao_Stage.0 - WHERE  ( ( idRegiao = ?  ) ) ]
+2022/06/13 18:34:41 - plus_stage - Preparing statement: 
+2022/06/13 18:34:41 - plus_stage - INSERT INTO produto (idProduto, idSubcategoria, produto, cor) VALUES ( ?,  ?,  ?,  ?)
+2022/06/13 18:34:41 - plus_stage - Preparing statement: 
+2022/06/13 18:34:41 - plus_stage - INSERT INTO subcategoria (idSubcategoria, subcategoria, idCategoria) VALUES ( ?,  ?,  ?)
+2022/06/13 18:34:41 - Subcategoria_Stage.0 - Setting update preparedStatement to [UPDATE subcategoria
+2022/06/13 18:34:41 - Subcategoria_Stage.0 - SET subcategoria = ?
+2022/06/13 18:34:41 - Subcategoria_Stage.0 - ,   idCategoria = ?
+2022/06/13 18:34:41 - Subcategoria_Stage.0 - WHERE  ( ( idSubcategoria = ?  ) ) ]
+2022/06/13 18:34:41 - Produto_Stage.0 - Setting update preparedStatement to [UPDATE produto
+2022/06/13 18:34:41 - Produto_Stage.0 - SET idSubcategoria = ?
+2022/06/13 18:34:41 - Produto_Stage.0 - ,   produto = ?
+2022/06/13 18:34:41 - Produto_Stage.0 - ,   cor = ?
+2022/06/13 18:34:41 - Produto_Stage.0 - WHERE  ( ( idProduto = ?  ) ) ]
+2022/06/13 18:34:41 - plus_stage - Connection to database closed!
+2022/06/13 18:34:41 - Categoria_Stage.0 - Finished processing (I=4, O=0, R=4, W=4, U=0, E=0)
+2022/06/13 18:34:41 - plus_SQLSERVER - Connection to database closed!
+2022/06/13 18:34:41 - Categoria.0 - Finished processing (I=4, O=0, R=0, W=4, U=0, E=0)
+2022/06/13 18:34:41 - plus_SQLSERVER - Connection to database closed!
+2022/06/13 18:34:41 - Subcategoria.0 - Finished processing (I=37, O=0, R=0, W=37, U=0, E=0)
+2022/06/13 18:34:41 - Territorio.0 - !TableInput.Log.FinishedReadingQuery!
+2022/06/13 18:34:41 - JobCargas_Stage - Starting entry [Success]
+2022/06/13 18:34:41 - Produto.0 - !TableInput.Log.FinishedReadingQuery!
+2022/06/13 18:34:41 - Cliente_Stage.0 - Setting preparedStatement to [SELECT idCliente, idRegiao, primeiroNome, nomeMeio, ultimoNome, dataNascimento, estadoCivil, sexo, email, endereco, telefone FROM clientes WHERE  ( ( idCliente = ?  ) ) ]
+2022/06/13 18:34:41 - Territorio_Stage.0 - Setting preparedStatement to [SELECT idTerritorioVendas, vendasTerritotioRegiao, vendasTerritotioPais, vendasGrupoTerritotio FROM territorio WHERE  ( ( idTerritorioVendas = ?  ) ) ]
+2022/06/13 18:34:41 - plus_stage - Connection to database closed!
+2022/06/13 18:34:41 - Subcategoria_Stage.0 - Finished processing (I=37, O=0, R=37, W=37, U=0, E=0)
+2022/06/13 18:34:41 - plus_stage - Preparing statement: 
+2022/06/13 18:34:41 - plus_stage - INSERT INTO clientes (idCliente, idRegiao, primeiroNome, nomeMeio, ultimoNome, dataNascimento, estadoCivil, sexo, email, endereco, telefone) VALUES ( ?,  ?,  ?,  ?,  ?,  ?,  ?,  ?,  ?,  ?,  ?)
+2022/06/13 18:34:41 - Cliente_Stage.0 - Setting update preparedStatement to [UPDATE clientes
+2022/06/13 18:34:41 - Cliente_Stage.0 - SET idRegiao = ?
+2022/06/13 18:34:41 - Cliente_Stage.0 - ,   primeiroNome = ?
+2022/06/13 18:34:41 - Cliente_Stage.0 - ,   nomeMeio = ?
+2022/06/13 18:34:41 - Cliente_Stage.0 - ,   ultimoNome = ?
+2022/06/13 18:34:41 - Cliente_Stage.0 - ,   dataNascimento = ?
+2022/06/13 18:34:41 - Cliente_Stage.0 - ,   estadoCivil = ?
+2022/06/13 18:34:41 - Cliente_Stage.0 - ,   sexo = ?
+2022/06/13 18:34:41 - Cliente_Stage.0 - ,   email = ?
+2022/06/13 18:34:41 - Cliente_Stage.0 - ,   endereco = ?
+2022/06/13 18:34:41 - Cliente_Stage.0 - ,   telefone = ?
+2022/06/13 18:34:41 - Cliente_Stage.0 - WHERE  ( ( idCliente = ?  ) ) ]
+2022/06/13 18:34:41 - plus_stage - Preparing statement: 
+2022/06/13 18:34:41 - plus_stage - INSERT INTO territorio (idTerritorioVendas, vendasTerritotioRegiao, vendasTerritotioPais, vendasGrupoTerritotio) VALUES ( ?,  ?,  ?,  ?)
+2022/06/13 18:34:41 - Territorio_Stage.0 - Setting update preparedStatement to [UPDATE territorio
+2022/06/13 18:34:41 - Territorio_Stage.0 - SET vendasTerritotioRegiao = ?
+2022/06/13 18:34:41 - Territorio_Stage.0 - ,   vendasTerritotioPais = ?
+2022/06/13 18:34:41 - Territorio_Stage.0 - ,   vendasGrupoTerritotio = ?
+2022/06/13 18:34:41 - Territorio_Stage.0 - WHERE  ( ( idTerritorioVendas = ?  ) ) ]
+2022/06/13 18:34:41 - Regiao.0 - !TableInput.Log.FinishedReadingQuery!
+2022/06/13 18:34:41 - plus_SQLSERVER - Connection to database closed!
+2022/06/13 18:34:41 - Produto.0 - Finished processing (I=606, O=0, R=0, W=606, U=0, E=0)
+2022/06/13 18:34:42 - plus_stage - Connection to database closed!
+2022/06/13 18:34:42 - Territorio_Stage.0 - Finished processing (I=11, O=0, R=11, W=11, U=0, E=0)
+2022/06/13 18:34:42 - plus_SQLSERVER - Connection to database closed!
+2022/06/13 18:34:42 - Regiao.0 - Finished processing (I=655, O=0, R=0, W=655, U=0, E=0)
+2022/06/13 18:34:42 - plus_stage - Connection to database closed!
+2022/06/13 18:34:42 - Produto_Stage.0 - Finished processing (I=606, O=0, R=606, W=606, U=0, E=0)
+2022/06/13 18:34:42 - JobCargas_Stage - exec(5, 0, Success.0)
+2022/06/13 18:34:42 - Success - Starting job entry
+2022/06/13 18:34:42 - JobCargas_Stage - Finished job entry [Success] (result=[true])
+2022/06/13 18:34:42 - plus_stage - Connection to database closed!
+2022/06/13 18:34:42 - Regiao_Stage.0 - Finished processing (I=655, O=0, R=655, W=655, U=0, E=0)
+2022/06/13 18:34:42 - plus_SQLSERVER - Connection to database closed!
+2022/06/13 18:34:42 - Territorio.0 - Finished processing (I=11, O=0, R=0, W=11, U=0, E=0)
+2022/06/13 18:34:43 - JobCargas_Stage - Starting entry [Success]
+2022/06/13 18:34:43 - JobCargas_Stage - Starting entry [Success]
+2022/06/13 18:34:43 - JobCargas_Stage - Starting entry [Success]
+2022/06/13 18:34:43 - VendasInternet_Stage.0 - Prepared statement : INSERT INTO vendas_internet (idProduto, "data", idCliente, idTerritorioVendas, ordemVendas, custoTotalProduto, quantidadeVendas) VALUES ( ?,  ?,  ?,  ?,  ?,  ?,  ?)
+2022/06/13 18:34:43 - JobCargas_Stage - Starting entry [Success]
+2022/06/13 18:34:43 - JobCargas_Stage - exec(5, 0, Success.0)
+2022/06/13 18:34:43 - Success - Starting job entry
+2022/06/13 18:34:43 - JobCargas_Stage - Finished job entry [Success] (result=[true])
+2022/06/13 18:34:43 - JobCargas_Stage - exec(5, 0, Success.0)
+2022/06/13 18:34:43 - Success - Starting job entry
+2022/06/13 18:34:43 - JobCargas_Stage - Finished job entry [Success] (result=[true])
+2022/06/13 18:34:43 - JobCargas_Stage - exec(5, 0, Success.0)
+2022/06/13 18:34:43 - Success - Starting job entry
+2022/06/13 18:34:43 - JobCargas_Stage - Finished job entry [Success] (result=[true])
+2022/06/13 18:34:43 - JobCargas_Stage - exec(5, 0, Success.0)
+2022/06/13 18:34:43 - Success - Starting job entry
+2022/06/13 18:34:43 - JobCargas_Stage - Finished job entry [Success] (result=[true])
+2022/06/13 18:34:46 - Vendas_Internet.0 - !TableInput.Log.LineNumber!
+2022/06/13 18:34:46 - Vendas_Internet.0 - !TableInput.Log.FinishedReadingQuery!
+2022/06/13 18:34:46 - VendasInternet_Stage.0 - linenr 50000
+2022/06/13 18:34:46 - plus_stage - Connection to database closed!
+2022/06/13 18:34:46 - VendasInternet_Stage.0 - Finished processing (I=0, O=52801, R=52801, W=52801, U=0, E=0)
+2022/06/13 18:34:46 - plus_SQLSERVER - Connection to database closed!
+2022/06/13 18:34:46 - Vendas_Internet.0 - Finished processing (I=52801, O=0, R=0, W=52801, U=0, E=0)
+2022/06/13 18:34:46 - JobCargas_Stage - Starting entry [Success]
+2022/06/13 18:34:46 - JobCargas_Stage - exec(5, 0, Success.0)
+2022/06/13 18:34:46 - Success - Starting job entry
+2022/06/13 18:34:46 - JobCargas_Stage - Finished job entry [Success] (result=[true])
+2022/06/13 18:35:20 - Cliente.0 - !TableInput.Log.FinishedReadingQuery!
+2022/06/13 18:35:20 - plus_SQLSERVER - Connection to database closed!
+2022/06/13 18:35:20 - Cliente.0 - Finished processing (I=18484, O=0, R=0, W=18484, U=0, E=0)
+2022/06/13 18:35:50 - plus_stage - Connection to database closed!
+2022/06/13 18:35:50 - Cliente_Stage.0 - Finished processing (I=18484, O=0, R=18484, W=18484, U=0, E=0)
+2022/06/13 18:35:50 - JobCargas_Stage - Starting entry [Success]
+2022/06/13 18:35:50 - JobCargas_Stage - exec(5, 0, Success.0)
+2022/06/13 18:35:50 - Success - Starting job entry
+2022/06/13 18:35:50 - JobCargas_Stage - Finished job entry [Success] (result=[true])
+2022/06/13 18:35:50 - plus_stage - New database connection defined
+2022/06/13 18:35:50 - plus_stage - Auto commit off
+2022/06/13 18:35:50 - plus_stage - Connection to database closed!

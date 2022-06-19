@@ -1,0 +1,10 @@
+
+Link Atualizada com parâmetro:
+http://compras.dados.gov.br/fornecedores/v1/fornecedores.json?uf=DF
+
+Em breve irei atualizar a aula.
+
+
+
+Link antigo não funciona mais, o site excluiu.
+http://compras.dados.gov.br/fornecedores/v1/fornecedores.json

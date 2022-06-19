@@ -1,0 +1,917 @@
+2022/06/11 14:40:17 - JobCargas_DW - Using run configuration [Pentaho local]
+2022/06/11 14:40:17 - JobCargas_DW - exec(4, 0, Start.0)
+2022/06/11 14:40:17 - Start - Starting job entry
+2022/06/11 14:40:17 - JobCargas_DW - Starting entry [DimensaoCliente]
+2022/06/11 14:40:17 - JobCargas_DW - exec(5, 0, DimensaoCliente.0)
+2022/06/11 14:40:17 - DimensaoCliente - Starting job entry
+2022/06/11 14:40:17 - DimensaoCliente - Opening transformation: [null] in directory [/]
+2022/06/11 14:40:18 - DimensaoCliente - Starting transformation...(file=null, name=DimensaoCliente, repinfo=null)
+2022/06/11 14:40:18 - DimensaoCliente - Using run configuration [Pentaho local]
+2022/06/11 14:40:18 - DimensaoCliente - Running transformation using the Kettle execution engine
+2022/06/11 14:40:18 - DimensaoCliente - Transforma??o ? pr?-carregada do reposit?rio.
+2022/06/11 14:40:18 - DimensaoCliente - Expedindo in?cio para transforma??o [DimensaoCliente]
+2022/06/11 14:40:18 - DimensaoCliente - Nr de argumentos detectados:0 
+2022/06/11 14:40:18 - DimensaoCliente - Esta n?o ? uma repeti??o de transforma??o
+2022/06/11 14:40:18 - DimensaoCliente - Foram encotrados 4 steps diferentes para executar.
+2022/06/11 14:40:18 - DimensaoCliente - Alocando rowsets...
+2022/06/11 14:40:18 - DimensaoCliente -  Alocando rowsets para o step 0 --> Clientes
+2022/06/11 14:40:18 - DimensaoCliente -   c?pias pr?vias = 1, pr?ximas c?pias=1
+2022/06/11 14:40:18 - DimensaoCliente - Transforma??o alocou novo rowset [Clientes.0 - Nome Completo.0]
+2022/06/11 14:40:18 - DimensaoCliente -  Foram alocados 1 rowsets por step 0 --> Clientes  
+2022/06/11 14:40:18 - DimensaoCliente -  Alocando rowsets para o step 1 --> Nome Completo
+2022/06/11 14:40:18 - DimensaoCliente -   c?pias pr?vias = 1, pr?ximas c?pias=1
+2022/06/11 14:40:18 - DimensaoCliente - Transforma??o alocou novo rowset [Nome Completo.0 - Select values.0]
+2022/06/11 14:40:18 - DimensaoCliente -  Foram alocados 2 rowsets por step 1 --> Nome Completo  
+2022/06/11 14:40:18 - DimensaoCliente -  Alocando rowsets para o step 2 --> Select values
+2022/06/11 14:40:18 - DimensaoCliente -   c?pias pr?vias = 1, pr?ximas c?pias=1
+2022/06/11 14:40:18 - DimensaoCliente - Transforma??o alocou novo rowset [Select values.0 - Dim_Cliente.0]
+2022/06/11 14:40:18 - DimensaoCliente -  Foram alocados 3 rowsets por step 2 --> Select values  
+2022/06/11 14:40:18 - DimensaoCliente -  Alocando rowsets para o step 3 --> Dim_Cliente
+2022/06/11 14:40:18 - DimensaoCliente -  Foram alocados 3 rowsets por step 3 --> Dim_Cliente  
+2022/06/11 14:40:18 - DimensaoCliente - Alocando Steps & StepData...
+2022/06/11 14:40:18 - DimensaoCliente -  Transforma??o ir? alocar o step [Clientes] do tipe [TableInput]
+2022/06/11 14:40:18 - Clientes.0 - distribution activated
+2022/06/11 14:40:18 - Clientes.0 - Starting allocation of buffers & new threads...
+2022/06/11 14:40:18 - Clientes.0 - Step info: nrinput=0 nroutput=1
+2022/06/11 14:40:18 - Clientes.0 - output rel. is  1:1
+2022/06/11 14:40:18 - Clientes.0 - Found output rowset [Clientes.0 - Nome Completo.0]
+2022/06/11 14:40:18 - Clientes.0 - Finished dispatching
+2022/06/11 14:40:18 - DimensaoCliente -  Transforma??o alocou um novo step: [Clientes].0
+2022/06/11 14:40:18 - DimensaoCliente -  Transforma??o ir? alocar o step [Nome Completo] do tipe [ConcatFields]
+2022/06/11 14:40:18 - Nome Completo.0 - distribution activated
+2022/06/11 14:40:18 - Nome Completo.0 - Starting allocation of buffers & new threads...
+2022/06/11 14:40:18 - Nome Completo.0 - Step info: nrinput=1 nroutput=1
+2022/06/11 14:40:18 - Nome Completo.0 - Got previous step from [Nome Completo] #0 --> Clientes
+2022/06/11 14:40:18 - Nome Completo.0 - input rel is 1:1
+2022/06/11 14:40:18 - Nome Completo.0 - Found input rowset [Clientes.0 - Nome Completo.0]
+2022/06/11 14:40:18 - Nome Completo.0 - output rel. is  1:1
+2022/06/11 14:40:18 - Nome Completo.0 - Found output rowset [Nome Completo.0 - Select values.0]
+2022/06/11 14:40:18 - Nome Completo.0 - Finished dispatching
+2022/06/11 14:40:18 - DimensaoCliente -  Transforma??o alocou um novo step: [Nome Completo].0
+2022/06/11 14:40:18 - DimensaoCliente -  Transforma??o ir? alocar o step [Select values] do tipe [SelectValues]
+2022/06/11 14:40:18 - Select values.0 - distribution activated
+2022/06/11 14:40:18 - Select values.0 - Starting allocation of buffers & new threads...
+2022/06/11 14:40:18 - Select values.0 - Step info: nrinput=1 nroutput=1
+2022/06/11 14:40:18 - Select values.0 - Got previous step from [Select values] #0 --> Nome Completo
+2022/06/11 14:40:18 - Select values.0 - input rel is 1:1
+2022/06/11 14:40:18 - Select values.0 - Found input rowset [Nome Completo.0 - Select values.0]
+2022/06/11 14:40:18 - Select values.0 - output rel. is  1:1
+2022/06/11 14:40:18 - Select values.0 - Found output rowset [Select values.0 - Dim_Cliente.0]
+2022/06/11 14:40:18 - Select values.0 - Finished dispatching
+2022/06/11 14:40:18 - DimensaoCliente -  Transforma??o alocou um novo step: [Select values].0
+2022/06/11 14:40:18 - DimensaoCliente -  Transforma??o ir? alocar o step [Dim_Cliente] do tipe [TableOutput]
+2022/06/11 14:40:18 - Dim_Cliente.0 - distribution activated
+2022/06/11 14:40:18 - Dim_Cliente.0 - Starting allocation of buffers & new threads...
+2022/06/11 14:40:18 - Dim_Cliente.0 - Step info: nrinput=1 nroutput=0
+2022/06/11 14:40:18 - Dim_Cliente.0 - Got previous step from [Dim_Cliente] #0 --> Select values
+2022/06/11 14:40:18 - Dim_Cliente.0 - input rel is 1:1
+2022/06/11 14:40:18 - Dim_Cliente.0 - Found input rowset [Select values.0 - Dim_Cliente.0]
+2022/06/11 14:40:18 - Dim_Cliente.0 - Finished dispatching
+2022/06/11 14:40:18 - DimensaoCliente -  Transforma??o alocou um novo step: [Dim_Cliente].0
+2022/06/11 14:40:18 - DimensaoCliente - Esta transforma??o pode ser repetida com a data de repeti??o : 2022/06/11 14:40:18
+2022/06/11 14:40:18 - DimensaoCliente - Inicializando 4 steps...
+2022/06/11 14:40:18 - Clientes.0 - Released server socket on port 0
+2022/06/11 14:40:18 - Select values.0 - Released server socket on port 0
+2022/06/11 14:40:18 - plus_stage - New database connection defined
+2022/06/11 14:40:18 - Nome Completo.0 - Released server socket on port 0
+2022/06/11 14:40:18 - Dim_Cliente.0 - Released server socket on port 0
+2022/06/11 14:40:18 - plus_dw - New database connection defined
+2022/06/11 14:40:18 - plus_stage - Auto commit off
+2022/06/11 14:40:18 - Clientes.0 - !TableInput.Log.ConnectedToDatabase!
+2022/06/11 14:40:18 - Dim_Cliente.0 - Connected to database [plus_dw] (commit=1000)
+2022/06/11 14:40:18 - plus_dw - Auto commit off
+2022/06/11 14:40:18 - DimensaoCliente - Step [Clientes.0] inicializado sem falhas.
+2022/06/11 14:40:18 - DimensaoCliente - Step [Nome Completo.0] inicializado sem falhas.
+2022/06/11 14:40:18 - DimensaoCliente - Step [Select values.0] inicializado sem falhas.
+2022/06/11 14:40:18 - DimensaoCliente - Step [Dim_Cliente.0] inicializado sem falhas.
+2022/06/11 14:40:18 - Clientes.0 - Iniciando execução...
+2022/06/11 14:40:18 - Nome Completo.0 - Iniciando execução...
+2022/06/11 14:40:18 - Clientes.0 - !TableInput.Log.SqlQuery!
+2022/06/11 14:40:18 - DimensaoCliente - Transforma??o alocou 4 threads e 3 rowsets.
+2022/06/11 14:40:18 - Dim_Cliente.0 - Iniciando execução...
+2022/06/11 14:40:18 - Select values.0 - Iniciando execução...
+2022/06/11 14:40:18 - Dim_Cliente.0 - Prepared statement : INSERT INTO dim_cliente (idcliente, datanascimento, estadocivil, sexo, email, telefone, nome_completo) VALUES ( ?,  ?,  ?,  ?,  ?,  ?,  ?)
+2022/06/11 14:40:18 - Clientes.0 - !TableInput.Log.FinishedReadingQuery!
+2022/06/11 14:40:18 - plus_stage - Connection to database closed!
+2022/06/11 14:40:18 - Clientes.0 - Finished processing (I=18484, O=0, R=0, W=18484, U=0, E=0)
+2022/06/11 14:40:18 - Nome Completo.0 - Finished processing (I=0, O=0, R=18484, W=18484, U=0, E=0)
+2022/06/11 14:40:22 - Select values.0 - Finished processing (I=0, O=0, R=18484, W=18484, U=0, E=0)
+2022/06/11 14:40:27 - plus_dw - Connection to database closed!
+2022/06/11 14:40:27 - Dim_Cliente.0 - Finished processing (I=0, O=18484, R=18484, W=18484, U=0, E=0)
+2022/06/11 14:40:27 - JobCargas_DW - Starting entry [DimensaoProduto]
+2022/06/11 14:40:27 - JobCargas_DW - exec(6, 0, DimensaoProduto.0)
+2022/06/11 14:40:27 - DimensaoProduto - Starting job entry
+2022/06/11 14:40:27 - DimensaoProduto - Opening transformation: [null] in directory [/]
+2022/06/11 14:40:27 - DimensaoProduto - Starting transformation...(file=null, name=DimensaoProduto, repinfo=null)
+2022/06/11 14:40:27 - DimensaoProduto - Using run configuration [Pentaho local]
+2022/06/11 14:40:27 - DimensaoProduto - Running transformation using the Kettle execution engine
+2022/06/11 14:40:27 - DimensaoProduto - Transforma??o ? pr?-carregada do reposit?rio.
+2022/06/11 14:40:27 - DimensaoProduto - Expedindo in?cio para transforma??o [DimensaoProduto]
+2022/06/11 14:40:27 - DimensaoProduto - Nr de argumentos detectados:0 
+2022/06/11 14:40:27 - DimensaoProduto - Esta n?o ? uma repeti??o de transforma??o
+2022/06/11 14:40:27 - DimensaoProduto - Foram encotrados 12 steps diferentes para executar.
+2022/06/11 14:40:27 - DimensaoProduto - Alocando rowsets...
+2022/06/11 14:40:27 - DimensaoProduto -  Alocando rowsets para o step 0 --> Produto
+2022/06/11 14:40:27 - DimensaoProduto -   c?pias pr?vias = 1, pr?ximas c?pias=1
+2022/06/11 14:40:27 - DimensaoProduto - Transforma??o alocou novo rowset [Produto.0 - Ordena Produto.0]
+2022/06/11 14:40:27 - DimensaoProduto -  Foram alocados 1 rowsets por step 0 --> Produto  
+2022/06/11 14:40:27 - DimensaoProduto -  Alocando rowsets para o step 1 --> Ordena Produto
+2022/06/11 14:40:27 - DimensaoProduto -   c?pias pr?vias = 1, pr?ximas c?pias=1
+2022/06/11 14:40:27 - DimensaoProduto - Transforma??o alocou novo rowset [Ordena Produto.0 - Busca Subcategoria.0]
+2022/06/11 14:40:27 - DimensaoProduto -  Foram alocados 2 rowsets por step 1 --> Ordena Produto  
+2022/06/11 14:40:27 - DimensaoProduto -  Alocando rowsets para o step 2 --> Subcategoria
+2022/06/11 14:40:27 - DimensaoProduto -   c?pias pr?vias = 1, pr?ximas c?pias=1
+2022/06/11 14:40:27 - DimensaoProduto - Transforma??o alocou novo rowset [Subcategoria.0 - Ordena Subcategoria.0]
+2022/06/11 14:40:27 - DimensaoProduto -  Foram alocados 3 rowsets por step 2 --> Subcategoria  
+2022/06/11 14:40:27 - DimensaoProduto -  Alocando rowsets para o step 3 --> Ordena Subcategoria
+2022/06/11 14:40:27 - DimensaoProduto -   c?pias pr?vias = 1, pr?ximas c?pias=1
+2022/06/11 14:40:27 - DimensaoProduto - Transforma??o alocou novo rowset [Ordena Subcategoria.0 - Busca Subcategoria.0]
+2022/06/11 14:40:27 - DimensaoProduto -  Foram alocados 4 rowsets por step 3 --> Ordena Subcategoria  
+2022/06/11 14:40:27 - DimensaoProduto -  Alocando rowsets para o step 4 --> Busca Subcategoria
+2022/06/11 14:40:27 - DimensaoProduto -   c?pias pr?vias = 1, pr?ximas c?pias=1
+2022/06/11 14:40:27 - DimensaoProduto - Transforma??o alocou novo rowset [Busca Subcategoria.0 - Ordena Produto_Subcategoria.0]
+2022/06/11 14:40:27 - DimensaoProduto -  Foram alocados 5 rowsets por step 4 --> Busca Subcategoria  
+2022/06/11 14:40:27 - DimensaoProduto -  Alocando rowsets para o step 5 --> Ordena Produto_Subcategoria
+2022/06/11 14:40:27 - DimensaoProduto -   c?pias pr?vias = 1, pr?ximas c?pias=1
+2022/06/11 14:40:27 - DimensaoProduto - Transforma??o alocou novo rowset [Ordena Produto_Subcategoria.0 - Busca Categoria.0]
+2022/06/11 14:40:27 - DimensaoProduto -  Foram alocados 6 rowsets por step 5 --> Ordena Produto_Subcategoria  
+2022/06/11 14:40:27 - DimensaoProduto -  Alocando rowsets para o step 6 --> Categoria
+2022/06/11 14:40:27 - DimensaoProduto -   c?pias pr?vias = 1, pr?ximas c?pias=1
+2022/06/11 14:40:27 - DimensaoProduto - Transforma??o alocou novo rowset [Categoria.0 - Ordena Categoria.0]
+2022/06/11 14:40:27 - DimensaoProduto -  Foram alocados 7 rowsets por step 6 --> Categoria  
+2022/06/11 14:40:27 - DimensaoProduto -  Alocando rowsets para o step 7 --> Ordena Categoria
+2022/06/11 14:40:27 - DimensaoProduto -   c?pias pr?vias = 1, pr?ximas c?pias=1
+2022/06/11 14:40:27 - DimensaoProduto - Transforma??o alocou novo rowset [Ordena Categoria.0 - Busca Categoria.0]
+2022/06/11 14:40:27 - DimensaoProduto -  Foram alocados 8 rowsets por step 7 --> Ordena Categoria  
+2022/06/11 14:40:27 - DimensaoProduto -  Alocando rowsets para o step 8 --> Busca Categoria
+2022/06/11 14:40:27 - DimensaoProduto -   c?pias pr?vias = 1, pr?ximas c?pias=1
+2022/06/11 14:40:27 - DimensaoProduto - Transforma??o alocou novo rowset [Busca Categoria.0 - Tratando Nulos.0]
+2022/06/11 14:40:27 - DimensaoProduto -  Foram alocados 9 rowsets por step 8 --> Busca Categoria  
+2022/06/11 14:40:27 - DimensaoProduto -  Alocando rowsets para o step 9 --> Tratando Nulos
+2022/06/11 14:40:27 - DimensaoProduto -   c?pias pr?vias = 1, pr?ximas c?pias=1
+2022/06/11 14:40:27 - DimensaoProduto - Transforma??o alocou novo rowset [Tratando Nulos.0 - Campos Oficiais.0]
+2022/06/11 14:40:27 - DimensaoProduto -  Foram alocados 10 rowsets por step 9 --> Tratando Nulos  
+2022/06/11 14:40:27 - DimensaoProduto -  Alocando rowsets para o step 10 --> Campos Oficiais
+2022/06/11 14:40:27 - DimensaoProduto -   c?pias pr?vias = 1, pr?ximas c?pias=1
+2022/06/11 14:40:27 - DimensaoProduto - Transforma??o alocou novo rowset [Campos Oficiais.0 - Dimensão Produto.0]
+2022/06/11 14:40:27 - DimensaoProduto -  Foram alocados 11 rowsets por step 10 --> Campos Oficiais  
+2022/06/11 14:40:27 - DimensaoProduto -  Alocando rowsets para o step 11 --> Dimensão Produto
+2022/06/11 14:40:27 - DimensaoProduto -  Foram alocados 11 rowsets por step 11 --> Dimensão Produto  
+2022/06/11 14:40:27 - DimensaoProduto - Alocando Steps & StepData...
+2022/06/11 14:40:27 - DimensaoProduto -  Transforma??o ir? alocar o step [Produto] do tipe [TableInput]
+2022/06/11 14:40:27 - Produto.0 - distribution activated
+2022/06/11 14:40:27 - Produto.0 - Starting allocation of buffers & new threads...
+2022/06/11 14:40:27 - Produto.0 - Step info: nrinput=0 nroutput=1
+2022/06/11 14:40:27 - Produto.0 - output rel. is  1:1
+2022/06/11 14:40:27 - Produto.0 - Found output rowset [Produto.0 - Ordena Produto.0]
+2022/06/11 14:40:27 - Produto.0 - Finished dispatching
+2022/06/11 14:40:27 - DimensaoProduto -  Transforma??o alocou um novo step: [Produto].0
+2022/06/11 14:40:27 - DimensaoProduto -  Transforma??o ir? alocar o step [Ordena Produto] do tipe [SortRows]
+2022/06/11 14:40:27 - Ordena Produto.0 - distribution activated
+2022/06/11 14:40:27 - Ordena Produto.0 - Starting allocation of buffers & new threads...
+2022/06/11 14:40:27 - Ordena Produto.0 - Step info: nrinput=1 nroutput=1
+2022/06/11 14:40:27 - Ordena Produto.0 - Got previous step from [Ordena Produto] #0 --> Produto
+2022/06/11 14:40:27 - Ordena Produto.0 - input rel is 1:1
+2022/06/11 14:40:27 - Ordena Produto.0 - Found input rowset [Produto.0 - Ordena Produto.0]
+2022/06/11 14:40:27 - Ordena Produto.0 - output rel. is  1:1
+2022/06/11 14:40:27 - Ordena Produto.0 - Found output rowset [Ordena Produto.0 - Busca Subcategoria.0]
+2022/06/11 14:40:27 - Ordena Produto.0 - Finished dispatching
+2022/06/11 14:40:27 - DimensaoProduto -  Transforma??o alocou um novo step: [Ordena Produto].0
+2022/06/11 14:40:27 - DimensaoProduto -  Transforma??o ir? alocar o step [Subcategoria] do tipe [TableInput]
+2022/06/11 14:40:27 - Subcategoria.0 - distribution activated
+2022/06/11 14:40:27 - Subcategoria.0 - Starting allocation of buffers & new threads...
+2022/06/11 14:40:27 - Subcategoria.0 - Step info: nrinput=0 nroutput=1
+2022/06/11 14:40:27 - Subcategoria.0 - output rel. is  1:1
+2022/06/11 14:40:27 - Subcategoria.0 - Found output rowset [Subcategoria.0 - Ordena Subcategoria.0]
+2022/06/11 14:40:27 - Subcategoria.0 - Finished dispatching
+2022/06/11 14:40:27 - DimensaoProduto -  Transforma??o alocou um novo step: [Subcategoria].0
+2022/06/11 14:40:27 - DimensaoProduto -  Transforma??o ir? alocar o step [Ordena Subcategoria] do tipe [SortRows]
+2022/06/11 14:40:27 - Ordena Subcategoria.0 - distribution activated
+2022/06/11 14:40:27 - Ordena Subcategoria.0 - Starting allocation of buffers & new threads...
+2022/06/11 14:40:27 - Ordena Subcategoria.0 - Step info: nrinput=1 nroutput=1
+2022/06/11 14:40:27 - Ordena Subcategoria.0 - Got previous step from [Ordena Subcategoria] #0 --> Subcategoria
+2022/06/11 14:40:27 - Ordena Subcategoria.0 - input rel is 1:1
+2022/06/11 14:40:27 - Ordena Subcategoria.0 - Found input rowset [Subcategoria.0 - Ordena Subcategoria.0]
+2022/06/11 14:40:27 - Ordena Subcategoria.0 - output rel. is  1:1
+2022/06/11 14:40:27 - Ordena Subcategoria.0 - Found output rowset [Ordena Subcategoria.0 - Busca Subcategoria.0]
+2022/06/11 14:40:27 - Ordena Subcategoria.0 - Finished dispatching
+2022/06/11 14:40:27 - DimensaoProduto -  Transforma??o alocou um novo step: [Ordena Subcategoria].0
+2022/06/11 14:40:27 - DimensaoProduto -  Transforma??o ir? alocar o step [Busca Subcategoria] do tipe [MergeJoin]
+2022/06/11 14:40:27 - Busca Subcategoria.0 - distribution activated
+2022/06/11 14:40:27 - Busca Subcategoria.0 - Starting allocation of buffers & new threads...
+2022/06/11 14:40:27 - Busca Subcategoria.0 - Step info: nrinput=2 nroutput=1
+2022/06/11 14:40:27 - Busca Subcategoria.0 - Got previous step from [Busca Subcategoria] #0 --> Ordena Produto
+2022/06/11 14:40:27 - Busca Subcategoria.0 - input rel is 1:1
+2022/06/11 14:40:27 - Busca Subcategoria.0 - Found input rowset [Ordena Produto.0 - Busca Subcategoria.0]
+2022/06/11 14:40:27 - Busca Subcategoria.0 - Got previous step from [Busca Subcategoria] #1 --> Ordena Subcategoria
+2022/06/11 14:40:27 - Busca Subcategoria.0 - input rel is 1:1
+2022/06/11 14:40:27 - Busca Subcategoria.0 - Found input rowset [Ordena Subcategoria.0 - Busca Subcategoria.0]
+2022/06/11 14:40:27 - Busca Subcategoria.0 - output rel. is  1:1
+2022/06/11 14:40:27 - Busca Subcategoria.0 - Found output rowset [Busca Subcategoria.0 - Ordena Produto_Subcategoria.0]
+2022/06/11 14:40:27 - Busca Subcategoria.0 - Finished dispatching
+2022/06/11 14:40:27 - DimensaoProduto -  Transforma??o alocou um novo step: [Busca Subcategoria].0
+2022/06/11 14:40:27 - DimensaoProduto -  Transforma??o ir? alocar o step [Ordena Produto_Subcategoria] do tipe [SortRows]
+2022/06/11 14:40:27 - Ordena Produto_Subcategoria.0 - distribution activated
+2022/06/11 14:40:27 - Ordena Produto_Subcategoria.0 - Starting allocation of buffers & new threads...
+2022/06/11 14:40:27 - Ordena Produto_Subcategoria.0 - Step info: nrinput=1 nroutput=1
+2022/06/11 14:40:27 - Ordena Produto_Subcategoria.0 - Got previous step from [Ordena Produto_Subcategoria] #0 --> Busca Subcategoria
+2022/06/11 14:40:27 - Ordena Produto_Subcategoria.0 - input rel is 1:1
+2022/06/11 14:40:27 - Ordena Produto_Subcategoria.0 - Found input rowset [Busca Subcategoria.0 - Ordena Produto_Subcategoria.0]
+2022/06/11 14:40:27 - Ordena Produto_Subcategoria.0 - output rel. is  1:1
+2022/06/11 14:40:27 - Ordena Produto_Subcategoria.0 - Found output rowset [Ordena Produto_Subcategoria.0 - Busca Categoria.0]
+2022/06/11 14:40:27 - Ordena Produto_Subcategoria.0 - Finished dispatching
+2022/06/11 14:40:27 - DimensaoProduto -  Transforma??o alocou um novo step: [Ordena Produto_Subcategoria].0
+2022/06/11 14:40:27 - DimensaoProduto -  Transforma??o ir? alocar o step [Categoria] do tipe [TableInput]
+2022/06/11 14:40:27 - Categoria.0 - distribution activated
+2022/06/11 14:40:27 - Categoria.0 - Starting allocation of buffers & new threads...
+2022/06/11 14:40:27 - Categoria.0 - Step info: nrinput=0 nroutput=1
+2022/06/11 14:40:27 - Categoria.0 - output rel. is  1:1
+2022/06/11 14:40:27 - Categoria.0 - Found output rowset [Categoria.0 - Ordena Categoria.0]
+2022/06/11 14:40:27 - Categoria.0 - Finished dispatching
+2022/06/11 14:40:27 - DimensaoProduto -  Transforma??o alocou um novo step: [Categoria].0
+2022/06/11 14:40:27 - DimensaoProduto -  Transforma??o ir? alocar o step [Ordena Categoria] do tipe [SortRows]
+2022/06/11 14:40:27 - Ordena Categoria.0 - distribution activated
+2022/06/11 14:40:27 - Ordena Categoria.0 - Starting allocation of buffers & new threads...
+2022/06/11 14:40:27 - Ordena Categoria.0 - Step info: nrinput=1 nroutput=1
+2022/06/11 14:40:27 - Ordena Categoria.0 - Got previous step from [Ordena Categoria] #0 --> Categoria
+2022/06/11 14:40:27 - Ordena Categoria.0 - input rel is 1:1
+2022/06/11 14:40:27 - Ordena Categoria.0 - Found input rowset [Categoria.0 - Ordena Categoria.0]
+2022/06/11 14:40:27 - Ordena Categoria.0 - output rel. is  1:1
+2022/06/11 14:40:27 - Ordena Categoria.0 - Found output rowset [Ordena Categoria.0 - Busca Categoria.0]
+2022/06/11 14:40:27 - Ordena Categoria.0 - Finished dispatching
+2022/06/11 14:40:27 - DimensaoProduto -  Transforma??o alocou um novo step: [Ordena Categoria].0
+2022/06/11 14:40:27 - DimensaoProduto -  Transforma??o ir? alocar o step [Busca Categoria] do tipe [MergeJoin]
+2022/06/11 14:40:27 - Busca Categoria.0 - distribution activated
+2022/06/11 14:40:27 - Busca Categoria.0 - Starting allocation of buffers & new threads...
+2022/06/11 14:40:27 - Busca Categoria.0 - Step info: nrinput=2 nroutput=1
+2022/06/11 14:40:27 - Busca Categoria.0 - Got previous step from [Busca Categoria] #0 --> Ordena Categoria
+2022/06/11 14:40:27 - Busca Categoria.0 - input rel is 1:1
+2022/06/11 14:40:27 - Busca Categoria.0 - Found input rowset [Ordena Categoria.0 - Busca Categoria.0]
+2022/06/11 14:40:27 - Busca Categoria.0 - Got previous step from [Busca Categoria] #1 --> Ordena Produto_Subcategoria
+2022/06/11 14:40:27 - Busca Categoria.0 - input rel is 1:1
+2022/06/11 14:40:27 - Busca Categoria.0 - Found input rowset [Ordena Produto_Subcategoria.0 - Busca Categoria.0]
+2022/06/11 14:40:27 - Busca Categoria.0 - output rel. is  1:1
+2022/06/11 14:40:27 - Busca Categoria.0 - Found output rowset [Busca Categoria.0 - Tratando Nulos.0]
+2022/06/11 14:40:27 - Busca Categoria.0 - Finished dispatching
+2022/06/11 14:40:27 - DimensaoProduto -  Transforma??o alocou um novo step: [Busca Categoria].0
+2022/06/11 14:40:27 - DimensaoProduto -  Transforma??o ir? alocar o step [Tratando Nulos] do tipe [IfNull]
+2022/06/11 14:40:27 - Tratando Nulos.0 - distribution activated
+2022/06/11 14:40:27 - Tratando Nulos.0 - Starting allocation of buffers & new threads...
+2022/06/11 14:40:27 - Tratando Nulos.0 - Step info: nrinput=1 nroutput=1
+2022/06/11 14:40:27 - Tratando Nulos.0 - Got previous step from [Tratando Nulos] #0 --> Busca Categoria
+2022/06/11 14:40:27 - Tratando Nulos.0 - input rel is 1:1
+2022/06/11 14:40:27 - Tratando Nulos.0 - Found input rowset [Busca Categoria.0 - Tratando Nulos.0]
+2022/06/11 14:40:27 - Tratando Nulos.0 - output rel. is  1:1
+2022/06/11 14:40:27 - Tratando Nulos.0 - Found output rowset [Tratando Nulos.0 - Campos Oficiais.0]
+2022/06/11 14:40:27 - Tratando Nulos.0 - Finished dispatching
+2022/06/11 14:40:27 - DimensaoProduto -  Transforma??o alocou um novo step: [Tratando Nulos].0
+2022/06/11 14:40:27 - DimensaoProduto -  Transforma??o ir? alocar o step [Campos Oficiais] do tipe [SelectValues]
+2022/06/11 14:40:27 - Campos Oficiais.0 - distribution activated
+2022/06/11 14:40:27 - Campos Oficiais.0 - Starting allocation of buffers & new threads...
+2022/06/11 14:40:27 - Campos Oficiais.0 - Step info: nrinput=1 nroutput=1
+2022/06/11 14:40:27 - Campos Oficiais.0 - Got previous step from [Campos Oficiais] #0 --> Tratando Nulos
+2022/06/11 14:40:27 - Campos Oficiais.0 - input rel is 1:1
+2022/06/11 14:40:27 - Campos Oficiais.0 - Found input rowset [Tratando Nulos.0 - Campos Oficiais.0]
+2022/06/11 14:40:27 - Campos Oficiais.0 - output rel. is  1:1
+2022/06/11 14:40:27 - Campos Oficiais.0 - Found output rowset [Campos Oficiais.0 - Dimensão Produto.0]
+2022/06/11 14:40:27 - Campos Oficiais.0 - Finished dispatching
+2022/06/11 14:40:27 - DimensaoProduto -  Transforma??o alocou um novo step: [Campos Oficiais].0
+2022/06/11 14:40:27 - DimensaoProduto -  Transforma??o ir? alocar o step [Dimensão Produto] do tipe [DimensionLookup]
+2022/06/11 14:40:27 - Dimensão Produto.0 - distribution activated
+2022/06/11 14:40:27 - Dimensão Produto.0 - Starting allocation of buffers & new threads...
+2022/06/11 14:40:27 - Dimensão Produto.0 - Step info: nrinput=1 nroutput=0
+2022/06/11 14:40:27 - Dimensão Produto.0 - Got previous step from [Dimensão Produto] #0 --> Campos Oficiais
+2022/06/11 14:40:27 - Dimensão Produto.0 - input rel is 1:1
+2022/06/11 14:40:27 - Dimensão Produto.0 - Found input rowset [Campos Oficiais.0 - Dimensão Produto.0]
+2022/06/11 14:40:27 - Dimensão Produto.0 - Finished dispatching
+2022/06/11 14:40:27 - DimensaoProduto -  Transforma??o alocou um novo step: [Dimensão Produto].0
+2022/06/11 14:40:27 - DimensaoProduto - Esta transforma??o pode ser repetida com a data de repeti??o : 2022/06/11 14:40:27
+2022/06/11 14:40:27 - DimensaoProduto - Inicializando 12 steps...
+2022/06/11 14:40:27 - Produto.0 - Released server socket on port 0
+2022/06/11 14:40:27 - Ordena Produto.0 - Released server socket on port 0
+2022/06/11 14:40:27 - plus_stage - New database connection defined
+2022/06/11 14:40:27 - Subcategoria.0 - Released server socket on port 0
+2022/06/11 14:40:27 - Campos Oficiais.0 - Released server socket on port 0
+2022/06/11 14:40:27 - plus_stage - New database connection defined
+2022/06/11 14:40:27 - Dimensão Produto.0 - Released server socket on port 0
+2022/06/11 14:40:27 - Ordena Subcategoria.0 - Released server socket on port 0
+2022/06/11 14:40:27 - Ordena Produto_Subcategoria.0 - Released server socket on port 0
+2022/06/11 14:40:27 - Categoria.0 - Released server socket on port 0
+2022/06/11 14:40:27 - Ordena Categoria.0 - Released server socket on port 0
+2022/06/11 14:40:27 - Busca Categoria.0 - Released server socket on port 0
+2022/06/11 14:40:27 - Tratando Nulos.0 - Released server socket on port 0
+2022/06/11 14:40:27 - Busca Subcategoria.0 - Released server socket on port 0
+2022/06/11 14:40:27 - plus_dw - New database connection defined
+2022/06/11 14:40:27 - plus_stage - New database connection defined
+2022/06/11 14:40:28 - plus_stage - Auto commit off
+2022/06/11 14:40:28 - Subcategoria.0 - !TableInput.Log.ConnectedToDatabase!
+2022/06/11 14:40:28 - Dimensão Produto.0 - Connected to database...
+2022/06/11 14:40:28 - plus_dw - Auto commit off
+2022/06/11 14:40:28 - plus_stage - Auto commit off
+2022/06/11 14:40:28 - Produto.0 - !TableInput.Log.ConnectedToDatabase!
+2022/06/11 14:40:28 - plus_stage - Auto commit off
+2022/06/11 14:40:28 - Categoria.0 - !TableInput.Log.ConnectedToDatabase!
+2022/06/11 14:40:28 - DimensaoProduto - Step [Produto.0] inicializado sem falhas.
+2022/06/11 14:40:28 - DimensaoProduto - Step [Ordena Produto.0] inicializado sem falhas.
+2022/06/11 14:40:28 - DimensaoProduto - Step [Subcategoria.0] inicializado sem falhas.
+2022/06/11 14:40:28 - DimensaoProduto - Step [Ordena Subcategoria.0] inicializado sem falhas.
+2022/06/11 14:40:28 - DimensaoProduto - Step [Busca Subcategoria.0] inicializado sem falhas.
+2022/06/11 14:40:28 - DimensaoProduto - Step [Ordena Produto_Subcategoria.0] inicializado sem falhas.
+2022/06/11 14:40:28 - DimensaoProduto - Step [Categoria.0] inicializado sem falhas.
+2022/06/11 14:40:28 - DimensaoProduto - Step [Ordena Categoria.0] inicializado sem falhas.
+2022/06/11 14:40:28 - DimensaoProduto - Step [Busca Categoria.0] inicializado sem falhas.
+2022/06/11 14:40:28 - DimensaoProduto - Step [Tratando Nulos.0] inicializado sem falhas.
+2022/06/11 14:40:28 - DimensaoProduto - Step [Campos Oficiais.0] inicializado sem falhas.
+2022/06/11 14:40:28 - DimensaoProduto - Step [Dimensão Produto.0] inicializado sem falhas.
+2022/06/11 14:40:28 - Produto.0 - Iniciando execução...
+2022/06/11 14:40:28 - Ordena Produto.0 - Iniciando execução...
+2022/06/11 14:40:28 - Subcategoria.0 - Iniciando execução...
+2022/06/11 14:40:28 - Subcategoria.0 - !TableInput.Log.SqlQuery!
+2022/06/11 14:40:28 - Produto.0 - !TableInput.Log.SqlQuery!
+2022/06/11 14:40:28 - DimensaoProduto - Transforma??o alocou 12 threads e 11 rowsets.
+2022/06/11 14:40:28 - Busca Categoria.0 - Iniciando execução...
+2022/06/11 14:40:28 - Campos Oficiais.0 - Iniciando execução...
+2022/06/11 14:40:28 - Ordena Categoria.0 - Iniciando execução...
+2022/06/11 14:40:28 - Categoria.0 - Iniciando execução...
+2022/06/11 14:40:28 - Categoria.0 - !TableInput.Log.SqlQuery!
+2022/06/11 14:40:28 - Tratando Nulos.0 - Iniciando execução...
+2022/06/11 14:40:28 - Ordena Subcategoria.0 - Iniciando execução...
+2022/06/11 14:40:28 - Ordena Produto_Subcategoria.0 - Iniciando execução...
+2022/06/11 14:40:28 - Busca Subcategoria.0 - Iniciando execução...
+2022/06/11 14:40:28 - Dimensão Produto.0 - Iniciando execução...
+2022/06/11 14:40:28 - Subcategoria.0 - !TableInput.Log.FinishedReadingQuery!
+2022/06/11 14:40:28 - plus_stage - Connection to database closed!
+2022/06/11 14:40:28 - Subcategoria.0 - Finished processing (I=37, O=0, R=0, W=37, U=0, E=0)
+2022/06/11 14:40:28 - Ordena Subcategoria.0 - The number of binary string to data type conversions done in this sort block is 0
+2022/06/11 14:40:28 - Ordena Subcategoria.0 - Finished processing (I=0, O=0, R=37, W=37, U=0, E=0)
+2022/06/11 14:40:28 - Categoria.0 - !TableInput.Log.FinishedReadingQuery!
+2022/06/11 14:40:28 - plus_stage - Connection to database closed!
+2022/06/11 14:40:28 - Categoria.0 - Finished processing (I=4, O=0, R=0, W=4, U=0, E=0)
+2022/06/11 14:40:28 - Produto.0 - !TableInput.Log.FinishedReadingQuery!
+2022/06/11 14:40:28 - Ordena Categoria.0 - The number of binary string to data type conversions done in this sort block is 0
+2022/06/11 14:40:28 - plus_stage - Connection to database closed!
+2022/06/11 14:40:28 - Ordena Categoria.0 - Finished processing (I=0, O=0, R=4, W=4, U=0, E=0)
+2022/06/11 14:40:28 - Produto.0 - Finished processing (I=606, O=0, R=0, W=606, U=0, E=0)
+2022/06/11 14:40:28 - Ordena Produto.0 - The number of binary string to data type conversions done in this sort block is 0
+2022/06/11 14:40:28 - Ordena Produto.0 - Finished processing (I=0, O=0, R=606, W=606, U=0, E=0)
+2022/06/11 14:40:28 - Busca Subcategoria.0 - Finished processing (I=0, O=0, R=643, W=606, U=0, E=0)
+2022/06/11 14:40:28 - Ordena Produto_Subcategoria.0 - The number of binary string to data type conversions done in this sort block is 0
+2022/06/11 14:40:28 - Ordena Produto_Subcategoria.0 - Finished processing (I=0, O=0, R=606, W=606, U=0, E=0)
+2022/06/11 14:40:28 - Dimensão Produto.0 - Dimension Lookup setting preparedStatement to [SELECT sk_produto, versao, idsubcategoria, produto, cor, subcategoria, idcategoria, categoria, inicio, fim FROM dim_produto WHERE idproduto = ?  AND ? >= inicio
+2022/06/11 14:40:28 - Dimensão Produto.0 -  AND ? < fim
+2022/06/11 14:40:28 - Dimensão Produto.0 - ]
+2022/06/11 14:40:28 - Dimensão Produto.0 - Finished preparing dimension lookup statement.
+2022/06/11 14:40:28 - Busca Categoria.0 - Finished processing (I=0, O=0, R=610, W=606, U=0, E=0)
+2022/06/11 14:40:28 - Tratando Nulos.0 - Finished processing (I=0, O=0, R=606, W=606, U=0, E=0)
+2022/06/11 14:40:28 - Campos Oficiais.0 - Finished processing (I=0, O=0, R=606, W=606, U=0, E=0)
+2022/06/11 14:40:28 - plus_dw - Connection to database closed!
+2022/06/11 14:40:28 - Dimensão Produto.0 - Finished processing (I=606, O=0, R=606, W=606, U=0, E=0)
+2022/06/11 14:40:28 - JobCargas_DW - Starting entry [DimensaoRegiao]
+2022/06/11 14:40:28 - JobCargas_DW - exec(7, 0, DimensaoRegiao.0)
+2022/06/11 14:40:28 - DimensaoRegiao - Starting job entry
+2022/06/11 14:40:28 - DimensaoRegiao - Opening transformation: [null] in directory [/]
+2022/06/11 14:40:28 - DimensaoRegiao - Starting transformation...(file=null, name=DimensaoRegiao, repinfo=null)
+2022/06/11 14:40:28 - DimensaoRegiao - Using run configuration [Pentaho local]
+2022/06/11 14:40:28 - DimensaoRegiao - Running transformation using the Kettle execution engine
+2022/06/11 14:40:28 - DimensaoRegiao - Transforma??o ? pr?-carregada do reposit?rio.
+2022/06/11 14:40:28 - DimensaoRegiao - Expedindo in?cio para transforma??o [DimensaoRegiao]
+2022/06/11 14:40:28 - DimensaoRegiao - Nr de argumentos detectados:0 
+2022/06/11 14:40:28 - DimensaoRegiao - Esta n?o ? uma repeti??o de transforma??o
+2022/06/11 14:40:28 - DimensaoRegiao - Foram encotrados 2 steps diferentes para executar.
+2022/06/11 14:40:28 - DimensaoRegiao - Alocando rowsets...
+2022/06/11 14:40:28 - DimensaoRegiao -  Alocando rowsets para o step 0 --> Região
+2022/06/11 14:40:28 - DimensaoRegiao -   c?pias pr?vias = 1, pr?ximas c?pias=1
+2022/06/11 14:40:28 - DimensaoRegiao - Transforma??o alocou novo rowset [Região.0 - Dim_Região.0]
+2022/06/11 14:40:28 - DimensaoRegiao -  Foram alocados 1 rowsets por step 0 --> Região  
+2022/06/11 14:40:28 - DimensaoRegiao -  Alocando rowsets para o step 1 --> Dim_Região
+2022/06/11 14:40:28 - DimensaoRegiao -  Foram alocados 1 rowsets por step 1 --> Dim_Região  
+2022/06/11 14:40:28 - DimensaoRegiao - Alocando Steps & StepData...
+2022/06/11 14:40:28 - DimensaoRegiao -  Transforma??o ir? alocar o step [Região] do tipe [TableInput]
+2022/06/11 14:40:28 - Região.0 - distribution activated
+2022/06/11 14:40:28 - Região.0 - Starting allocation of buffers & new threads...
+2022/06/11 14:40:28 - Região.0 - Step info: nrinput=0 nroutput=1
+2022/06/11 14:40:28 - Região.0 - output rel. is  1:1
+2022/06/11 14:40:28 - Região.0 - Found output rowset [Região.0 - Dim_Região.0]
+2022/06/11 14:40:28 - Região.0 - Finished dispatching
+2022/06/11 14:40:28 - DimensaoRegiao -  Transforma??o alocou um novo step: [Região].0
+2022/06/11 14:40:28 - DimensaoRegiao -  Transforma??o ir? alocar o step [Dim_Região] do tipe [TableOutput]
+2022/06/11 14:40:28 - Dim_Região.0 - distribution activated
+2022/06/11 14:40:28 - Dim_Região.0 - Starting allocation of buffers & new threads...
+2022/06/11 14:40:28 - Dim_Região.0 - Step info: nrinput=1 nroutput=0
+2022/06/11 14:40:28 - Dim_Região.0 - Got previous step from [Dim_Região] #0 --> Região
+2022/06/11 14:40:28 - Dim_Região.0 - input rel is 1:1
+2022/06/11 14:40:28 - Dim_Região.0 - Found input rowset [Região.0 - Dim_Região.0]
+2022/06/11 14:40:28 - Dim_Região.0 - Finished dispatching
+2022/06/11 14:40:28 - DimensaoRegiao -  Transforma??o alocou um novo step: [Dim_Região].0
+2022/06/11 14:40:28 - DimensaoRegiao - Esta transforma??o pode ser repetida com a data de repeti??o : 2022/06/11 14:40:28
+2022/06/11 14:40:28 - DimensaoRegiao - Inicializando 2 steps...
+2022/06/11 14:40:28 - Região.0 - Released server socket on port 0
+2022/06/11 14:40:28 - Dim_Região.0 - Released server socket on port 0
+2022/06/11 14:40:28 - plus_stage - New database connection defined
+2022/06/11 14:40:28 - plus_dw - New database connection defined
+2022/06/11 14:40:29 - Dim_Região.0 - Connected to database [plus_dw] (commit=1000)
+2022/06/11 14:40:29 - plus_stage - Auto commit off
+2022/06/11 14:40:29 - plus_dw - Auto commit off
+2022/06/11 14:40:29 - Região.0 - !TableInput.Log.ConnectedToDatabase!
+2022/06/11 14:40:29 - DimensaoRegiao - Step [Região.0] inicializado sem falhas.
+2022/06/11 14:40:29 - DimensaoRegiao - Step [Dim_Região.0] inicializado sem falhas.
+2022/06/11 14:40:29 - Região.0 - Iniciando execução...
+2022/06/11 14:40:29 - Região.0 - !TableInput.Log.SqlQuery!
+2022/06/11 14:40:29 - DimensaoRegiao - Transforma??o alocou 2 threads e 1 rowsets.
+2022/06/11 14:40:29 - Dim_Região.0 - Iniciando execução...
+2022/06/11 14:40:29 - Região.0 - !TableInput.Log.FinishedReadingQuery!
+2022/06/11 14:40:29 - plus_stage - Connection to database closed!
+2022/06/11 14:40:29 - Região.0 - Finished processing (I=655, O=0, R=0, W=655, U=0, E=0)
+2022/06/11 14:40:29 - Dim_Região.0 - Prepared statement : INSERT INTO dim_regiao (idregiao, cidade, estado, pais, idvendasterritorio) VALUES ( ?,  ?,  ?,  ?,  ?)
+2022/06/11 14:40:29 - plus_dw - Connection to database closed!
+2022/06/11 14:40:29 - Dim_Região.0 - Finished processing (I=0, O=655, R=655, W=655, U=0, E=0)
+2022/06/11 14:40:29 - JobCargas_DW - Starting entry [DimensaoTempo]
+2022/06/11 14:40:29 - JobCargas_DW - exec(8, 0, DimensaoTempo.0)
+2022/06/11 14:40:29 - DimensaoTempo - Starting job entry
+2022/06/11 14:40:29 - DimensaoTempo - Opening transformation: [null] in directory [/]
+2022/06/11 14:40:29 - DimensaoTempo - Starting transformation...(file=null, name=DimensaoTempo, repinfo=null)
+2022/06/11 14:40:29 - DimensaoTempo - Using run configuration [Pentaho local]
+2022/06/11 14:40:29 - DimensaoTempo - Running transformation using the Kettle execution engine
+2022/06/11 14:40:29 - DimensaoTempo - Transforma??o ? pr?-carregada do reposit?rio.
+2022/06/11 14:40:29 - DimensaoTempo - Expedindo in?cio para transforma??o [DimensaoTempo]
+2022/06/11 14:40:29 - DimensaoTempo - Nr de argumentos detectados:0 
+2022/06/11 14:40:29 - DimensaoTempo - Esta n?o ? uma repeti??o de transforma??o
+2022/06/11 14:40:29 - DimensaoTempo - Foram encotrados 11 steps diferentes para executar.
+2022/06/11 14:40:29 - DimensaoTempo - Alocando rowsets...
+2022/06/11 14:40:29 - DimensaoTempo -  Alocando rowsets para o step 0 --> CargaInicial
+2022/06/11 14:40:29 - DimensaoTempo -   c?pias pr?vias = 1, pr?ximas c?pias=1
+2022/06/11 14:40:29 - DimensaoTempo - Transforma??o alocou novo rowset [CargaInicial.0 - Dias.0]
+2022/06/11 14:40:29 - DimensaoTempo -  Foram alocados 1 rowsets por step 0 --> CargaInicial  
+2022/06/11 14:40:29 - DimensaoTempo -  Alocando rowsets para o step 1 --> Dias
+2022/06/11 14:40:29 - DimensaoTempo -   c?pias pr?vias = 1, pr?ximas c?pias=1
+2022/06/11 14:40:29 - DimensaoTempo - Transforma??o alocou novo rowset [Dias.0 - Calcula Datas.0]
+2022/06/11 14:40:29 - DimensaoTempo -  Foram alocados 2 rowsets por step 1 --> Dias  
+2022/06/11 14:40:29 - DimensaoTempo -  Alocando rowsets para o step 2 --> Calcula Datas
+2022/06/11 14:40:29 - DimensaoTempo -   c?pias pr?vias = 1, pr?ximas c?pias=1
+2022/06/11 14:40:29 - DimensaoTempo - Transforma??o alocou novo rowset [Calcula Datas.0 - SemanaDoAno.0]
+2022/06/11 14:40:29 - DimensaoTempo -  Foram alocados 3 rowsets por step 2 --> Calcula Datas  
+2022/06/11 14:40:29 - DimensaoTempo -  Alocando rowsets para o step 3 --> SemanaDoAno
+2022/06/11 14:40:29 - DimensaoTempo -   c?pias pr?vias = 1, pr?ximas c?pias=1
+2022/06/11 14:40:29 - DimensaoTempo - Transforma??o alocou novo rowset [SemanaDoAno.0 - MesNome.0]
+2022/06/11 14:40:29 - DimensaoTempo -  Foram alocados 4 rowsets por step 3 --> SemanaDoAno  
+2022/06/11 14:40:29 - DimensaoTempo -  Alocando rowsets para o step 4 --> MesNome
+2022/06/11 14:40:29 - DimensaoTempo -   c?pias pr?vias = 1, pr?ximas c?pias=1
+2022/06/11 14:40:29 - DimensaoTempo - Transforma??o alocou novo rowset [MesNome.0 - DiaSemanaNome.0]
+2022/06/11 14:40:29 - DimensaoTempo -  Foram alocados 5 rowsets por step 4 --> MesNome  
+2022/06/11 14:40:29 - DimensaoTempo -  Alocando rowsets para o step 5 --> DiaSemanaNome
+2022/06/11 14:40:29 - DimensaoTempo -   c?pias pr?vias = 1, pr?ximas c?pias=1
+2022/06/11 14:40:29 - DimensaoTempo - Transforma??o alocou novo rowset [DiaSemanaNome.0 - NomeTrimestre.0]
+2022/06/11 14:40:29 - DimensaoTempo -  Foram alocados 6 rowsets por step 5 --> DiaSemanaNome  
+2022/06/11 14:40:29 - DimensaoTempo -  Alocando rowsets para o step 6 --> NomeTrimestre
+2022/06/11 14:40:29 - DimensaoTempo -   c?pias pr?vias = 1, pr?ximas c?pias=1
+2022/06/11 14:40:29 - DimensaoTempo - Transforma??o alocou novo rowset [NomeTrimestre.0 - Semestre.0]
+2022/06/11 14:40:29 - DimensaoTempo -  Foram alocados 7 rowsets por step 6 --> NomeTrimestre  
+2022/06/11 14:40:29 - DimensaoTempo -  Alocando rowsets para o step 7 --> Semestre
+2022/06/11 14:40:29 - DimensaoTempo -   c?pias pr?vias = 1, pr?ximas c?pias=1
+2022/06/11 14:40:29 - DimensaoTempo - Transforma??o alocou novo rowset [Semestre.0 - NomeSemestre.0]
+2022/06/11 14:40:29 - DimensaoTempo -  Foram alocados 8 rowsets por step 7 --> Semestre  
+2022/06/11 14:40:29 - DimensaoTempo -  Alocando rowsets para o step 8 --> NomeSemestre
+2022/06/11 14:40:29 - DimensaoTempo -   c?pias pr?vias = 1, pr?ximas c?pias=1
+2022/06/11 14:40:29 - DimensaoTempo - Transforma??o alocou novo rowset [NomeSemestre.0 - Select values.0]
+2022/06/11 14:40:29 - DimensaoTempo -  Foram alocados 9 rowsets por step 8 --> NomeSemestre  
+2022/06/11 14:40:29 - DimensaoTempo -  Alocando rowsets para o step 9 --> Select values
+2022/06/11 14:40:29 - DimensaoTempo -   c?pias pr?vias = 1, pr?ximas c?pias=1
+2022/06/11 14:40:29 - DimensaoTempo - Transforma??o alocou novo rowset [Select values.0 - Dim_Tempo.0]
+2022/06/11 14:40:29 - DimensaoTempo -  Foram alocados 10 rowsets por step 9 --> Select values  
+2022/06/11 14:40:29 - DimensaoTempo -  Alocando rowsets para o step 10 --> Dim_Tempo
+2022/06/11 14:40:29 - DimensaoTempo -  Foram alocados 10 rowsets por step 10 --> Dim_Tempo  
+2022/06/11 14:40:29 - DimensaoTempo - Alocando Steps & StepData...
+2022/06/11 14:40:29 - DimensaoTempo -  Transforma??o ir? alocar o step [CargaInicial] do tipe [RowGenerator]
+2022/06/11 14:40:29 - CargaInicial.0 - distribution activated
+2022/06/11 14:40:29 - CargaInicial.0 - Starting allocation of buffers & new threads...
+2022/06/11 14:40:29 - CargaInicial.0 - Step info: nrinput=0 nroutput=1
+2022/06/11 14:40:29 - CargaInicial.0 - output rel. is  1:1
+2022/06/11 14:40:29 - CargaInicial.0 - Found output rowset [CargaInicial.0 - Dias.0]
+2022/06/11 14:40:29 - CargaInicial.0 - Finished dispatching
+2022/06/11 14:40:29 - DimensaoTempo -  Transforma??o alocou um novo step: [CargaInicial].0
+2022/06/11 14:40:29 - DimensaoTempo -  Transforma??o ir? alocar o step [Dias] do tipe [Sequence]
+2022/06/11 14:40:29 - Dias.0 - distribution activated
+2022/06/11 14:40:29 - Dias.0 - Starting allocation of buffers & new threads...
+2022/06/11 14:40:29 - Dias.0 - Step info: nrinput=1 nroutput=1
+2022/06/11 14:40:29 - Dias.0 - Got previous step from [Dias] #0 --> CargaInicial
+2022/06/11 14:40:29 - Dias.0 - input rel is 1:1
+2022/06/11 14:40:29 - Dias.0 - Found input rowset [CargaInicial.0 - Dias.0]
+2022/06/11 14:40:29 - Dias.0 - output rel. is  1:1
+2022/06/11 14:40:29 - Dias.0 - Found output rowset [Dias.0 - Calcula Datas.0]
+2022/06/11 14:40:29 - Dias.0 - Finished dispatching
+2022/06/11 14:40:29 - DimensaoTempo -  Transforma??o alocou um novo step: [Dias].0
+2022/06/11 14:40:29 - DimensaoTempo -  Transforma??o ir? alocar o step [Calcula Datas] do tipe [Calculator]
+2022/06/11 14:40:29 - Calcula Datas.0 - distribution activated
+2022/06/11 14:40:29 - Calcula Datas.0 - Starting allocation of buffers & new threads...
+2022/06/11 14:40:29 - Calcula Datas.0 - Step info: nrinput=1 nroutput=1
+2022/06/11 14:40:29 - Calcula Datas.0 - Got previous step from [Calcula Datas] #0 --> Dias
+2022/06/11 14:40:29 - Calcula Datas.0 - input rel is 1:1
+2022/06/11 14:40:29 - Calcula Datas.0 - Found input rowset [Dias.0 - Calcula Datas.0]
+2022/06/11 14:40:29 - Calcula Datas.0 - output rel. is  1:1
+2022/06/11 14:40:29 - Calcula Datas.0 - Found output rowset [Calcula Datas.0 - SemanaDoAno.0]
+2022/06/11 14:40:29 - Calcula Datas.0 - Finished dispatching
+2022/06/11 14:40:29 - DimensaoTempo -  Transforma??o alocou um novo step: [Calcula Datas].0
+2022/06/11 14:40:29 - DimensaoTempo -  Transforma??o ir? alocar o step [SemanaDoAno] do tipe [Formula]
+2022/06/11 14:40:29 - SemanaDoAno.0 - distribution activated
+2022/06/11 14:40:29 - SemanaDoAno.0 - Starting allocation of buffers & new threads...
+2022/06/11 14:40:29 - SemanaDoAno.0 - Step info: nrinput=1 nroutput=1
+2022/06/11 14:40:29 - SemanaDoAno.0 - Got previous step from [SemanaDoAno] #0 --> Calcula Datas
+2022/06/11 14:40:29 - SemanaDoAno.0 - input rel is 1:1
+2022/06/11 14:40:29 - SemanaDoAno.0 - Found input rowset [Calcula Datas.0 - SemanaDoAno.0]
+2022/06/11 14:40:29 - SemanaDoAno.0 - output rel. is  1:1
+2022/06/11 14:40:29 - SemanaDoAno.0 - Found output rowset [SemanaDoAno.0 - MesNome.0]
+2022/06/11 14:40:29 - SemanaDoAno.0 - Finished dispatching
+2022/06/11 14:40:29 - DimensaoTempo -  Transforma??o alocou um novo step: [SemanaDoAno].0
+2022/06/11 14:40:29 - DimensaoTempo -  Transforma??o ir? alocar o step [MesNome] do tipe [ValueMapper]
+2022/06/11 14:40:29 - MesNome.0 - distribution activated
+2022/06/11 14:40:29 - MesNome.0 - Starting allocation of buffers & new threads...
+2022/06/11 14:40:29 - MesNome.0 - Step info: nrinput=1 nroutput=1
+2022/06/11 14:40:29 - MesNome.0 - Got previous step from [MesNome] #0 --> SemanaDoAno
+2022/06/11 14:40:29 - MesNome.0 - input rel is 1:1
+2022/06/11 14:40:29 - MesNome.0 - Found input rowset [SemanaDoAno.0 - MesNome.0]
+2022/06/11 14:40:29 - MesNome.0 - output rel. is  1:1
+2022/06/11 14:40:29 - MesNome.0 - Found output rowset [MesNome.0 - DiaSemanaNome.0]
+2022/06/11 14:40:29 - MesNome.0 - Finished dispatching
+2022/06/11 14:40:29 - DimensaoTempo -  Transforma??o alocou um novo step: [MesNome].0
+2022/06/11 14:40:29 - DimensaoTempo -  Transforma??o ir? alocar o step [DiaSemanaNome] do tipe [ValueMapper]
+2022/06/11 14:40:29 - DiaSemanaNome.0 - distribution activated
+2022/06/11 14:40:29 - DiaSemanaNome.0 - Starting allocation of buffers & new threads...
+2022/06/11 14:40:29 - DiaSemanaNome.0 - Step info: nrinput=1 nroutput=1
+2022/06/11 14:40:29 - DiaSemanaNome.0 - Got previous step from [DiaSemanaNome] #0 --> MesNome
+2022/06/11 14:40:29 - DiaSemanaNome.0 - input rel is 1:1
+2022/06/11 14:40:29 - DiaSemanaNome.0 - Found input rowset [MesNome.0 - DiaSemanaNome.0]
+2022/06/11 14:40:29 - DiaSemanaNome.0 - output rel. is  1:1
+2022/06/11 14:40:29 - DiaSemanaNome.0 - Found output rowset [DiaSemanaNome.0 - NomeTrimestre.0]
+2022/06/11 14:40:29 - DiaSemanaNome.0 - Finished dispatching
+2022/06/11 14:40:29 - DimensaoTempo -  Transforma??o alocou um novo step: [DiaSemanaNome].0
+2022/06/11 14:40:29 - DimensaoTempo -  Transforma??o ir? alocar o step [NomeTrimestre] do tipe [ValueMapper]
+2022/06/11 14:40:29 - NomeTrimestre.0 - distribution activated
+2022/06/11 14:40:29 - NomeTrimestre.0 - Starting allocation of buffers & new threads...
+2022/06/11 14:40:29 - NomeTrimestre.0 - Step info: nrinput=1 nroutput=1
+2022/06/11 14:40:29 - NomeTrimestre.0 - Got previous step from [NomeTrimestre] #0 --> DiaSemanaNome
+2022/06/11 14:40:29 - NomeTrimestre.0 - input rel is 1:1
+2022/06/11 14:40:29 - NomeTrimestre.0 - Found input rowset [DiaSemanaNome.0 - NomeTrimestre.0]
+2022/06/11 14:40:29 - NomeTrimestre.0 - output rel. is  1:1
+2022/06/11 14:40:29 - NomeTrimestre.0 - Found output rowset [NomeTrimestre.0 - Semestre.0]
+2022/06/11 14:40:29 - NomeTrimestre.0 - Finished dispatching
+2022/06/11 14:40:29 - DimensaoTempo -  Transforma??o alocou um novo step: [NomeTrimestre].0
+2022/06/11 14:40:29 - DimensaoTempo -  Transforma??o ir? alocar o step [Semestre] do tipe [ValueMapper]
+2022/06/11 14:40:29 - Semestre.0 - distribution activated
+2022/06/11 14:40:29 - Semestre.0 - Starting allocation of buffers & new threads...
+2022/06/11 14:40:29 - Semestre.0 - Step info: nrinput=1 nroutput=1
+2022/06/11 14:40:29 - Semestre.0 - Got previous step from [Semestre] #0 --> NomeTrimestre
+2022/06/11 14:40:29 - Semestre.0 - input rel is 1:1
+2022/06/11 14:40:29 - Semestre.0 - Found input rowset [NomeTrimestre.0 - Semestre.0]
+2022/06/11 14:40:29 - Semestre.0 - output rel. is  1:1
+2022/06/11 14:40:29 - Semestre.0 - Found output rowset [Semestre.0 - NomeSemestre.0]
+2022/06/11 14:40:29 - Semestre.0 - Finished dispatching
+2022/06/11 14:40:29 - DimensaoTempo -  Transforma??o alocou um novo step: [Semestre].0
+2022/06/11 14:40:29 - DimensaoTempo -  Transforma??o ir? alocar o step [NomeSemestre] do tipe [ValueMapper]
+2022/06/11 14:40:29 - NomeSemestre.0 - distribution activated
+2022/06/11 14:40:29 - NomeSemestre.0 - Starting allocation of buffers & new threads...
+2022/06/11 14:40:29 - NomeSemestre.0 - Step info: nrinput=1 nroutput=1
+2022/06/11 14:40:29 - NomeSemestre.0 - Got previous step from [NomeSemestre] #0 --> Semestre
+2022/06/11 14:40:29 - NomeSemestre.0 - input rel is 1:1
+2022/06/11 14:40:29 - NomeSemestre.0 - Found input rowset [Semestre.0 - NomeSemestre.0]
+2022/06/11 14:40:29 - NomeSemestre.0 - output rel. is  1:1
+2022/06/11 14:40:29 - NomeSemestre.0 - Found output rowset [NomeSemestre.0 - Select values.0]
+2022/06/11 14:40:29 - NomeSemestre.0 - Finished dispatching
+2022/06/11 14:40:29 - DimensaoTempo -  Transforma??o alocou um novo step: [NomeSemestre].0
+2022/06/11 14:40:29 - DimensaoTempo -  Transforma??o ir? alocar o step [Select values] do tipe [SelectValues]
+2022/06/11 14:40:29 - Select values.0 - distribution activated
+2022/06/11 14:40:29 - Select values.0 - Starting allocation of buffers & new threads...
+2022/06/11 14:40:29 - Select values.0 - Step info: nrinput=1 nroutput=1
+2022/06/11 14:40:29 - Select values.0 - Got previous step from [Select values] #0 --> NomeSemestre
+2022/06/11 14:40:29 - Select values.0 - input rel is 1:1
+2022/06/11 14:40:29 - Select values.0 - Found input rowset [NomeSemestre.0 - Select values.0]
+2022/06/11 14:40:29 - Select values.0 - output rel. is  1:1
+2022/06/11 14:40:29 - Select values.0 - Found output rowset [Select values.0 - Dim_Tempo.0]
+2022/06/11 14:40:29 - Select values.0 - Finished dispatching
+2022/06/11 14:40:29 - DimensaoTempo -  Transforma??o alocou um novo step: [Select values].0
+2022/06/11 14:40:29 - DimensaoTempo -  Transforma??o ir? alocar o step [Dim_Tempo] do tipe [TableOutput]
+2022/06/11 14:40:29 - Dim_Tempo.0 - distribution activated
+2022/06/11 14:40:29 - Dim_Tempo.0 - Starting allocation of buffers & new threads...
+2022/06/11 14:40:29 - Dim_Tempo.0 - Step info: nrinput=1 nroutput=0
+2022/06/11 14:40:29 - Dim_Tempo.0 - Got previous step from [Dim_Tempo] #0 --> Select values
+2022/06/11 14:40:29 - Dim_Tempo.0 - input rel is 1:1
+2022/06/11 14:40:29 - Dim_Tempo.0 - Found input rowset [Select values.0 - Dim_Tempo.0]
+2022/06/11 14:40:29 - Dim_Tempo.0 - Finished dispatching
+2022/06/11 14:40:29 - DimensaoTempo -  Transforma??o alocou um novo step: [Dim_Tempo].0
+2022/06/11 14:40:29 - DimensaoTempo - Esta transforma??o pode ser repetida com a data de repeti??o : 2022/06/11 14:40:29
+2022/06/11 14:40:29 - DimensaoTempo - Inicializando 11 steps...
+2022/06/11 14:40:29 - CargaInicial.0 - Released server socket on port 0
+2022/06/11 14:40:29 - Dias.0 - Released server socket on port 0
+2022/06/11 14:40:29 - Calcula Datas.0 - Released server socket on port 0
+2022/06/11 14:40:29 - MesNome.0 - Released server socket on port 0
+2022/06/11 14:40:29 - SemanaDoAno.0 - Released server socket on port 0
+2022/06/11 14:40:29 - DiaSemanaNome.0 - Released server socket on port 0
+2022/06/11 14:40:29 - Semestre.0 - Released server socket on port 0
+2022/06/11 14:40:29 - Select values.0 - Released server socket on port 0
+2022/06/11 14:40:29 - NomeTrimestre.0 - Released server socket on port 0
+2022/06/11 14:40:29 - NomeSemestre.0 - Released server socket on port 0
+2022/06/11 14:40:29 - Dim_Tempo.0 - Released server socket on port 0
+2022/06/11 14:40:29 - plus_dw - New database connection defined
+2022/06/11 14:40:29 - Dim_Tempo.0 - Connected to database [plus_dw] (commit=1000)
+2022/06/11 14:40:29 - plus_dw - Auto commit off
+2022/06/11 14:40:29 - DimensaoTempo - Step [CargaInicial.0] inicializado sem falhas.
+2022/06/11 14:40:29 - DimensaoTempo - Step [Dias.0] inicializado sem falhas.
+2022/06/11 14:40:29 - DimensaoTempo - Step [Calcula Datas.0] inicializado sem falhas.
+2022/06/11 14:40:29 - DimensaoTempo - Step [SemanaDoAno.0] inicializado sem falhas.
+2022/06/11 14:40:29 - DimensaoTempo - Step [MesNome.0] inicializado sem falhas.
+2022/06/11 14:40:29 - DimensaoTempo - Step [DiaSemanaNome.0] inicializado sem falhas.
+2022/06/11 14:40:29 - DimensaoTempo - Step [NomeTrimestre.0] inicializado sem falhas.
+2022/06/11 14:40:29 - DimensaoTempo - Step [Semestre.0] inicializado sem falhas.
+2022/06/11 14:40:29 - DimensaoTempo - Step [NomeSemestre.0] inicializado sem falhas.
+2022/06/11 14:40:29 - DimensaoTempo - Step [Select values.0] inicializado sem falhas.
+2022/06/11 14:40:29 - DimensaoTempo - Step [Dim_Tempo.0] inicializado sem falhas.
+2022/06/11 14:40:29 - CargaInicial.0 - Iniciando execução...
+2022/06/11 14:40:29 - Dias.0 - Iniciando execução...
+2022/06/11 14:40:29 - DimensaoTempo - Transforma??o alocou 11 threads e 10 rowsets.
+2022/06/11 14:40:29 - SemanaDoAno.0 - Iniciando execução...
+2022/06/11 14:40:29 - Calcula Datas.0 - Iniciando execução...
+2022/06/11 14:40:29 - CargaInicial.0 - Finished processing (I=0, O=0, R=0, W=10000, U=0, E=0)
+2022/06/11 14:40:29 - MesNome.0 - Iniciando execução...
+2022/06/11 14:40:29 - DiaSemanaNome.0 - Iniciando execução...
+2022/06/11 14:40:29 - NomeTrimestre.0 - Iniciando execução...
+2022/06/11 14:40:29 - Semestre.0 - Iniciando execução...
+2022/06/11 14:40:29 - NomeSemestre.0 - Iniciando execução...
+2022/06/11 14:40:29 - Select values.0 - Iniciando execução...
+2022/06/11 14:40:29 - Dim_Tempo.0 - Iniciando execução...
+2022/06/11 14:40:29 - Dias.0 - Finished processing (I=0, O=0, R=10000, W=10000, U=0, E=0)
+2022/06/11 14:40:29 - Dim_Tempo.0 - Prepared statement : INSERT INTO dim_tempo (sk_data, Ano, Mes, DiaSemana, DiaMes, DiaAno, Trimestre, SemanaAno, SemanaAnoNome, MesNome, DiaSemanaNome, NomeTrimestre, Semestre, NomeSemestre) VALUES ( ?,  ?,  ?,  ?,  ?,  ?,  ?,  ?,  ?,  ?,  ?,  ?,  ?,  ?)
+2022/06/11 14:40:29 - Calcula Datas.0 - Finished processing (I=0, O=0, R=10000, W=10000, U=0, E=0)
+2022/06/11 14:40:29 - SemanaDoAno.0 - Finished processing (I=0, O=0, R=10000, W=10000, U=0, E=0)
+2022/06/11 14:40:29 - MesNome.0 - Finished processing (I=0, O=0, R=10000, W=10000, U=0, E=0)
+2022/06/11 14:40:29 - DiaSemanaNome.0 - Finished processing (I=0, O=0, R=10000, W=10000, U=0, E=0)
+2022/06/11 14:40:29 - NomeTrimestre.0 - Finished processing (I=0, O=0, R=10000, W=10000, U=0, E=0)
+2022/06/11 14:40:29 - Semestre.0 - Finished processing (I=0, O=0, R=10000, W=10000, U=0, E=0)
+2022/06/11 14:40:29 - NomeSemestre.0 - Finished processing (I=0, O=0, R=10000, W=10000, U=0, E=0)
+2022/06/11 14:40:29 - Select values.0 - Finished processing (I=0, O=0, R=10000, W=10000, U=0, E=0)
+2022/06/11 14:40:30 - plus_dw - Connection to database closed!
+2022/06/11 14:40:30 - Dim_Tempo.0 - Finished processing (I=0, O=10000, R=10000, W=10000, U=0, E=0)
+2022/06/11 14:40:30 - JobCargas_DW - Starting entry [DimensaoTerritorio]
+2022/06/11 14:40:30 - JobCargas_DW - exec(9, 0, DimensaoTerritorio.0)
+2022/06/11 14:40:30 - DimensaoTerritorio - Starting job entry
+2022/06/11 14:40:30 - DimensaoTerritorio - Opening transformation: [null] in directory [/]
+2022/06/11 14:40:30 - DimensaoTerritorio - Starting transformation...(file=null, name=DimensaoTerritorio, repinfo=null)
+2022/06/11 14:40:30 - DimensaoTerritorio - Using run configuration [Pentaho local]
+2022/06/11 14:40:30 - DimensaoTerritorio - Running transformation using the Kettle execution engine
+2022/06/11 14:40:30 - DimensaoTerritorio - Transforma??o ? pr?-carregada do reposit?rio.
+2022/06/11 14:40:30 - DimensaoTerritorio - Expedindo in?cio para transforma??o [DimensaoTerritorio]
+2022/06/11 14:40:30 - DimensaoTerritorio - Nr de argumentos detectados:0 
+2022/06/11 14:40:30 - DimensaoTerritorio - Esta n?o ? uma repeti??o de transforma??o
+2022/06/11 14:40:30 - DimensaoTerritorio - Foram encotrados 2 steps diferentes para executar.
+2022/06/11 14:40:30 - DimensaoTerritorio - Alocando rowsets...
+2022/06/11 14:40:30 - DimensaoTerritorio -  Alocando rowsets para o step 0 --> Territorio
+2022/06/11 14:40:30 - DimensaoTerritorio -   c?pias pr?vias = 1, pr?ximas c?pias=1
+2022/06/11 14:40:30 - DimensaoTerritorio - Transforma??o alocou novo rowset [Territorio.0 - Dim_Territorio.0]
+2022/06/11 14:40:30 - DimensaoTerritorio -  Foram alocados 1 rowsets por step 0 --> Territorio  
+2022/06/11 14:40:30 - DimensaoTerritorio -  Alocando rowsets para o step 1 --> Dim_Territorio
+2022/06/11 14:40:30 - DimensaoTerritorio -  Foram alocados 1 rowsets por step 1 --> Dim_Territorio  
+2022/06/11 14:40:30 - DimensaoTerritorio - Alocando Steps & StepData...
+2022/06/11 14:40:30 - DimensaoTerritorio -  Transforma??o ir? alocar o step [Territorio] do tipe [TableInput]
+2022/06/11 14:40:30 - Territorio.0 - distribution activated
+2022/06/11 14:40:30 - Territorio.0 - Starting allocation of buffers & new threads...
+2022/06/11 14:40:30 - Territorio.0 - Step info: nrinput=0 nroutput=1
+2022/06/11 14:40:30 - Territorio.0 - output rel. is  1:1
+2022/06/11 14:40:30 - Territorio.0 - Found output rowset [Territorio.0 - Dim_Territorio.0]
+2022/06/11 14:40:30 - Territorio.0 - Finished dispatching
+2022/06/11 14:40:30 - DimensaoTerritorio -  Transforma??o alocou um novo step: [Territorio].0
+2022/06/11 14:40:30 - DimensaoTerritorio -  Transforma??o ir? alocar o step [Dim_Territorio] do tipe [TableOutput]
+2022/06/11 14:40:30 - Dim_Territorio.0 - distribution activated
+2022/06/11 14:40:30 - Dim_Territorio.0 - Starting allocation of buffers & new threads...
+2022/06/11 14:40:30 - Dim_Territorio.0 - Step info: nrinput=1 nroutput=0
+2022/06/11 14:40:30 - Dim_Territorio.0 - Got previous step from [Dim_Territorio] #0 --> Territorio
+2022/06/11 14:40:30 - Dim_Territorio.0 - input rel is 1:1
+2022/06/11 14:40:30 - Dim_Territorio.0 - Found input rowset [Territorio.0 - Dim_Territorio.0]
+2022/06/11 14:40:30 - Dim_Territorio.0 - Finished dispatching
+2022/06/11 14:40:30 - DimensaoTerritorio -  Transforma??o alocou um novo step: [Dim_Territorio].0
+2022/06/11 14:40:30 - DimensaoTerritorio - Esta transforma??o pode ser repetida com a data de repeti??o : 2022/06/11 14:40:30
+2022/06/11 14:40:30 - DimensaoTerritorio - Inicializando 2 steps...
+2022/06/11 14:40:30 - Territorio.0 - Released server socket on port 0
+2022/06/11 14:40:30 - Dim_Territorio.0 - Released server socket on port 0
+2022/06/11 14:40:30 - plus_stage - New database connection defined
+2022/06/11 14:40:30 - plus_dw - New database connection defined
+2022/06/11 14:40:30 - plus_stage - Auto commit off
+2022/06/11 14:40:30 - Territorio.0 - !TableInput.Log.ConnectedToDatabase!
+2022/06/11 14:40:30 - Dim_Territorio.0 - Connected to database [plus_dw] (commit=1000)
+2022/06/11 14:40:30 - plus_dw - Auto commit off
+2022/06/11 14:40:30 - DimensaoTerritorio - Step [Territorio.0] inicializado sem falhas.
+2022/06/11 14:40:30 - DimensaoTerritorio - Step [Dim_Territorio.0] inicializado sem falhas.
+2022/06/11 14:40:30 - Territorio.0 - Iniciando execução...
+2022/06/11 14:40:30 - DimensaoTerritorio - Transforma??o alocou 2 threads e 1 rowsets.
+2022/06/11 14:40:30 - Territorio.0 - !TableInput.Log.SqlQuery!
+2022/06/11 14:40:30 - Dim_Territorio.0 - Iniciando execução...
+2022/06/11 14:40:30 - Territorio.0 - !TableInput.Log.FinishedReadingQuery!
+2022/06/11 14:40:30 - plus_stage - Connection to database closed!
+2022/06/11 14:40:30 - Territorio.0 - Finished processing (I=11, O=0, R=0, W=11, U=0, E=0)
+2022/06/11 14:40:30 - Dim_Territorio.0 - Prepared statement : INSERT INTO dim_territorio (idterritoriovendas, vendasterritotioregiao, vendasterritotiopais, vendasgrupoterritotio) VALUES ( ?,  ?,  ?,  ?)
+2022/06/11 14:40:30 - plus_dw - Connection to database closed!
+2022/06/11 14:40:30 - Dim_Territorio.0 - Finished processing (I=0, O=11, R=11, W=11, U=0, E=0)
+2022/06/11 14:40:30 - JobCargas_DW - Starting entry [Fato]
+2022/06/11 14:40:30 - JobCargas_DW - exec(10, 0, Fato.0)
+2022/06/11 14:40:30 - Fato - Starting job entry
+2022/06/11 14:40:30 - Fato - Opening transformation: [null] in directory [/]
+2022/06/11 14:40:30 - Fato - Starting transformation...(file=null, name=Fato, repinfo=null)
+2022/06/11 14:40:30 - Fato - Using run configuration [Pentaho local]
+2022/06/11 14:40:30 - Fato - Running transformation using the Kettle execution engine
+2022/06/11 14:40:30 - Fato - Transforma??o ? pr?-carregada do reposit?rio.
+2022/06/11 14:40:30 - Fato - Expedindo in?cio para transforma??o [Fato]
+2022/06/11 14:40:30 - Fato - Nr de argumentos detectados:0 
+2022/06/11 14:40:30 - Fato - Esta n?o ? uma repeti??o de transforma??o
+2022/06/11 14:40:30 - Fato - Foram encotrados 8 steps diferentes para executar.
+2022/06/11 14:40:30 - Fato - Alocando rowsets...
+2022/06/11 14:40:30 - Fato -  Alocando rowsets para o step 0 --> Captura SK_Territorio
+2022/06/11 14:40:30 - Fato -   c?pias pr?vias = 1, pr?ximas c?pias=1
+2022/06/11 14:40:30 - Fato - Transforma??o alocou novo rowset [Captura SK_Territorio.0 - Captura SK_Regiao.0]
+2022/06/11 14:40:30 - Fato -  Foram alocados 1 rowsets por step 0 --> Captura SK_Territorio  
+2022/06/11 14:40:30 - Fato -  Alocando rowsets para o step 1 --> Captura SK_Regiao
+2022/06/11 14:40:30 - Fato -   c?pias pr?vias = 1, pr?ximas c?pias=1
+2022/06/11 14:40:30 - Fato - Transforma??o alocou novo rowset [Captura SK_Regiao.0 - Captura SK_Cliente.0]
+2022/06/11 14:40:30 - Fato -  Foram alocados 2 rowsets por step 1 --> Captura SK_Regiao  
+2022/06/11 14:40:30 - Fato -  Alocando rowsets para o step 2 --> Captura SK_Cliente
+2022/06/11 14:40:30 - Fato -   c?pias pr?vias = 1, pr?ximas c?pias=1
+2022/06/11 14:40:30 - Fato - Transforma??o alocou novo rowset [Captura SK_Cliente.0 - Captura SK_Produto.0]
+2022/06/11 14:40:30 - Fato -  Foram alocados 3 rowsets por step 2 --> Captura SK_Cliente  
+2022/06/11 14:40:30 - Fato -  Alocando rowsets para o step 3 --> Captura SK_Produto
+2022/06/11 14:40:30 - Fato -   c?pias pr?vias = 1, pr?ximas c?pias=1
+2022/06/11 14:40:30 - Fato - Transforma??o alocou novo rowset [Captura SK_Produto.0 - Select values.0]
+2022/06/11 14:40:30 - Fato -  Foram alocados 4 rowsets por step 3 --> Captura SK_Produto  
+2022/06/11 14:40:30 - Fato -  Alocando rowsets para o step 4 --> Select values
+2022/06/11 14:40:30 - Fato -   c?pias pr?vias = 1, pr?ximas c?pias=1
+2022/06/11 14:40:30 - Fato - Transforma??o alocou novo rowset [Select values.0 - Fato Vendas.0]
+2022/06/11 14:40:30 - Fato -  Foram alocados 5 rowsets por step 4 --> Select values  
+2022/06/11 14:40:30 - Fato -  Alocando rowsets para o step 5 --> Fato Vendas
+2022/06/11 14:40:30 - Fato -  Foram alocados 5 rowsets por step 5 --> Fato Vendas  
+2022/06/11 14:40:30 - Fato -  Alocando rowsets para o step 6 --> Vendas Internet DW
+2022/06/11 14:40:30 - Fato -   c?pias pr?vias = 1, pr?ximas c?pias=1
+2022/06/11 14:40:30 - Fato - Transforma??o alocou novo rowset [Vendas Internet DW.0 - Converte Data.0]
+2022/06/11 14:40:30 - Fato -  Foram alocados 6 rowsets por step 6 --> Vendas Internet DW  
+2022/06/11 14:40:30 - Fato -  Alocando rowsets para o step 7 --> Converte Data
+2022/06/11 14:40:30 - Fato -   c?pias pr?vias = 1, pr?ximas c?pias=1
+2022/06/11 14:40:30 - Fato - Transforma??o alocou novo rowset [Converte Data.0 - Captura SK_Territorio.0]
+2022/06/11 14:40:30 - Fato -  Foram alocados 7 rowsets por step 7 --> Converte Data  
+2022/06/11 14:40:30 - Fato - Alocando Steps & StepData...
+2022/06/11 14:40:30 - Fato -  Transforma??o ir? alocar o step [Captura SK_Territorio] do tipe [DBLookup]
+2022/06/11 14:40:30 - Captura SK_Territorio.0 - distribution activated
+2022/06/11 14:40:30 - Captura SK_Territorio.0 - Starting allocation of buffers & new threads...
+2022/06/11 14:40:30 - Captura SK_Territorio.0 - Step info: nrinput=1 nroutput=1
+2022/06/11 14:40:30 - Captura SK_Territorio.0 - Got previous step from [Captura SK_Territorio] #0 --> Converte Data
+2022/06/11 14:40:30 - Captura SK_Territorio.0 - input rel is 1:1
+2022/06/11 14:40:30 - Captura SK_Territorio.0 - Found input rowset [Converte Data.0 - Captura SK_Territorio.0]
+2022/06/11 14:40:30 - Captura SK_Territorio.0 - output rel. is  1:1
+2022/06/11 14:40:30 - Captura SK_Territorio.0 - Found output rowset [Captura SK_Territorio.0 - Captura SK_Regiao.0]
+2022/06/11 14:40:30 - Captura SK_Territorio.0 - Finished dispatching
+2022/06/11 14:40:30 - Fato -  Transforma??o alocou um novo step: [Captura SK_Territorio].0
+2022/06/11 14:40:30 - Fato -  Transforma??o ir? alocar o step [Captura SK_Regiao] do tipe [DBLookup]
+2022/06/11 14:40:30 - Captura SK_Regiao.0 - distribution activated
+2022/06/11 14:40:30 - Captura SK_Regiao.0 - Starting allocation of buffers & new threads...
+2022/06/11 14:40:30 - Captura SK_Regiao.0 - Step info: nrinput=1 nroutput=1
+2022/06/11 14:40:30 - Captura SK_Regiao.0 - Got previous step from [Captura SK_Regiao] #0 --> Captura SK_Territorio
+2022/06/11 14:40:30 - Captura SK_Regiao.0 - input rel is 1:1
+2022/06/11 14:40:30 - Captura SK_Regiao.0 - Found input rowset [Captura SK_Territorio.0 - Captura SK_Regiao.0]
+2022/06/11 14:40:30 - Captura SK_Regiao.0 - output rel. is  1:1
+2022/06/11 14:40:30 - Captura SK_Regiao.0 - Found output rowset [Captura SK_Regiao.0 - Captura SK_Cliente.0]
+2022/06/11 14:40:30 - Captura SK_Regiao.0 - Finished dispatching
+2022/06/11 14:40:30 - Fato -  Transforma??o alocou um novo step: [Captura SK_Regiao].0
+2022/06/11 14:40:30 - Fato -  Transforma??o ir? alocar o step [Captura SK_Cliente] do tipe [DBLookup]
+2022/06/11 14:40:30 - Captura SK_Cliente.0 - distribution activated
+2022/06/11 14:40:30 - Captura SK_Cliente.0 - Starting allocation of buffers & new threads...
+2022/06/11 14:40:30 - Captura SK_Cliente.0 - Step info: nrinput=1 nroutput=1
+2022/06/11 14:40:30 - Captura SK_Cliente.0 - Got previous step from [Captura SK_Cliente] #0 --> Captura SK_Regiao
+2022/06/11 14:40:30 - Captura SK_Cliente.0 - input rel is 1:1
+2022/06/11 14:40:30 - Captura SK_Cliente.0 - Found input rowset [Captura SK_Regiao.0 - Captura SK_Cliente.0]
+2022/06/11 14:40:30 - Captura SK_Cliente.0 - output rel. is  1:1
+2022/06/11 14:40:30 - Captura SK_Cliente.0 - Found output rowset [Captura SK_Cliente.0 - Captura SK_Produto.0]
+2022/06/11 14:40:30 - Captura SK_Cliente.0 - Finished dispatching
+2022/06/11 14:40:30 - Fato -  Transforma??o alocou um novo step: [Captura SK_Cliente].0
+2022/06/11 14:40:30 - Fato -  Transforma??o ir? alocar o step [Captura SK_Produto] do tipe [DBLookup]
+2022/06/11 14:40:30 - Captura SK_Produto.0 - distribution activated
+2022/06/11 14:40:30 - Captura SK_Produto.0 - Starting allocation of buffers & new threads...
+2022/06/11 14:40:30 - Captura SK_Produto.0 - Step info: nrinput=1 nroutput=1
+2022/06/11 14:40:30 - Captura SK_Produto.0 - Got previous step from [Captura SK_Produto] #0 --> Captura SK_Cliente
+2022/06/11 14:40:30 - Captura SK_Produto.0 - input rel is 1:1
+2022/06/11 14:40:30 - Captura SK_Produto.0 - Found input rowset [Captura SK_Cliente.0 - Captura SK_Produto.0]
+2022/06/11 14:40:30 - Captura SK_Produto.0 - output rel. is  1:1
+2022/06/11 14:40:30 - Captura SK_Produto.0 - Found output rowset [Captura SK_Produto.0 - Select values.0]
+2022/06/11 14:40:30 - Captura SK_Produto.0 - Finished dispatching
+2022/06/11 14:40:30 - Fato -  Transforma??o alocou um novo step: [Captura SK_Produto].0
+2022/06/11 14:40:30 - Fato -  Transforma??o ir? alocar o step [Select values] do tipe [SelectValues]
+2022/06/11 14:40:30 - Select values.0 - distribution activated
+2022/06/11 14:40:30 - Select values.0 - Starting allocation of buffers & new threads...
+2022/06/11 14:40:30 - Select values.0 - Step info: nrinput=1 nroutput=1
+2022/06/11 14:40:30 - Select values.0 - Got previous step from [Select values] #0 --> Captura SK_Produto
+2022/06/11 14:40:30 - Select values.0 - input rel is 1:1
+2022/06/11 14:40:30 - Select values.0 - Found input rowset [Captura SK_Produto.0 - Select values.0]
+2022/06/11 14:40:30 - Select values.0 - output rel. is  1:1
+2022/06/11 14:40:30 - Select values.0 - Found output rowset [Select values.0 - Fato Vendas.0]
+2022/06/11 14:40:30 - Select values.0 - Finished dispatching
+2022/06/11 14:40:30 - Fato -  Transforma??o alocou um novo step: [Select values].0
+2022/06/11 14:40:30 - Fato -  Transforma??o ir? alocar o step [Fato Vendas] do tipe [TableOutput]
+2022/06/11 14:40:30 - Fato Vendas.0 - distribution activated
+2022/06/11 14:40:30 - Fato Vendas.0 - Starting allocation of buffers & new threads...
+2022/06/11 14:40:30 - Fato Vendas.0 - Step info: nrinput=1 nroutput=0
+2022/06/11 14:40:30 - Fato Vendas.0 - Got previous step from [Fato Vendas] #0 --> Select values
+2022/06/11 14:40:30 - Fato Vendas.0 - input rel is 1:1
+2022/06/11 14:40:30 - Fato Vendas.0 - Found input rowset [Select values.0 - Fato Vendas.0]
+2022/06/11 14:40:30 - Fato Vendas.0 - Finished dispatching
+2022/06/11 14:40:30 - Fato -  Transforma??o alocou um novo step: [Fato Vendas].0
+2022/06/11 14:40:30 - Fato -  Transforma??o ir? alocar o step [Vendas Internet DW] do tipe [TableInput]
+2022/06/11 14:40:30 - Vendas Internet DW.0 - distribution activated
+2022/06/11 14:40:30 - Vendas Internet DW.0 - Starting allocation of buffers & new threads...
+2022/06/11 14:40:30 - Vendas Internet DW.0 - Step info: nrinput=0 nroutput=1
+2022/06/11 14:40:30 - Vendas Internet DW.0 - output rel. is  1:1
+2022/06/11 14:40:30 - Vendas Internet DW.0 - Found output rowset [Vendas Internet DW.0 - Converte Data.0]
+2022/06/11 14:40:30 - Vendas Internet DW.0 - Finished dispatching
+2022/06/11 14:40:30 - Fato -  Transforma??o alocou um novo step: [Vendas Internet DW].0
+2022/06/11 14:40:30 - Fato -  Transforma??o ir? alocar o step [Converte Data] do tipe [Calculator]
+2022/06/11 14:40:30 - Converte Data.0 - distribution activated
+2022/06/11 14:40:30 - Converte Data.0 - Starting allocation of buffers & new threads...
+2022/06/11 14:40:30 - Converte Data.0 - Step info: nrinput=1 nroutput=1
+2022/06/11 14:40:30 - Converte Data.0 - Got previous step from [Converte Data] #0 --> Vendas Internet DW
+2022/06/11 14:40:30 - Converte Data.0 - input rel is 1:1
+2022/06/11 14:40:30 - Converte Data.0 - Found input rowset [Vendas Internet DW.0 - Converte Data.0]
+2022/06/11 14:40:30 - Converte Data.0 - output rel. is  1:1
+2022/06/11 14:40:30 - Converte Data.0 - Found output rowset [Converte Data.0 - Captura SK_Territorio.0]
+2022/06/11 14:40:30 - Converte Data.0 - Finished dispatching
+2022/06/11 14:40:30 - Fato -  Transforma??o alocou um novo step: [Converte Data].0
+2022/06/11 14:40:30 - Fato - Esta transforma??o pode ser repetida com a data de repeti??o : 2022/06/11 14:40:30
+2022/06/11 14:40:30 - Fato - Inicializando 8 steps...
+2022/06/11 14:40:30 - Captura SK_Territorio.0 - Released server socket on port 0
+2022/06/11 14:40:30 - plus_dw - New database connection defined
+2022/06/11 14:40:30 - Captura SK_Regiao.0 - Released server socket on port 0
+2022/06/11 14:40:30 - Captura SK_Cliente.0 - Released server socket on port 0
+2022/06/11 14:40:30 - plus_dw - New database connection defined
+2022/06/11 14:40:30 - Converte Data.0 - Released server socket on port 0
+2022/06/11 14:40:30 - plus_dw - New database connection defined
+2022/06/11 14:40:30 - Fato Vendas.0 - Released server socket on port 0
+2022/06/11 14:40:30 - plus_dw - New database connection defined
+2022/06/11 14:40:30 - Vendas Internet DW.0 - Released server socket on port 0
+2022/06/11 14:40:30 - plus_stage - New database connection defined
+2022/06/11 14:40:30 - Captura SK_Produto.0 - Released server socket on port 0
+2022/06/11 14:40:30 - plus_dw - New database connection defined
+2022/06/11 14:40:30 - Select values.0 - Released server socket on port 0
+2022/06/11 14:40:30 - plus_dw - Auto commit off
+2022/06/11 14:40:30 - Captura SK_Cliente.0 - Conectado ao banco de dados...
+2022/06/11 14:40:30 - plus_dw - Auto commit off
+2022/06/11 14:40:30 - Captura SK_Produto.0 - Conectado ao banco de dados...
+2022/06/11 14:40:30 - plus_dw - Auto commit off
+2022/06/11 14:40:30 - Captura SK_Regiao.0 - Conectado ao banco de dados...
+2022/06/11 14:40:30 - plus_stage - Auto commit off
+2022/06/11 14:40:30 - Vendas Internet DW.0 - !TableInput.Log.ConnectedToDatabase!
+2022/06/11 14:40:30 - plus_dw - Auto commit off
+2022/06/11 14:40:30 - Captura SK_Territorio.0 - Conectado ao banco de dados...
+2022/06/11 14:40:30 - Fato Vendas.0 - Connected to database [plus_dw] (commit=1000)
+2022/06/11 14:40:30 - plus_dw - Auto commit off
+2022/06/11 14:40:30 - Fato - Step [Captura SK_Territorio.0] inicializado sem falhas.
+2022/06/11 14:40:30 - Fato - Step [Captura SK_Regiao.0] inicializado sem falhas.
+2022/06/11 14:40:30 - Fato - Step [Captura SK_Cliente.0] inicializado sem falhas.
+2022/06/11 14:40:30 - Fato - Step [Captura SK_Produto.0] inicializado sem falhas.
+2022/06/11 14:40:30 - Fato - Step [Select values.0] inicializado sem falhas.
+2022/06/11 14:40:30 - Fato - Step [Fato Vendas.0] inicializado sem falhas.
+2022/06/11 14:40:30 - Fato - Step [Vendas Internet DW.0] inicializado sem falhas.
+2022/06/11 14:40:30 - Fato - Step [Converte Data.0] inicializado sem falhas.
+2022/06/11 14:40:30 - Fato - Transforma??o alocou 8 threads e 7 rowsets.
+2022/06/11 14:40:30 - Captura SK_Territorio.0 - Iniciando execução...
+2022/06/11 14:40:30 - Captura SK_Regiao.0 - Iniciando execução...
+2022/06/11 14:40:30 - Select values.0 - Iniciando execução...
+2022/06/11 14:40:30 - Vendas Internet DW.0 - Iniciando execução...
+2022/06/11 14:40:30 - Fato Vendas.0 - Iniciando execução...
+2022/06/11 14:40:30 - Captura SK_Produto.0 - Iniciando execução...
+2022/06/11 14:40:30 - Captura SK_Cliente.0 - Iniciando execução...
+2022/06/11 14:40:30 - Vendas Internet DW.0 - !TableInput.Log.SqlQuery!
+2022/06/11 14:40:30 - Converte Data.0 - Iniciando execução...
+2022/06/11 14:40:30 - plus_dw - Setting preparedStatement to [SELECT sk_territorio FROM dim_territorio WHERE idterritoriovendas = ? ]
+2022/06/11 14:40:30 - Captura SK_Territorio.0 - Verificando linha: [381], [20120101], [16942], [7], [SO46700], [605.6492], [1000.4375], [20120101], [01/01/2012]
+2022/06/11 14:40:30 - plus_dw - Setting preparedStatement to [SELECT sk_regiao FROM dim_regiao WHERE idvendasterritorio = ? ]
+2022/06/11 14:40:30 - Captura SK_Regiao.0 - Verificando linha: [381], [20120101], [16942], [7], [SO46700], [605.6492], [1000.4375], [20120101], [01/01/2012], [128]
+2022/06/11 14:40:30 - plus_dw - Setting preparedStatement to [SELECT sk_cliente FROM dim_cliente WHERE idcliente = ? ]
+2022/06/11 14:40:30 - Captura SK_Cliente.0 - Verificando linha: [381], [20120101], [16942], [7], [SO46700], [605.6492], [1000.4375], [20120101], [01/01/2012], [128], [7384]
+2022/06/11 14:40:30 - plus_dw - Setting preparedStatement to [SELECT sk_produto FROM dim_produto WHERE idproduto = ?  ORDER BY versao desc]
+2022/06/11 14:40:30 - Captura SK_Produto.0 - Verificando linha: [381], [20120101], [16942], [7], [SO46700], [605.6492], [1000.4375], [20120101], [01/01/2012], [128], [7384], [209267]
+2022/06/11 14:40:30 - Fato Vendas.0 - Prepared statement : INSERT INTO fato (ordemvendas, custototalproduto, quantidadevendas, sk_data, sk_territorio, sk_regiao, sk_cliente, sk_produto) VALUES ( ?,  ?,  ?,  ?,  ?,  ?,  ?,  ?)
+2022/06/11 14:40:34 - Vendas Internet DW.0 - !TableInput.Log.FinishedReadingQuery!
+2022/06/11 14:40:34 - plus_stage - Connection to database closed!
+2022/06/11 14:40:34 - Vendas Internet DW.0 - Finished processing (I=33970, O=0, R=0, W=33970, U=0, E=0)
+2022/06/11 14:40:40 - Converte Data.0 - Finished processing (I=0, O=0, R=33970, W=33970, U=0, E=0)
+2022/06/11 14:40:56 - plus_dw - Connection to database closed!
+2022/06/11 14:40:56 - Captura SK_Territorio.0 - Finished processing (I=33970, O=0, R=33970, W=33970, U=0, E=0)
+2022/06/11 14:41:25 - plus_dw - Connection to database closed!
+2022/06/11 14:41:25 - Captura SK_Regiao.0 - Finished processing (I=33970, O=0, R=33970, W=33970, U=0, E=0)
+2022/06/11 14:41:39 - plus_dw - Connection to database closed!
+2022/06/11 14:41:39 - Captura SK_Cliente.0 - Finished processing (I=33970, O=0, R=33970, W=33970, U=0, E=0)
+2022/06/11 14:41:39 - plus_dw - Connection to database closed!
+2022/06/11 14:41:39 - Captura SK_Produto.0 - Finished processing (I=33970, O=0, R=33970, W=33970, U=0, E=0)
+2022/06/11 14:41:40 - Select values.0 - Finished processing (I=0, O=0, R=33970, W=33970, U=0, E=0)
+2022/06/11 14:41:40 - plus_dw - Connection to database closed!
+2022/06/11 14:41:40 - Fato Vendas.0 - Finished processing (I=0, O=33970, R=33970, W=33970, U=0, E=0)
+2022/06/11 14:41:40 - JobCargas_DW - Starting entry [Success]
+2022/06/11 14:41:40 - JobCargas_DW - exec(11, 0, Success.0)
+2022/06/11 14:41:40 - Success - Starting job entry
+2022/06/11 14:41:40 - JobCargas_DW - Finished job entry [Success] (result=[true])
+2022/06/11 14:41:40 - JobCargas_DW - Finished job entry [Fato] (result=[true])
+2022/06/11 14:41:40 - JobCargas_DW - Finished job entry [DimensaoTerritorio] (result=[true])
+2022/06/11 14:41:40 - JobCargas_DW - Finished job entry [DimensaoTempo] (result=[true])
+2022/06/11 14:41:40 - JobCargas_DW - Finished job entry [DimensaoRegiao] (result=[true])
+2022/06/11 14:41:40 - JobCargas_DW - Finished job entry [DimensaoProduto] (result=[true])
+2022/06/11 14:41:40 - JobCargas_DW - Finished job entry [DimensaoCliente] (result=[true])

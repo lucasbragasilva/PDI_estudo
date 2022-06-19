@@ -1,0 +1,5 @@
+keytool -import -alias certificado2 
+-keystore "C:\Program Files (x86)\Java\jre1.8.0_251\lib\security\cacerts" 
+-file "C:\Program Files (x86)\Java\jre1.8.0_251\lib\security\certificado_digital2.cer"
+
+senha : changeit

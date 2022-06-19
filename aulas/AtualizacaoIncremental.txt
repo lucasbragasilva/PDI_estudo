@@ -1,0 +1,55 @@
+use PLUS
+go
+SELECT
+  idProduto
+, cast("data" as date) as data
+, idCliente
+, idTerritorioVendas
+, ordemVendas
+, custoTotalProduto
+, quantidadeVendas
+FROM vendas_internet
+where data <= '2013-12-31'
+
+
+
+-- Data mais recente da tabela
+use VARIADOS
+SELECT 
+      Max([data]) as ultimaData
+FROM [VARIADOS].[dbo].[VendasInternet]
+
+-- dataAtual menos 30 dias
+use VARIADOS
+select DATEADD(day, -30, Max([data])) from [VendasInternet]);
+
+--data do sistema (Hoje)
+use VARIADOS
+SELECT 
+	  cast(getdate() as Date) as dataAtual
+FROM [VARIADOS].[dbo].[VendasInternet]
+
+--Tabela de parâmetros
+USE [VARIADOS]
+GO
+
+CREATE TABLE [dbo].[PARAM_CARGA](
+	[yyyymmdd] [date] NULL,
+	[cod] [int] NULL,
+	[nome] [varchar](20) NULL
+)
+GO
+
+INSERT INTO [dbo].[PARAM_CARGA]
+           ([yyyymmdd]
+           ,[cod]
+           ,[nome])
+     VALUES
+           ('2020-01-01'
+           ,1
+           ,'DATA_INICIO'),
+		   ('2020-01-02'
+           ,2
+           ,'DATA_FINAL')
+GO
+

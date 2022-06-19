@@ -1,0 +1,2652 @@
+ETL - EXTRAIR, TRANSFORMAÇÃO, CARREGAR
+
+4. instalando o pentaho data integration (PDI)
+
+AULA 13
+-> Steps(são as funções) e hope(as ligações)
+
+AULA 14
+-> Definições do input (CSV file input)
+
+-Step name (nome do step)
+-Filename (local do arquivo que quero extrair)
+-Delimiter (demilitador, especifica o caractere separador do campo)
+-Enclosure (especifica um caractere delimitador, geralmente são as aspas)
+-NIO buffer size (define o tamanho do buffer de leitura)
+-Lazy conversion (mantém a conversão dos dados para um momento posterior)
+-Header row present (identifica os cabeçalhos dos arquivos)
+-Add filename to result (add o nome dos arquivos aos arquivos usados na transformação)
+-The row number field name (inclui o número de linha no campo interger no fluxo de dados)
+-Running in parallel (ler partes do mesmo arquivo em paralelo)
+-File encoding (tipo de caractere, mais utilizado UTF-8)
+
+-> Step Dummy (do nothing)
+--Funções Dummy
+-saída de dados
+-pré-visualização de dados
+
+AULA 15 INPUT
+
+-> Definições do input (txt file input)
+--Aba File
+-Nome do Step
+-File or directory (selecionar o arquivo e depois adicionar)
+
+--Aba Content
+-Filetype (CSV, por conta que csv é um arquivo texto)
+-Separetor (;)
+-Enclousure (")
+-Header (marcar, porque tem a primeira linha como cabeçalho)
+-Compression (para comprimir o arquivo, deixar none se não for)
+-No empty rows (não trazer linhas vazias)
+-The date format Locale (pt_BR)
+
+--Aba Fields
+-obter campos
+-preview
+
+--obs: Quando a aba da tranformação esta em negrito é por conta que o arquivo não esta salvo.
+
+AULA 16 - INPUT EXCEL
+
+--Aba Files
+-Nome do step
+-Spread sheet type (engine) - tipo de excel
+-file or directory
+
+--Aba !Sheets
+-Get sheetname(s)... (ele abre um pop-up, selecione a pasta clientes e adicionar, ok)
+
+-- Aba !Fields
+-Get Fields from header row...
+-trim type (os dois lados) limpar dados
+
+AULA 17 - INPUT MULTIPLE FILES EXCEL
+
+-Pegar caminho onde estão os arquivos ( neste caso C:\Material_PDI\Inputs\Arquivos_excel\Files)
+-Spread Sheet type (Apache POI Streaming)
+-Exclude Regular Expression (expressão regular - ^count.+)
+
+-- Aba !Fields
+-Get Fields from header row...
+-deletar as colunas repetidas
+
+AULA 18 - INPUT ACCESS
+
+--Aba File
+-Nome do step (Produto)
+-File or directory (browse - local)
+
+--Aba Content
+-Table (selecionar a tabela que irei utilizar, no caso produtos)
+
+--Aba Fields
+-Get Fields
+-Preview
+
+AULA 19 - INPUT XML
+
+-Escolher Get data from XML
+
+--Aba File
+-file or directory (escolher caminho e arquivo xml)
+
+--Aba Content
+-Loop XPath (Get XPath nodes, selecionar Deputados/Deputado para me trazer todos as colunas)
+
+--Aba Fields
+-get fieds
+
+AULA 20 - INPUT JSON
+
+salvar transformação
+
+-JSON input, Dummy e ligar o step com o shift
+abrir o input
+
+--Aba File
+-nome step (MoedaMundial)
+-browse (achar o arquivo pelo caminho)
+
+--Aba Fields
+temos que saber que dados tem no arquivo
+abrir o arquivo JSON (abrir com bloco de notas)
+
+-name (por o nome da coluna)
+-Path ($..nome_da_coluna_name, mesmo nome)
+
+
+AULA 21 - DATA GRID
+
+-step data grid e dummy
+-abrir data grid
+
+para que serve o 
+-criar dados estaticos, criar dentro do PDI os dados estaticos
+
+-aba meta são as colunas da tabela
+-data são os dados da tabela
+
+--Aba Meta
+-Name  -type
+
+Cliente String
+EstadoCivil String
+Sexo String
+
+
+AULA 22 - TABLE INPUT
+
+-STEP Table input, dummy
+
+antes de confiturar, abrir pgadmin
+
+no pgadmin, criar o banco de dados estudos
+dentro de estudos com o botão direito escolher a opção restore
+->obs: dentro da aula existe uma solução alternativa caso dê erro
+
+abrir o table input
+--new...
+-Connection name (conn_estudo)
+escolher o banco "PostgreSQL"
+-Host Name (localhost)
+-Database Name (nome do banco de dados que estamo utilizado, no caso, "estudos"
+-Port Number (vem por padrão, 5432)
+-Username (postgres)
+-Password (123456)
+
+--Get SQL select statement (verificar as tabelas que tenho no meu banco)
+
+AULA 23 - OUTPUT EXCEL
+
+usar table input e criar a conexão com estudos
+
+usar o step output excel
+--Aba File
+-filename (colocar o nome de saida e procurar o destino em navegar e quando selecionar, apagar a extensão, porque ja tem na opção de baixo)
+
+--Aba Fields
+-obter campos
+
+excutar transformação
+
+AULA 24 - OUTPUT EXCEL WRITER
+
+escrita com arquivo excel
+
+-step csv file input, excel writer
+input csv orçamento
+
+--Step Excel Writer
+
+--Aba File & Sheet
+-filename (escolher o caminho do arquivo na pasta)
+-extensão (escolher a extenção do arquivo)
+-If output file exists (se ja existe o arquivo, selecionar "use existing file for writing")
+-Sheet name (nome da aba na planilha, no caso, Plan1)
+-If sheet exists in output file (escrito no arquivo existente, write to existing sheet)
+
+--Aba Content
+-Auto Size Column (marcar)
+-Write Header (deixar marcado)
+-Start writing at cell A1 (começar a escrever a partir da celula A1)
+
+AULA 25 - OUTPUT CSV E ACCESS
+
+usar 2 Table input, text file output, access output
+
+pegar a conexão ja feita no da aula table input
+
+ir em File -> Open -> abrir input Table
+ir em View -> Conexões ->botão direito na conexão conn_estudo e selecionar "share" (compartilhar)
+
+agora pegar a conexão na primeira table input e pegar a tabela categoria
+abrir o step text file output
+--Aba File
+-nome step (saida categoria)
+-filename (local onde vai ser a saida do arquivo e no final digitar \nome_arquivo)
+-Extensão (csv)
+
+agora pegar a conexão da segunda table input e pegar a tabela subcategoria
+abrir o step microsoft access output
+--Aba File
+-nome step (saida subcategoria)
+-filename (local onde vai ser a saida do arquivo)
+-target table (nome da tabela, subcategoria)
+
+
+AULA 26 - OUTPUT TEXT FILE
+-step table input, text file output
+-pegar a tabela produto na table input
+
+--Text File Output
+-selecionar onde vai ser a saida do arquivo (\nome_arquivo)
+-Extensão ja vem como padrão txt
+
+AULA 27 - OUTPUT XML E JSON
+
+abrir pgadmin
+criar um novo banco de dados chamados "dados_publicos" e restaurar o banco com as tabelas
+
+criar uma nova transformação
+
+-step table input, json output, xml output
+usar 1 input para dois caminhos de saida
+
+-step table input
+--Criar uma nova conexão
+-new... 
+-Connection name (daddos_publicos)
+-Host Name (localhost)
+-Databases Name (dados_publicos)
+-Port Number (5432)
+-Username (postgres)
+-Password (123456) 
+
+-get SQL
+-trazer a tabela "cgu"
+usar apelidos para as clunas
+
+-as id_orgao
+-as nome_orgao
+-as ano
+-as mes
+-as favorecido
+-as data_transacao
+-as valor_transacao
+
+ligar as duas saidas
+
+--step JSON OUTPUT
+--Aba General
+-Nr rows in a bloc (mudar para 0, para não criar um arquivo a cada linha populada da tabela)
+-filename (local onde o arquivo vai ser salvo e escolher o nome do arquivo)
+
+--Aba Fields
+-get fields
+
+--step XML OUTPUT
+--Aba File
+-filename (local que vai ser armazenado com o nome do arquivo)
+
+AULA 28 - TABLE OUTPUT
+
+-Step CSV file input, table output
+
+step CSV file input
+empregados (pegar o arquivo CSV empregados, usar o delimitador ;)
+
+step table output
+-connection (conn_estudo)
+-target table (empregados)
+-SQL (criar SQL para popular a tabela, exucutar a consulta, ja cria automaticamente o sql da consulta)
+
+AULA 29 - OUTPUT UPDATE X INSERT/UPDATE
+
+criar nova transformação
+steps excel input, table output, update, insert/update
+
+quando ligar os step escolher a opção de copia para que todos os dados sejam copiados, se escolher distribuir o input vai distrinuir os dados entre as ligações
+
+-step excel
+--aba files
+-nome step (vendedores)
+-spread (excel 2007)
+-navegar (procurar vendedores e add)
+
+--aba sheets
+-get sheetnames
+
+--aba fields
+-get fields
+
+--step update
+-target table (vendedores)
+-get fields (comparar com um interger, deixar o id e apagar os outros campos)
+-update fields ( deixar somente os campos que vão ser alterados)
+
+--step inset/update
+-connection (conn_estudo)
+-target (vendedores)
+-get fields (deixar somente o id de comparação)
+-get updates fields (pode marcar se quer o update ou não)
+
+-AULA 30 - TRANSFORMAÇÃO DE DADOS
+
+AULA 31 - ALTERANDO E REMOVENDO COLUNAS - SELECT VALUES (alterar memoria pentaho)
+
+se tiver 8gb de memoria ram e o pentaho estiver lento.
+vai no local do arquivo bat e botão direito, editar.
+procurar um quadrado onde tem um monte de asterisco e logo abaixo set java runtime.
+abaixo dele tem um if.
+
+if "%PENTAHO_DI_JAVA_OPTIONS%"=="" set PENTAHO_DI_JAVA_OPTIONS="-Xms1024m" "-Xmx2048m"
+neste if podemos mudar o minimo e o máximo de memória, o padrão é o que esta acima.
+
+
+-steps - table input, table output
+
+conectar os steps
+
+salva como Select Values
+
+-step - usar dois select values
+dentro do step select values temos 3 abas
+
+--Aba Select & Alter
+-Rename (podemos alterar o nome, tamanho e a presição) 
+
+--Aba Remove
+tudo que deixar em fieldname irá apagar
+
+--Aba Meta-Data
+(pode alterar o nome, tipo entre outras formatações)
+
+AULA 32 - SPLIT FIELDS E CONCAT FIELDS 
+-steps - csv file input, 2 split fields, 3 concat fiels, 2 select values, 1 table output-s
+
+-step csv file input
+-name (GastosViagens)
+
+-step split fields (sepação de campos)
+-field to split (id_pais)
+-delimiter (\)
+-new field (id, pais)
+-remove id (n, n)
+-type (integer, String)  
+
+
+-step split fields 2 (sepação de campos)
+-step name (separa meio de transporte)
+-field to split (meio_de_transporte)
+-delimiter (-)
+-new field (uf_destino, transporte)
+-remove id (n, n)
+-type (String, String)  
+
+
+podemos previsualizar a execução sem executar a transformação:
+botão direito no utimo step -> preview... -> quick launch
+
+-step concat fields (unir campos)
+-target field name (Origem)
+-separator (-)
+quais campos vai unir
+name (pais, origem)
+type (String, String)
+
+
+-step concat fields (unir campos)
+-nome step (destino)
+-target field name (Destino)
+-separator (-)
+quais campos vai unir
+name (destino_pais, uf_destino)
+type (String, String)
+
+-step select values
+-aba remove
+-get fields (deixar os campos para apagar -> pais, uf_origem, pais_destino, uf_destino)
+
+-step select values
+-aba meta-data
+-get fields (formatar tipo campo)
+
+-step table output
+-nome step (GastosViagens)
+-connection (dados_publicos)
+-target table (GastosViagens)
+-SQL (criar e executar SQL)
+
+
+AULA 33 - ORDENANDO E AGRUPANDO - SORT ROWS / GROUP BY
+
+-criar uma nova transformação
+-usar step table input, sort rows, group by, memory group by
+
+-step table input
+-connection (dados_publicos)
+-get sql (tabela pagamento - deixar somente o valor e orgão pagador)
+
+-step sort rows
+-fieldname (qual coluna irá ser ordenado, no caso, orgao pagador)
+
+-step group by
+-group field (selecionar o campo que irá agrupar, no caso orgao pagado)
+-Name (campo que vai ser agregado, dar um nome a ele, no caso, total)
+-subject (valor irá ser o campo de agregação)
+-type (tipo de agregação, no caso vai ser uma soma - SUM)
+
+neste caso ele usou o sort para ordenar e o group para agrupar.
+ja o memory group by faz as duas coisas, mais ele aloca os dados em memoria e se tiver usando muitos dados pode estourar a memória do computaodr.
+
+-step memoru group by
+-get fields
+-group field (apagar valor)
+-Name (total)
+-subject (valor)
+-type (Sum)
+
+AULA 34 - DIRECIONAMENTOS DE SAIDA - VALUE MAPPER / SWITCH CASE.
+
+-steps - table input, value mapper, switch / case, excel output, 2 text file output
+
+-step excel output
+-nome step (Produção)
+-filename (local de salvar)
+--aba fields - obter os campos
+
+
+-step txt file output
+-nome step (Design)
+-extensão (csv)
+-filename (local de salvar)
+--aba fields - obter os campos
+
+-step txt file output
+-nome step (DemaisCargos)
+-extensão (txt)
+-filename (local de salvar)
+--aba fields - obter os campos
+
+-step table input
+-connection (conn_estudo)
+-get sql (empregados)
+
+-step value mapper
+-step name (Altera sexo)
+-fieldname (sexo)
+-source value ( M, F)
+-target value (masculino, feminino)
+
+-step switch / case
+-step name (Direcionamento de saídas)
+-field name (departamento)
+-use string contains (marcar)
+-case value data type (String)
+-value (Production, Tool Design)
+-target step (Produção, Design)
+-default target step (DemaisCargos)
+
+
+AULA 35 - FILTRANDO REGISTROS E TRATANDO NULOS
+
+-steps 1 table input, 3 filter rows, 4 dummy, 1 if field value is null
+
+table input
+-connection (dados_publicos)
+-get sql (pagamentos)
+
+filter rows 1
+-step name (Maior 300 e Menor 500)
+field (campo valor, condição >, value 300)
+add condition (and) 
+field (campo valor, condição <, value 500)
+
+filter rows 2
+-step name (	)
+-field (campo orgao_pagador, condição is null)
+
+if field value is null
+-step name (tratando nulos)
+-select fields (selecionar)
+-field (orgao_pagador)
+-replace (Sigilosa)
+-set empty string (N)
+
+filter rows 3
+-step name (Maior 500)
+-field (campo valor, condição >, value 500)
+
+AULA 36 - Filtros Aprimorados - Java Filter
+
+steps - 1 excel input, 1 java filter, 2 dummy
+
+step dummy 1
+-name (Verdadeiro)
+
+step dummy 2
+-name (Falso)
+
+Excel input
+-files -> navegar (arquivo)
+-sheets -> get sheetname
+-field -> mudar os campos devidos
+
+java filter
+-condition (nome.startsWith("C") -> começar com...)
+-condition (nome.contains("M" -> contém... )
+-condition (nome.equals("Eliz Lima" -> contém... )
+-condition (idade > 30)
+-condition (idade > 30 && sexo.contains("F") )
+
+AULA 37 - MANIPULANDO STRINGS - REPLACE IN STRING E STRING CUT
+
+-steps - 1 csv file input, 1 replace in string, 1 string cut, 2 dummy
+
+csv file input
+-filename (arquivo nome indeferidos)
+-obter campos
+
+replace string
+-in stream field (sexo, sexo)
+-search (Masculino, Feminino)
+-Replace (M, F)
+-out stream field (criar novo campo - Homens, Mulheres)
+
+string cut (trás o intervalo do corte)
+-in stream field (sexo)
+-out stream field (sexo2)
+-cut from (0)
+-cut to (4)
+
+
+AULA 38 - REALIZANDO CALCULOS - CALCULATOR
+
+steps - 1 excel input, 1 calculator, 1 dummy
+
+excel input
+filename (arquivo lucros)
+
+calculator
+novo campo (total_compra)
+calculo (A * B)
+campo A (qtd_vendida)
+campo B (valor_compra)
+tipo do valor (number)
+
+novo campo (total_venda)
+calculo (A * B)
+campo A (qtd_vendida)
+campo B (valor_venda)
+tipo do valor (number)
+
+novo campo (Lucro_Total)
+calculo (A - B)
+campo A (total_venda)
+campo B (total_compra)
+tipo do valor (number)
+
+
+AULA 39 - GENERALIDADES - FORMULA
+
+steps - 1 table input, 1 formula, 1 dummy
+
+table input
+-get sql (cgu)
+
+
+formula
+- new field (MES_ANO)
+- formula ( coluna tem que por entre [])
+"0"&[MES]&"/"&[ANO]
+-value type (string)
+
+- new field (LEFT)
+- formula ( coluna tem que por entre [])
+LEFT([nome];4)
+-value type (string)
+
+- new field (UPPER)
+- formula ( coluna tem que por entre [])
+UPPER([orgao])
+-value type (string)
+
+
+AULA 40 - TRABALHANDO COM VARIÁVEIS E SUB-TRANSFORMAÇÕES
+
+steps - 1 Data Grid, 1 table input, 1 dummy
+
+data grid
+->meta
+-Name (data)
+-type (date)
+-format (dd/MM/yyyy)
+->data
+por os dados
+(28/05/1956)
+ 
+table input
+-nome step (Parametros)
+-connection (conn_estudo)
+-get sql(empregados)
+
+adicionar clausula where dentro da consulta
+WHERE datanascimento > ? 
+*->(o ? serve como variável pegando o dado da data do data grid mas para isso temos que marcar a caixa replace variables in script)
+*->(em insert data from step temos que pegar o nome do step anterior no caso data grid)
+
+copiar steps e colar e adicionar um novo dummy e liga a primeira execução na primeira linha para que o step não execute
+além de desativar os hopes (as linhas)
+
+muda o nome da copia de parametro para variavel
+
+dar dois click da tela do pdi que vai aparecer uma caixa
+escolher a aba Parâmetros
+-Parâmetro (Data_Teste)
+-Valor padrão (28/05/1956)
+fecha essa janela e vai no input table variáveis
+
+apagar insert data from step e apagar o ?
+no local da ? apertar ctrl + space e escolher a variável data_teste e por entre aspas simples
+obs: por padrão ele fica ${data_teste}
+
+copiar somente o table input variavel e o dummy
+pegar step dummy, transformation Executor
+
+
+step transformation Executor
+-step name
+-browse (caminho de uma transformação - executa uma transformação que ja fiz)
+
+criar uma nova transformação como Sub transformação
+
+na sub transformação copiar o data grid da outra transformação para essa nova.
+
+data grid
+-data (28/05/1976)
+
+-step set variables
+-field name (campo que vou pegar - data)
+-variable name (DATA_NASCIMENTO)
+-variable scope type (valid in the virtual machine) 
+
+volta na primeira transformação
+
+step transformation Executor
+-browse (procura a transformação - sub transformação)
+
+step talbe input
+mudar a variável da where para DATA_NASCIMENTO (se caso não aparecer, salvar, fechar e depois abrir novamente a transformação e verificar que vai ter aparecido)
+
+AULA 41 - TRANSFORMANDO COLUNAS EM LINHAS - ROW NORMALIZAR
+
+step que transforma colunas em linhas
+
+
+-steps data grid, row normalize
+
+step data grid
+-meta
+name (id, nome, jan, fev, mar, abri)
+type (interger, string, number nos outros dados dos meses)
+-data
+adicionar os dados
+id (1, 2, 3, 4)
+nome (Maria, João, Pedro, Marcos)
+jan (100, 200, 300, 400)
+fev (150, 200, 250, 350)
+mar (125, 150, 250, 300)
+abri (200, 250, 300, 350)
+
+-step row normaliser
+step name ()
+type field (nome da minha coluna - Mes)
+Fieldname (nome das colunas dos meses - por de jan a abr)
+type (nao é o tipo de dado, é o mesmo nome do field name - repetir o nome)
+new field (novo campo - Valores em todos)
+
+AULA 42 - TRANSFORMANDO LINHAS EM COLUNAS - ROW DENORMALIZAR
+
+steps data grid, sort rows, group by, denomaliser, if field value is null, dummy
+ligar todos os steps nessa mesma ordem
+
+step data grid
+-meta
+name (produto, modelo)
+type (string, string)
+set empty string (n, n)
+-data
+produto (1 produto1, 4 produto2, 3 produto3)
+modelo (modeloA, ModeloB, modeloC, modeloA, ModeloB, modeloC, ModeloB, modeloC)
+
+step sort row
+-fieldname ( produto, modelo)
+-Ascending (s, s)
+
+step group by
+group field (aqui neste exemplo vou agrupar pela duas colunas - produto, modelo)
+
+aggregates (criar novo campo)
+name (QTD)
+subject (modelo)
+type (contagem - number of values(N))
+
+step denomaliser
+the key field (modelo)
+group field (produto)
+-target field
+targer fieldname (Qtd modeloA, Qtd modeloB, Qtd modeloC)
+Value fieldname (QTD, QTD, QTD)
+key value (modeloA, modeloB, modeloC)
+type (interger, interger, interger)
+aggregation (sum, sum, sum)
+
+step if field value is null
+select field (selecionar)
+-fields
+field (Qtd modeloA, Qtd modeloB, Qtd modeloC)
+replace by value (0, 0, 0)
+
+
+AULA 43 - UTILIZANDO O MERGE JOIN
+
+STEPS - 2 excel input, merge join, 1 dummy
+
+excel input
+spread sheet (apache poi)
+navegar (Vendedores)
+Sheets
+add
+fields
+obter campos e limpar dos dois lados (trim type)
+format (#, tira casa decimal)
+
+
+excel input 2
+spread sheet (apache poi)
+navegar (Vendas)
+Sheets
+add
+fields
+obter campos e limpar dos dois lados (trim type)
+format (#, tira casa decimal)
+
+merge join
+step name (merge Join)
+first step (excel input)
+second steps (excel input 2)
+join type (inner)
+
+AULA 44 - UTILIZANDO O MULTWAY MERGE JOIN.
+
+STEPS - 3 excel input, multiway merge join, dummy
+
+botão direito na transformação, por os nomes nas nota
+
+Vendas, Vendedores, Vendas_clientes
+
+configurar os 3 inputs com os respectivos arquivos
+
+multiway merge join (posso fazer um join com 3 tabelas)
+input 1 (vendas)
+input 2 (vendedores)
+input 3 (vendas_clientes)
+
+Select Keys (a chave que as tabelas se interligão, no caso, id_vendedor)
+
+
+AULA 45 - UNION ALL COM DUMMY.
+
+STEPS - excel input, get data from xml, text file input, table output, dummy
+
+excel input (Filial_01)
+text file input (Filial_02)
+
+get data from xml (Filial_03)
+-file (procurar o arquivo e adicionar)
+-content (loop XPath, selecionar Rows/Row para selecionar todas as colunas abaixo dele)
+
+se o dummy tiver os arquivos todas as mesmas colunas e mesmo tipo de dados ele faz a união dessas tabelas.
+
+table output
+nome step (Filial Matriz)
+connection (dados_publicos)
+target table (Filial_Matriz)
+SQL (mudar os tipos dos números para int)
+
+AULA 46 - UTILIZANDO APPENDS STREAMS E UNIQUE ROWS
+
+STEPS - 2 data grid, 1 append streams, 1 dummy, 1 unique rows
+
+data grid
+-meta
+name (cargo)
+type (string)
+-data
+vendedor
+analista
+assistente
+
+data grid
+-meta
+name (cargo)
+type (string)
+-data
+Coordenador
+Gerente
+Vendedor
+
+ligar os dois steps ao append
+
+Append streams (semelhante ao dummy com relação ao union, aqui a diferença é que podemos ordenador a tabela que fica em cima ou em baixo)
+step name
+Head hop (data grid)
+tail hop (data grid 2)
+
+Unique rows
+field name (cargo, nome do campo que quero comparar os campos unicos)
+ignore case (Y)
+
+
+AULA 47 - UTILIZANDO O MERGE ROWS (DIFF)
+
+STEPS - excel input, table output, table input, 2 sort rows, merge rows (diff), switch case, 2 select values,2 dummy
+
+excel input
+navegar para matriculados e fazer a importação do arquivo
+
+table output
+nome do step (Matriculados)
+connections (dados_publicos)
+target (matriculados)
+sql (trocar pra int)
+
+table input
+name (table matriculados)
+connection (dados_publicos)
+get sql (matriculados)
+
+2 sort
+fielname (cod)
+ascedenting (S)
+
+Merge Rows (diff)
+references rows (sort rows)
+compare rows origin (sort rows 2)
+flag fieldname (flagfield)
+key field (cod)
+value field (cod)
+
+swich case
+field (flagfield)
+case value (String
+value ( new, identical)
+target (select values, selct values 2)
+
+select values
+get fields e retirar o flag
+
+
+select values 2
+get fields 
+
+AULA 48 - ENTENDO O LOOKUP
+
+busca em uma base de dados em uma outra base de dados ou entre arquivos
+-lookup funciona de N X 1 (muitos para Um) e 1 X 1 (Um para Um)
+
+AULA 49 - UTILIZANDO O STREAM LOOKUP
+
+STEPS - 2 EXCEL INPUT, CSV INPUT, 2 STREAM LOOKUP, 1 DUMMY
+
+CSV INPUT
+filename (buscar arquivo "Alunos")
+delimiter (;)
+obtem campos
+preview
+
+EXCEL INPUT 1 
+-files
+spread sheet ( Excel 2007 XLSX (Apache POI))
+directory ( arquivo "endereço")
+add
+-!sheets
+get sheetnames (obter a pasta do arquivo)
+-fields
+get fields
+trim type (os dois)
+
+STREMA LOOKUP 1
+step name (busca endereço)
+lookup step (buscar excel input)
+-the key(s) to look
+field (id - campo de verificação)
+lookupfield (id - campo de verificação)
+-specify the fields
+field (Estado)
+type (string)
+
+EXCEL INPUT 2
+-files
+spread sheet ( Excel 2007 XLSX (Apache POI))
+directory ( arquivo "nascimento")
+add
+-!sheets
+get sheetnames (obter a pasta do arquivo)
+-fields
+get fields
+trim type (os dois)
+obs: na idade por em format o #
+
+
+STREMA LOOKUP 2
+step name (busca idade)
+lookup step (buscar excel input 2)
+-the key(s) to look
+field (id - campo de verificação)
+lookupfield (id - campo de verificação)
+-specify the fields
+field (idade)
+type (integer)
+
+
+AULA 50 - UTILIZANDO DATABASE LOOKUP
+
+STEPS - 2 TABLE OUTPUT, 2 EXCEL INPUT, 2 DUMMY, 1 CSV INPUT, 2 DATABASE LOOKUP, 
+
+procurar sql server configuration manager
+ou C:\Windows\SysWOW64\SQLServerManager14.msc
+
+-serviços do SQL Server
+verificar se o serviço esta em execução (iniciar serviços)
+
+-configuração do SQL native client
+--protocolos de cliente
+verificar se o TCP/IP esta habilitado (habilitar se não estiver)
+
+-configuração de rede do SQL Servers 
+--protocolo para MSSQLSERVER
+verificar se o TCP/IP habilitado
+endereço ip - configuração da porta 1433
+
+microsoft sql tools
+management studio
+
+senha 123456
+autenticação do sql server
+
+clicar em cima de banco de dados
+nova consulta
+
+CREATE DATABASE VARIADOS; (seleciona e executa)
+
+USE VARIADOS;
+
+EXCEL INPUT 1 
+-files
+spread sheet ( Excel 2007 XLSX (Apache POI))
+directory ( arquivo "endereço")
+add
+-!sheets
+get sheetnames (obter a pasta do arquivo)
+-fields
+get fields
+trim type (os dois)
+
+
+EXCEL INPUT 2
+-files
+spread sheet ( Excel 2007 XLSX (Apache POI))
+directory ( arquivo "nascimento")
+add
+-!sheets
+get sheetnames (obter a pasta do arquivo)
+-fields
+get fields
+trim type (os dois)
+obs: na idade por em format o #
+
+TABLE OUTPUT 1
+nome step (Endereço)
+connection (new...
+->connections type: MS SQL Server (Native)
+->Access:Native (JDBC)
+->connections name: conn_variados_sqlserver
+->Host Name: nome que esta no sqlserver [no meu caso LUCAS-NOTE]
+->Database Name: VARIADOS
+->Instance Name: pode deixar em branco
+->Port Number: 1433
+->Username: sa
+->Password: senha cadastrada (no meu caso 123456)
+
+target table (ENDERECO)
+SQL (tira ; do final da consulta)
+
+TABLE OUTPUT 2
+nome step (NASCIMENTO)
+target table (NASCIMENTO)
+SQL (tirar ; para não da erro ou se caso precisar(der erro sem o ;) deixar o ;)
+
+CSV INPUT
+step name (alunos)
+navegar (procurar alunos)
+delimiter (;)
+
+DATABASE LOOKUP
+nome step (Busca Endereço)
+connection (conn_variados_sqlserver)
+table lookup (ENDERECO)
+-chave para examinar
+campo da tabela (id)
+comparar (=)
+campo 1 (id)
+-valores a sairem
+campo (cidade)
+tipo (string)
+
+DATABASE LOOKUP 2
+nome step (Busca Nascimento)
+connection (conn_variados_sqlserver)
+table lookup (NASCIMENTO)
+-chave para examinar
+campo da tabela (id)
+comparar (=)
+campo 1 (id)
+-valores a sairem
+campo (idade)
+tipo (integer)
+
+AULA 51 - UTILIZANDO O REST CLIENT - CONSUMINDO API JSON
+
+STEPS - GENERATE ROWS, REST CLIENT, JSON INPUT, SELECT VALUES, EXCEL OUTPUT
+
+GENERATE ROWS
+nome (URL)
+limit (1 - gerar apenas uma linha com essa url)
+tipo (String)
+valor (http://compras.dados.gov.br/fornecedores/v1/fornecedores.json?uf=DF)
+
+REST CLIENT
+-general
+accept url from field (marcar)
+url field name (url)
+http method (GET)
+application type (JSON)
+result field name (resultado)
+
+
+JSON INPUT
+-file
+source is from a previous step (marcar)
+select field (resultado)
+-fields (ter que digitar todos os campos da nossa url
+Name
+id
+cnpj
+nome
+ativo
+id_municipio
+uf
+id_porte_empresa
+habilitado_licitado
+
+Path
+$..id
+$..cnpj
+$..nome
+$..ativo
+$..id_municipio
+$..uf
+$..id_porte_empresa
+$..habilitado_licitado
+
+tipo
+Integer
+string
+string
+boolean
+integer
+string
+integer
+boolean
+
+SELECT VALUES (CAPTURAR AS COLUNAS)
+apagar url, resultado
+
+EXCEL OUTPUT
+navegar (salvar em outputs, arquivos excel, salva como fornecedores)
+
+AULA 52 - UTILIZANDO O REST CLIENT - CONSUMINDO API XML
+
+STEPS - GENERATE ROWS, REST CLIENT, GET DATA FROM XML, SELECT VALUES
+
+GERENATE ROWS
+Fields
+limit (1)
+nome (url)
+tipo (string)
+valor (https://sistemas.tce.pe.gov.br/DadosAbertos/Municipios!xml)
+
+procurar o api para colar em valor (tce ce api)
+
+
+REST CLIENT
+URL field (url)
+HTTP method (GET)
+application type (XML - versões nova do programa ja identifica o typo)
+
+GET DATA FROM XML
+->file
+XML Source is defined (marcar)
+get XML source (result)
+->content
+loop xpath (capturar caminho - /resposta/conteudo/Municipios)
+->Fields
+tem que por os nomes dos campos no xpath (os mesmo que tem no XML)
+no name pode dar outros nomes
+
+SELECT VALUES
+->remove
+get fields (deixar o que quero remover)
+
+AULA 53 - UTILIZANDO WEB SERVICE LOOKUP
+
+STEPS - WEB SERVICES LOOKUP, GET DATA FROM XML, SELECT VALUES
+
+WEB SERVICES LOOKUP
+
+https://www2.camara.leg.br/transparencia/dados-abertos/dados-abertos-legislativo/webservices/deputados
+-usar a url acima para conseguir o endpoint (url abaixo)
+
+aba web service
+url (https://www.camara.gov.br/SitCamaraWS/Deputados.asmx?wsdl)
+clicar em load para poder disponibilizar os metodos para operation
+operation (obterDeputados)
+quando clicar na operation, vai aparecer uma nova aba para poder obter campos
+
+aba obterDeputadosResult
+obtem campo
+
+GET DATA FROM XML
+->file
+XML Source is defined (marcar)
+get XML source (ObterDeputadosresult)
+->content
+loop xpath (capturar caminho - /ObterDeputadosResult/deputados/deputado)
+->Fields
+tem que por os nomes dos campos no xpath utilizando (os mesmo que tem no XML)
+no name pode dar outros nomes
+
+SELECT VALUES
+remove
+deixa o campo que pretendo remover
+
+TABLE OUTPUT
+nome (output)
+connection (conn_variados_sqlserver)
+target table (Web_Service)
+SQL (executar o script)
+
+INSERT / UPDATE
+connection (conn_variados_sqlserver)
+target table (Web_Service)
+
+the key
+get fields
+
+update fields
+get update fields
+campo update deixar como "N" no ideCadastro
+
+AULA 54 - UTILIZANDI O REST CLIENT - CONSUMINDO API COM TOKEN (AUTHORIZATION)
+
+procurar api atlas noticia (primeiro link)
+recursos e api
+utilizando api
+criar cadastrado
+acesso via postman
+
+STEPS - GENERATE ROWS, REST CLIENT
+
+GENERATE ROWS
+limit (1)
+fields:
+nome (urlToken)
+tipo (string)
+valor (https://api.atlas.jor.br/api/v1/auth/login)
+
+nome (body)
+tipo (string)
+valor ({"email": "lucasbragadasilva@gmail.com", "password": "sua senha"})
+
+REST CLIENT
+accept url from field (marcar)
+url field name (urlTokien)
+http method (post)
+body field (body)
+application type (json)
+
+SELECT VALUES
+remove todos menos result
+
+FORMULA
+new field (Authorization)
+formula ("Bearer"&""&[result])
+value type (string)
+
+JSON INPUT
+-File
+souce is from a previous step (marcar)
+select field (result)
+-Fields
+name (access_token)
+Path ($..access_token)
+tipo (string)
+
+alterar a formula e por access_token
+
+REST CLIENT 2
+
+analytic?estado=RO
+
+url (
+http method (GET)
+result field (dados)
+-headers
+get fields
+deixar Authorization
+
+SELECT VALUES 2
+
+remover dados da aba remover
+
+JSON INPUT 2
+-File
+souce is from a previous step (marcar)
+select field (dados)
+-Fields
+campos o retorno do api
+
+name (nome campo)
+Path ($..campo)
+tipo (tipo dado)
+
+
+AULA 55 - COMBINATION LOOKUP/UPDATE  - SCD TIPO_02
+
+STEPS - EXCEL INPUT, COMBINATION LOOKUP/UPDATE
+
+EXCEL INPUT
+adicionar o arquivo fornecedor e adicionar os campos.
+
+COMBINATION LOOKUP/UPDATE
+nome step (Fornecedores)
+connection (conn_variados_sqlserver)
+tabela de destino ( Fornecedor)
+obtem campos
+campo chave técnica (sk_fornecedor)
+usa tabela máxima +1 (marcar)
+SQL
+
+AULA 56 - DIMENSION LOOKUP/UPDATE -SCD TIPO_02
+
+STEPS - EXCEL INPUT, DIMENSION LOOKUP/UPDATE
+
+EXCEL INPUT
+adicionar arquivo fornecedor 2
+
+
+DIMENSION LOOKUP/UPDATE
+step name (Fornecedor02)
+connection (conn_variados_sqlserver)
+target table (Fornecedor02)
+commit size (100, a cada 100 registro insere no banco)
+
+get fields
+-keys
+deixar somente a chave (idfornecedor)
+-fields
+get fields
+dimension field (NOME)
+stream field (NOME)
+type of dimension (insert)
+
+technical key (sk_fornecedor)
+use table maximum +1 (marcar)
+version field (version)
+min.year (2010)
+max year (2023)
+
+AULA 57-58 STEP MODIFIELD JAVASCRIPT VALUE PART-01_02
+
+STEPS - EXCEL INPUT, MODIFIED JAVA SCRIPT VALUE, DUMMY
+
+EXCEL INPUT
+adicionar arquivo javascript
+
+MODIFIED JAVA SCRIPT VALUE
+// script here
+
+var nome01 = upper(nome);
+var nome02 = lower(nome01);
+var nome03 = initCap(nome02);
+var nome04 = replace(nome, "a", "x");
+var nome05 = nome.replace(/M/g, "V"); (/M vai procurar todos os M, /g server para procurar linha a linha, "V" e substituir pelo V)
+
+if(sexo == "M"){
+	sexo = "Masculino";
+}else{
+	sexo = "Feminino";
+}
+
+var bonus;
+if(realizado >= meta){
+	bonus = realizado * 0.20;
+}else{
+	bonus = 0
+}
+
+
+var novoCargo;
+if(idade <= 30){
+	novoCargo = "Vendedor Junior";
+}else if(idade <= 40){
+	novoCargo = "Vendedor Pleno";
+}else{
+	novoCargo = "Vendedor Senior";
+}
+
+
+var data = new Date();
+var hoje = data.getDate() + "/" + data.getMonth() + "/" + data.getFullYear();
+
+fieldname (nome variavel, nome01)
+type (string)
+replace value (N)
+
+fieldname (nome variavel, nome02)
+type (string)
+replace value (N)
+
+fieldname (nome variavel, sexo)
+type (string)
+replace value (S) (para poder substituir o sexo utilizando a clausula if)
+
+fieldname (bonus)
+type (number)
+replace value (N)
+
+fieldname (novoCargo)
+type (String)
+replace value (N)
+
+fieldname (hoje)
+type (String)
+replace value (N)
+
+AULA 59 - INTRODUÇÃO AOS JOBS
+
+o que são jobs?
+recurso de execução
+podem executar tanto a transformações quanto outros jobs
+
+STEPS - GENERATE ROWS, DUMMY, 
+
+GENERATE ROWS
+nome (Gerar linhas)
+limit (10000)
+-fields
+nome (Numeros)
+tipo (Interger)
+valor (1)
+
+Criar um novo Job
+file -> Novo -> Job
+
+STEPS - START, TRANFORMATION, SUCESS
+
+START
+onde vai iniciar
+ele tem um recurso de agendamento de execução
+geralmente não se usa muito esse recurso por conta que tem que deixar oPDI aberto
+vamos criar um repositorio e criar um arquivo .bat para automatizar a execução sem a necessidade de o PDI ficar aberto 24h por dia
+ 
+(não mexer em nenhuma opção do start)
+
+nos hops (linhas)
+verde, cadeado, x
+
+verde = ele só vai para o sucess se não ocorrer nenhum erro
+x(vermelho) = se não ocorrer nenhum erro ele não da sucess
+cadeado (amarelo) = independete de dar erro ou não ele vai para o sucess
+
+TRANSFORMATION
+entry name (Generate Rows)
+browse... (localizar o arquivo no caso, gerenate rows)
+
+
+AULA 60-61 - FOREACH LOOP COM JOB E VARIÁVEIS NO CONSUMO DE API - PART01_02
+
+https://servicodados.ibge.gov.br/api/docs/localidades#api-UFs-estadosUFGet
+
+https://servicodados.ibge.gov.br/api/v1/localidades/estados/{UF}
+
+CRIAR 2 JOBS
+CRIAR 2 TRANFORMAÇÃO
+
+TRANSFORMAÇÃO 1 - SETA UF
+STEPS - DATA GRID, COPY ROWS TO RESULT
+
+DATA GRID
+-meta
+name (ESTADOS)
+type (String)
+-data
+SP
+RJ
+RO
+CE
+SE
+
+COPY ROWS TO RESULT
+
+TRANSFORMAÇÃO 2 - API Loop
+STEPS - GET ROWS FROM RESULT, SET VARIABLES, GET VARIABLES,  2 WRITE TO LOG, REST CLIENT, JSON INPUT, TABLE OUTPUT, SELECT VALUES
+
+
+GET ROWS FROM RESULT
+field name (ESTADOS)
+type (String)
+
+SET VARIABLES
+field name (ESTADOS)
+variable name (VAR_UFS)
+variable scope type (valid in the root job)
+
+GET VARIABLES
+name (UFS)
+variable(
+ctrl + space (atalho para aparecer os dados)
+se não
+${VAR_UFS}
+)
+tipo (string)
+
+WRITE TO LOG
+field (UFS)
+
+REST CLIENT
+URL(https://servicodados.ibge.gov.br/api/v1/localidades/estados/{UF})
+setar a variavel no lugar da {UF}
+
+URL(https://servicodados.ibge.gov.br/api/v1/localidades/estados/${VAR_UFS})
+http method (GET)
+application type (JSON)
+result field name (Dados)
+
+WRITE TO LOG 2 - teste, depois apagar
+field (Dados)
+
+JSON INPUT
+-file
+source is from a previous step (marcar)
+select fields (Dados)
+-fields
+name (nomes)
+path ($.. nomes)
+
+SELECT VALUES
+removar dados, estados, ufs
+
+TABLE OUTPUT
+nome step ()
+connection (conn_variados_sqlserver)
+target table (API_LOOP)
+SQL
+
+
+JOB 1 - SALVER COMO JOB LOOP
+
+STEPS - START, TRANSFORMATION, JOB, SUCESS
+TRANSFORMATION
+entry name (SETA UF)
+browse (SETA UF)
+
+JOB
+execute every input rows (marcar) (para cada linha que entrar do copy rows to result ele vai executar linha po linha)
+
+
+JOB 2 - Job Exec API Loop
+
+STEPS START, TRANSFORMATION, SUCESS
+TRANSFORMATION
+execute every input rows (marcar)
+browse (API Loop)
+
+
+AULA 62 - UPLOAD E DOWNLOAD DE SERVIDOR FTP - PUT E GET FILE WITH FTP
+
+CRIAR JOB (só tem o recurso de upload e download de ftp no job)
+
+JOB 1
+STEP - START, PUT A FILE WITCH FTP, SUCESS, GET A FILE WITCH FTP
+
+LINK PARA TESTE
+	
+
+FTP URL: ftp.dlptest.com or ftp://ftp.dlptest.com/
+FTP User: dlpuser
+Password: rNrKYTX9g7z3RgJRmxWuGHbeu
+
+PUT A FILE WITCH FTP
+-general
+ftp server name / ip address.com (ftp.dlptest.com)
+port (21)
+username (dlpuser)
+password (rNrKYTX9g7z3RgJRmxWuGHbeu)
+-files
+local directory (C:\Material_PDI\Inputs\Arquivos_texto\Files_FTP)
+wildcard (regular expression) (.*\.txt)
+remote directory (/)
+
+
+GET A FILE WITCH FTP
+ftp server name / ip address.com (ftp.dlptest.com)
+port (21)
+username (dlpuser)
+password (rNrKYTX9g7z3RgJRmxWuGHbeu)
+-files
+remote directory (/)
+wildcard (regular expression) (.*\.txt)
+target directory (C:\Material_PDI\Outputs\Arquivos_texto\OUT_FTP)
+
+AULA 63 - UTILIZANDO SCRIPT SHELL
+
+JOB - START, SUCESS,SHELL
+
+SHELL
+-general
+insert script (marcar)
+-script
+CMD.EXE /C
+xcopy.exe C:\Material_PDI\Inputs\Arquivos_texto\Files_FTP\*.txt C:\Material_PDI\Outputs\Arquivos_texto\OUT_FTP /Y
+
+AULA 64 - EXTRAINDO ARQUIVOS ZIP,S DE URL,S COM JOB E VARIÁVEIS
+
+JOB 
+STEP - START, TRANSFORMATION, JOB, SUCESS
+
+TRANSFORMATION
+transformation (browse... local SET ANO)
+
+TRANSFORMATION
+STEP - DATA GRID, COPY ROWS TO RESULT
+
+DATA GRID
+-meta
+name (ANO)
+type (string)
+-data
+passar os dados (2013 a 2022)
+
+JOB - JOB ZIP LOOP
+STEP - START, TRANSFORMATION, HTTP, SUCESS
+
+TRANSFORMATION
+execute every input row (marcar)
+browse... (local... GET ANO)
+
+HTTP
+url ( https://dados.es.gov.br/dataset/01d5ce08-5730-49b6-b2e4-83b2e4bbc283/resource/39ea46bd-167f-47b0-bb0a-db4117657172/download/municipios-receitas-2013.zip )
+usar a variavel ${NUMEROS} no lugar do ano
+url ( https://dados.es.gov.br/dataset/01d5ce08-5730-49b6-b2e4-83b2e4bbc283/resource/39ea46bd-167f-47b0-bb0a-db4117657172/download/municipios-receitas-${NUMEROS}.zip )
+na saida por o mesmo nome da entrada com a variavel no caso:
+municipios-receitas-${NUMEROS}.zip
+target file (saida local - C:\Material_PDI\Outputs\Outros\municipios-receitas-${NUMEROS}.zip)
+
+
+TRANSFORMATION
+STEP - GET ROWS FROM RESULT, SET VARIABLE, GET VARIABLES, WRITE TO LOG
+
+GET ROWS FROM RESULT
+fieldname (ANO)
+type (string)
+
+SET VARIABLE
+fieldname (ANO)
+variable name (NUMEROS)
+variable scope type (valid in the root job)
+
+GET VARIABLES
+name (NUMEROS_VAR)
+variable (${NUMEROS}
+tipo (string)
+
+WRITE TO LOG
+field (NUMEROS_VAR)
+
+AULA 65 - DESCOMPACTANDO ARQUIVOS EM DIRETÓRIO - FOREEACH LOOP COM JAVA SCRIPT
+
+JOB - Job Loop Extract Zip
+
+STEP - START, SUCESS, UNZIP FILE, SET VARIABLES, SIMPLE EVALUATION, WAIT FOR, JAVASCRIPT
+
+UNZIP FILE
+zip file name (local\arquivo - files... - C:\Material_PDI\Inputs\Outros\Zips\arquivo)
+target directory (destino local - C:\Material_PDI\Outputs\Arquivos_csv)
+mudar
+zip file name (local\arquivo - files... - C:\Material_PDI\Inputs\Outros\Zips\arquivo-variavel ${ano})
+
+
+mudar target para novo teste
+target directory ( C:\Material_PDI\Outputs\Arquivos_csv\ZIP_CSV)
+if fike exists (overwrite - sobreescrever)
+
+SET VARIABLES
+variable name (ano)
+Value (2013)
+variable scope type (valid in the root job)
+
+SIMPLE EVALUATION
+avaliar (variável)
+nome do campo (${ano})
+tipo (numero)
+condição de sucesso ( se o valor é menor o igual do que)
+valor (2020)
+
+WAIT FOR
+maximum timeout (1 - esta em segundos)
+
+JAVASCRIPT
+parent_job.getVariable("use_date")
+
+var ano02 = parent_job.getVariable("ano");
+var resultado = Number(ano02) + 1;
+parent_job.setVariable("ano", resultado);
+true;
+
+AULA 66 - INTRODUÇÃO AO PROJETO
+
+- onde será criado o projeto de ELT?
+no curso (maquina pessoal para estudo)
+se for em uma empresa tem que ser criado dentro de um servidor
+
+- processo de ETL
+banco cliente
+área de teste (staging)
+DataWarehouse (DW)
+ 
+-em quase fase a gente consegue transformar os dados?
+quando eu trago do cliente para minha área de teste ou
+quando área de teste para minha dw
+
+AULA 67 - IDENTIFICANDO FATO E DIMENSÕES
+
+-características da tabela fato.
+armazena informações quantitativas (métricas).
+desempenho da organização relativa a um deteminado assunto.
+
+-exemplo de um supermercado.
+venda: valor e quantidade
+
+-características de uma dimensão.
+do que foi a venda?
+produto
+
+de onde era esse produto?
+da categoria x
+
+AULA 68 - REQUISITOS DO PROJETO
+
+AULA 69 - IMPORTANDO A BASE DE DADOS PARA O SQL SERVER 2017
+
+base sql server - importar dados PLUS.bak
+
+botão direito em banco de dados...
+restaurar banco de dados...
+dispositivo
+...
+adicionar
+caminho do backup (botão direito e copiar)
+abrir o caminho no windows explorer
+colar o arquivo PLUS dentro do caminho do backup
+atualizar e selecionar o PLUS
+ok... ok... ok
+
+AULA 70 - CARGA DA TABELA CLIENTE
+
+PostgreSQL
+criar dois banco de dados
+banco stanting e banco de DW
+
+botão direito em databases
+create
+
+nome: plus_stage
+salvar
+
+nome: plus_dw
+salvar
+
+PDI
+criar repositorio onde vamos armazenar todas as transformações e jobs do projeto
+
+canto superior direitt tem um botão connect - clicar
+caixa de dialogo - other repositories
+file repository
+get started
+
+display name (Projeto)
+locaciton (material pdi - projeto)
+
+finish... finish.
+
+TRANFOMAÇÃO - Cliente_Stage
+
+STEP - TABLE INPUT, TABLE OUTPUT
+
+TABLE INPUT
+nome ( Cliente )
+-new ... (
+connection type: MS SQL Server (Native)
+connection name: plus_SQLSERVER
+host name: LUCAS-NOTE
+database: PLUS
+port: 1433
+username: sa
+password: 123456
+
+get sql select statement...
+tabela cliente
+ok
+todos os scripts
+
+TABLE OUTPUT
+nome ( plus_stage )
+-new ... (
+connection type: PostgreSQL
+host name: localhost
+database: plus_stage
+port: 5432
+username: postgres
+password: 123456
+
+connection ( plus_stage)
+target table ( clientes )
+SQL (criar sql)
+
+
+AULA 71 - CARGA DA TABELA REGIÃO
+
+CORRENÇÃO AULA 70
+apagar o table output (cliente stage)
+adicionar um insert / update
+
+INSERT / UPDATE
+step name (Cliente_Stage)
+connection (plus_stage)
+target table (clientes)
+
+the key (get fields)
+deixar somente id
+
+update fields
+remover o update de idCliente
+
+STEP - TABLE INPUT, TABLE OUTPUT, INSERT / UPDATE
+
+TABLE INPUT
+nome (Regiao)
+connection (plus_SQLSERVER)
+get SQL (tabela regiao)
+
+TABLE OUTPUT
+nome (regiao)
+connection (plus_stage)
+target table (Regiao)
+SQL
+
+INSERT / UPDATE
+nome (Regiao_Stage)
+connection (plus_stage)
+target table (regiao)
+the key (get field e deixar o id)
+update fields (get update fields, deixar o id com N no caso sem atualização)
+
+AULA 72 - CARGA DA TABELA TERRITÓRIO
+
+TRANFORMAÇÃO
+STEP - TABLE INPUT, TABLE OUTPUT, INSER/ UPDATE
+
+TABLE INPUT
+nome (Territorio)
+connection (plus_SQLSERVER)
+get SQL (tabela territorio)
+
+TABLE OUTPUT
+nome (Territorio)
+connection (plus_stage)
+target table (territorio)
+SQL
+
+INSERT / UPDATE
+nome (Territorio_Stage)
+connection (plus_stage)
+target table (territorio)
+the key (get field e deixar o id)
+update fields (get update fields, deixar o id com N no caso sem atualização)
+
+
+AULA 73 - CARGA DA TABELA CATEGORIA
+
+TRANFORMAÇÃO
+STEP - TABLE INPUT, TABLE OUTPUT, INSER/ UPDATE
+
+TABLE INPUT
+nome (Categoria)
+connection (plus_SQLSERVER)
+get SQL (tabela categoria)
+
+TABLE OUTPUT
+nome (Categoria)
+connection (plus_stage)
+target table (categoria)
+SQL
+
+INSERT / UPDATE
+nome (Categoria_Stage)
+connection (plus_stage)
+target table (categoria)
+the key (get field e deixar o id)
+update fields (get update fields, deixar o id com N no caso sem atualização)
+
+
+AULA 74 - CARGA DA TABELA SUBCATEGORIA
+
+TRANFORMAÇÃO
+STEP - TABLE INPUT, TABLE OUTPUT, INSER/ UPDATE
+
+TABLE INPUT
+nome (Subcategoria)
+connection (plus_SQLSERVER)
+get SQL (tabela subcategoria)
+
+TABLE OUTPUT
+nome (Subcategoria)
+connection (plus_stage)
+target table (subcategoria)
+SQL
+
+INSERT / UPDATE
+nome (Sucategoria_Stage)
+connection (plus_stage)
+target table (subcategoria)
+the key (get field e deixar o id)
+update fields (get update fields, deixar o id com N no caso sem atualização)
+
+
+AULA 75 - CARGA DA TABELA PRODUTO
+
+TRANFORMAÇÃO
+STEP - TABLE INPUT, TABLE OUTPUT, INSER/ UPDATE
+
+TABLE INPUT
+nome (Produto)
+connection (plus_SQLSERVER)
+get SQL (tabela produto)
+
+TABLE OUTPUT
+nome (Produto)
+connection (plus_stage)
+target table (produto)
+SQL
+
+INSERT / UPDATE
+nome (Produto_Stage)
+connection (plus_stage)
+target table (produto)
+the key (get field e deixar o id)
+update fields (get update fields, deixar o id com N no caso sem atualização)
+
+
+AULA 76 - CARGA DA TABELA VENDAS INTERNET
+
+No sql server, ir na tabela vendas internet
+nova consulta
+
+select distinct year([data]) from [dbo].[vendas_internet]
+order by year([data]) desc
+
+botão direito, selecionar as 1000 linhas superiores
+dentro do que aparecer,
+por
+where year([data]) = '2010'
+
+copiar a consulta
+
+SELECT [idProduto]
+      ,[data]
+      ,[idCliente]
+      ,[idTerritorioVendas]
+      ,[ordemVendas]
+      ,[custoTotalProduto]
+      ,[quantidadeVendas]
+  FROM [PLUS].[dbo].[vendas_internet]
+  where year([data]) = '2010'
+
+
+TRANFORMAÇÃO
+STEP - TABLE INPUT, TABLE OUTPUT
+
+TABLE INPUT
+nome (Vendas_Internet)
+connection (plus_SQLSERVER)
+get SQL (tabela vendas_internet)
+
+TABLE OUTPUT
+nome (vendasinternet_Stage)
+connection (plus_stage)
+target table (vendas_internet)
+SQL
+
+AULA 77 - CARGA DA DIMENSÃO CLIENTE
+
+TRANSFORMAÇÃO
+STEP - TABLE INPUT, CONCAT FIELDS, SELECT VALUES, TABLE OUTPUT
+
+TABLE INPUT
+nome (Clientes)
+connection (plus_stage)
+get SQL (clientes)
+
+CONCAT FIELS
+nome step (Nome Completo)
+target field name (nome_completo)
+Separator ( espaço )
+-fields
+name (primeironome, ultimonome)
+type (string, string)
+trim type ( os dois, os dois)
+
+SELECT VALUES
+-select & alter
+get fields
+retirar o 
+idregiao
+primeiro nome
+nome do meio
+ultimo nome
+endereço
+
+TABLE OUTPUT
+nome (Dim_Cliente)
+
+-new ... (
+connection type: PostgreSQL
+connection name: plus_dw
+host name: localhost
+database: plus_dw
+port: 5432
+username: postgres
+password: 123456
+
+connection (plus_dw) 
+target table (dim_cliente)
+truncate table (marcar) ele vai truncar(apagar) e carregar novamente
+return auto-generate key (marcar) (auto incremento)
+name of auto-generate key field (sk_cliente)
+SQL
+
+AULA 78 - CARGA DA DIMENSÃO TERRITÓRIO
+
+TRANSFORMAÇÃO
+STEPS - TABLE INPUT, TABLE OUTPUT
+
+TABLE INPUT
+nome step ( Territorio )
+connection (plus_stage)
+get sql (territorio)
+
+TABLE OUTPUT
+nome step ( Dim_Territorio )
+connection (plus_dw)
+target table (dim_territorio)
+truncate table (marcar)
+return auto-genereta (marcar)
+name of auto-genereted (sk_terriorio)
+sql
+
+AULA 79 - CARGA DA DIMENSÃO REGIÃO
+
+TRANSFORMAÇÃO
+STEPS - TABLE INPUT, TABLE OUTPUT
+
+TABLE INPUT
+nome step ( Regiao )
+connection (plus_stage)
+get sql ( regiao )
+
+TABLE OUTPUT
+nome step ( Dim_Regiao )
+connection ( plus_dw )
+target table ( dim_regiao )
+truncate table (marcar)
+return auto-genereta (marcar)
+name of auto-genereted (sk_regiao)
+sql
+
+AULA 80 - CARGA DA DIMENSÃO PRODUTO (SLOWLY CHANGINF DIMENSION)
+
+TRANSFORMAÇÃO
+STEP - TABLE INPUT 3, SORT ROWS 4, MERGE JOIN 2, IF FIELD VALUES IS NULL 1, SELECT VALUES, DIMENSION LOOKUP/UPDATE
+
+TABLE INPUT 1
+nome (Produto)
+connection ( plus_stage ) - tabela produto
+
+TABLE INPUT 2
+nome ( Subcategoria )
+connection ( plus_stage ) - tabela subcategoria
+
+SORT ROWS 1
+nome ( Ordena Produto )
+-fields
+fieldname ( idsubcategoria )
+ascending ( S )
+
+SORT ROWS 2
+nome ( Ordena Subcategoria )
+-fields
+fieldname ( idsubcategoria )
+ascending ( S )
+
+MERGE JOIN 1
+nome ( Busca Subcategoria
+first step ( Ordena Produto )
+second Step ( Ordena Subcategoria )
+join type ( Left outer )
+-keys
+key field 1-2 ( idsubcategoria )
+
+
+SORT ROWS 3
+nome ( Ordena Produto_Subcategoria )
+-fields
+fieldname ( idcategoria )
+ascending ( S )
+
+TABLE INPUT 3
+nome ( Categoria )
+connection ( plus_stage ) - tabela Categoria
+
+SORT ROWS 4
+nome ( Ordena Categoria )
+-fields
+fieldname ( idcategoria )
+ascending ( S )
+
+MERGE JOIN 2
+nome ( Busca Categoria )
+first step ( Ordena Produto_Subcategoria )
+second Step ( Ordena Categoria )
+join type ( Left outer )
+-keys
+key field 1-2 ( idcategoria )
+
+IF FIELD VALUE IS NULL
+nome ( Tratando Nulos )
+select field (marcar)
+-field
+field (idcategoria_1, idcategoria, idsubcategoria, subcategoria, categoria, idsubcategoria_1 )
+replace by value (0, 0, -1, ND, ND, -1 )
+
+SELECT VALUES
+nome ( Campos Oficiais )
+get fields
+select & alter
+ficar com todos os campos menos que tem o final _1
+
+DIMENSION LOOKUP/UPDATE
+nome ( Dimensão Produto )
+connection ( plus_dw )
+target table ( dim_produto )
+-keys
+get field
+deixar o idproduto
+-fields
+get field
+deixar o type of dimensions  update como insert
+technical field ( sk_produto )
+use table maximum +1 (marcar)
+SQL (
+version -> versao INT
+date_from -> inicio Date
+date to -> fim Date
+o que for INTEGER -> int
+) execute
+version field ( versao )
+date range start field ( inicio )
+table date range end ( fim )
+min year ( 2010 )
+max year ( 2100 )
+
+AULA 81 - CARGA DA DIMENSÃO TEMPO
+
+TRANSFORMAÇÃO
+STEPS - GENERATE ROWS, ADD SEQUENCE, CALCULATOR, FORMULA, VALUE MAPPER 5, SELECT VALUE, TABLE OUTPUT
+
+GENERATE ROWS
+nome ( CargaInicial )
+limit ( 10000 )
+-Fields:
+nome ( DataIncial )
+tipo ( Date )
+formato ( yyyyMMdd )
+valor ( 20100101 )
+set empty string ( N )
+
+ADD SEQUENCE
+nome ( Dias )
+nome valor ( Dias )
+inicio valor ( 0 )
+incremento de ( 1 )
+valor maximo ( 100000000 )
+
+CALCULATOR
+nome ( Calcula Datas )
+novo campo (sk_data, Ano, Mes, DiaSemana, DiaMes, DiaAno, Trimestre, SemanaAno)
+calculo ( data A + B Dias, ano da data A, mes da data A, dia da semana da data A, dia do mes da data A, dia do ano da data A, quarter of date A(trimestre), semana do ano da data A )
+campoa A ( DataInicial, sk_data, sk_data, sk_data, sk_data, sk_data, sk_data, sk_data)
+campo B ( Dias , -, -, -, -, -, -, -)
+tipo do valor ( Date, Interger, Interger, Interger, Interger, Interger, Interger, Interger)
+Conversion mask ( dd/MM/yyyy, -, -, -, -, -, -, -) 
+
+FORMULA
+nome ( SemanaDoAno )
+new field ( SemanaAnoNome )
+formula ( [SemanaAno]&"ºSemana"
+
+VALUE MAPPER 1
+nome ( MesNome )
+fieldname to use ( Mes )
+target field name ( MesNome ) novo campo
+source value (1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12)
+target value (janeiro, fevereiro, março, abril, maio, junho, julho, agosto, setembro, outubro, novembro, dezembro)
+
+VALUE MAPPER 2
+nome ( DiaSemanaNome )
+fieldname to use ( DiaSemana )
+target field name ( DiaSemanaNome ) novo campo
+source value (1, 2, 3, 4, 5, 6, 7)
+target value (Domingo, Segunda, Terça, Quarta, Quinta, Sexta, Sábado)
+
+VALUE MAPPER 3
+nome ( NomeTrimestre )
+fieldname to use ( Trimestre )
+target field name ( NomeTrimestre ) novo campo
+source value (1, 2, 3, 4)
+target value (1º trimestre, 2º trimestre, 3º trimestre, 4º trimestre)
+
+VALUE MAPPER 4
+nome ( Semestre )
+fieldname to use ( Trimestre )
+target field name ( Semestre ) novo campo
+source value (1, 2, 3, 4)
+target value (1, 1, 2, 2)
+
+VALUE MAPPER 5
+nome ( NomeSemestre )
+fieldname to use ( Semestre )
+target field name ( NomeSemestre ) novo campo 
+source value (1, 2)
+target value (1º Semestre, 1º Semestre, 2º Semestre, 2º Semestre)
+
+SELECT VALUES
+nome
+select & alter
+retirar datainicial, dias
+
+TABLE OUTPUT
+nome (Dim_Tempo)
+connection (plus_dw)
+target table (dim_tempo)
+truncate table (marcar)
+sql
+sk_data DATE
+trocar DOUBLE PRECISION por INT
+TEXT por VARCHAR(20)
+
+AULA 82 - CARGA DA FATO
+
+TRANSFORMAÇÃO
+STEPS - TABLE INPUT, DATABASE LOOKUP 4, SELECT VALUES, TABLE OUTPUT, CALCULATOR
+
+TABLE INPUT
+nome (Vends Internet DW)
+connection (plus_stage)
+get sql (vendas_internet)
+replace variables in script (marcar)
+
+DATABASE LOOKUP 1
+nome ( Captura SK_Territorio )
+connection (plus_dw)
+tabela lookup (dim_territorio)
+-chaves
+campo da tabela ( idterritoriovendas )
+comparador ( = )
+campo 1 ( idterritoriovendas )
+-valores a serem retomados da tabela lookup
+campo (sk_territorio)
+tipo (interger)
+
+DATABASE LOOKUP 2
+nome ( Captura SK_Regiao )
+connection (plus_dw)
+tabela lookup (dim_regiao)
+-chaves
+campo da tabela ( idvendasterritorio )
+comparador ( = )
+campo 1 ( idterritoriovendas )
+-valores a serem retomados da tabela lookup
+campo (sk_regiao)
+tipo (interger)
+
+DATABASE LOOKUP 3
+nome ( Captura SK_Cliente )
+connection (plus_dw)
+tabela lookup (dim_cliente)
+-chaves
+campo da tabela ( idcliente )
+comparador ( = )
+campo 1 ( idcliente )
+-valores a serem retomados da tabela lookup
+campo (sk_cliente)
+tipo (interger)
+
+DATABASE LOOKUP 4
+nome ( Captura SK_Produto )
+connection (plus_dw)
+tabela lookup (dim_produto)
+-chaves
+campo da tabela ( idproduto )
+comparador ( = )
+campo 1 ( idproduto )
+-valores a serem retomados da tabela lookup
+campo (sk_produto)
+tipo (interger)
+ordem por (versao desc)
+
+SELECT VALUES
+-select & alter
+get fields
+retirar idproduto, idcliente, idterritoriovendas
+rename to
+data para sk_data 
+
+[ -modificado-
+SELECT VALUES
+-select & alter
+get fields
+retirar idproduto, idcliente, idterritoriovendas, data, data_temp 
+]
+
+TABLE OUTPUT
+nome (Fato Vendas)
+connection (plus_dw)
+target table (Fato)
+SQL
+
+CALCULATOR
+nome (Converte Data)
+nome campo (data_temp, sk_data)
+calculo (create a copy of field A, create a copy of field A)
+campo A (data, data_temp)
+tipo valor (date, date)
+conversion mask (yyyyMMdd, dd/MM/yyyy)
+
+postgree
+tabela fato
+tools -> query tools
+
+ALTER TABLE public.fato drop column sk_data
+
+AULA 83 - CRIANDO JOBS DAS TRANSFORMAÇÕES DE STAGE
+
+organizar fluxo de execução do ETL
+
+JOB
+STEPS - START, TRANSFORMAÇÃO 7
+
+ligar o start nas tranformações
+
+TRANSFORMAÇÃO 1
+nome ( Categoria_Stage
+browse ( Categoria_Stage )
+
+TRANSFORMAÇÃO 2
+nome ( Subcategoria_Stage )
+browse ( Subategoria_Stage )
+
+TRANSFORMAÇÃO 3
+nome ( Cliente_Stage )
+browse ( Cliente_Stage )
+
+TRANSFORMAÇÃO 4
+nome ( Regiao_Stage )
+browse ( Regiao_Stage )
+
+TRANSFORMAÇÃO 5
+nome ( Territorio_Stage )
+browse ( Territorio_Stage )
+
+TRANSFORMAÇÃO 6
+nome ( Produto_Stage
+browse ( Produto_Stage )
+
+TRANSFORMAÇÃO 7
+nome ( VendasInternet_Stage )
+browse ( VendasInternet_Stage )
+
+botão direito no JOB
+escolher a opção 
+Run Next Entries In Parallel
+
+se clicar com botão direito na transformação
+escolher a opção
+Open Referenced Object -> transformation
+ele irá abrir a transformação em outra aba
+
+Abrir a Transformação VendasInternet
+
+DATA GRID
+-metas
+name (Ano)
+type (string)
+set empty string (N)
+-data
+2011
+
+TABLE INPUT VENDAS INTERNET
+apagar o 2010 e substituir por ? (entender como variável)
+insert data from step (data grid)
+
+AULA 84 - CRIANDO JOBS DAS TRANSFORMAÇÕES DO DATA WAREHOUSE
+
+JOB
+STEPS - START, TRANSFORMAÇÕES 6, SUCESS
+
+TRANSFORMAÇÃO 1
+nome ( DimensaoCliente )
+browse ( DimensaoCliente )
+
+TRANSFORMAÇÃO 2
+nome ( DimensaoProduto )
+browse ( DimensaoProduto )
+
+TRANSFORMAÇÃO 3
+nome ( DimensaoRegiao )
+browse ( DimensaoRegiao )
+
+TRANSFORMAÇÃO 4
+nome ( DimensaoTempo )
+browse ( DimensaoTempo )
+
+TRANSFORMAÇÃO 5
+nome ( DimensaoTerritorio )
+browse ( DimensaoTerritorio )
+
+TRANSFORMAÇÃO 6
+nome ( Fato )
+browse ( Fato )
+
+abrir a transformação fato
+abrir table input
+
+TABLE INPUT
+adicionar na query
+
+WHERE LEFT("data", 4) = '2011
+
+AULA 85 - JOB PRINCIPAL - CONFIGURANDO DISPARO SUCESSO/ERRO PARA O E-MAIL
+
+JOB
+STEPS - START, JOB 2, SUCESS, SET VARIABLES, MAIL 4
+
+abrir fato, vendasinternet_stage
+dentro de vendas internet_stage apagar o data grid
+
+SET VARIABLES - NO JOB
+nome ( Seta Ano )
+variable name ( Ano )
+value ( 2012 )
+variable scope type ( valid in the java virtual machine )
+
+JOB 1
+nome ( JobCargas_Stage )
+browsw ( JobCargas_Stage )
+-logging
+specify logfile (marcar)
+browse (local/Log_Carga_Stage)
+Log level (log detalhado)
+include date in logfile (marcar)
+include time in logfile (marcar)
+
+JOB 2
+nome ( JobCargas_DW )
+browsw ( JobCargas_DW )
+-logging
+specify logfile (marcar)
+browse (local/Log_job_DW)
+Log level (log detalhado)
+include date in logfile (marcar)
+include time in logfile (marcar)
+
+MAIL 1
+-addresses
+nome ( Carga Stage Sucesso )
+destination (e-mail)
+sender name ( assunto - Cargas Stage ETL )
+sender address (e-mail )
+-server
+smtp.gmail.com
+465
+use authentication (marcar)
+authentication user (email)
+authentication password (senha)
+use secure authentication (marcar)
+secure connection type (SSL)
+-email message
+include date in message (marcar)
+subject ([Job_Carga_Stage] Roudou com Sucesso!)
+comments (Execução bem sucedida!)
+
+MAIL 2
+nome ( Carga DW Sucesso )
+destination (e-mail)
+sender name ( assunto - Cargas Stage ETL )
+sender address (e-mail )
+-server
+smtp.gmail.com
+465
+use authentication (marcar)
+authentication user (email)
+authentication password (senha)
+use secure authentication (marcar)
+secure connection type (SSL)
+-email message
+include date in message (marcar)
+subject ([Job_Carga_DW] Roudou com Sucesso!)
+comments (Execução bem sucedida!)
+
+MAIL 3
+nome ( Carga Stage Erro )
+destination (e-mail)
+sender name ( assunto - Cargas Stage ETL )
+sender address (e-mail )
+-server
+smtp.gmail.com
+465
+use authentication (marcar)
+authentication user (email)
+authentication password (senha)
+use secure authentication (marcar)
+secure connection type (SSL)
+-email message
+include date in message (marcar)
+subject ([Job_Carga_Stage] Ocorreu erro!)
+comments (Problemas na execução!)
+-attached Files
+attach file(s) to message (marcar)
+select file (erro)
+
+MAIL 4
+nome ( Carga DW Erro )
+destination (e-mail)
+sender name ( assunto - Cargas Stage ETL )
+sender address (e-mail )
+-server
+smtp.gmail.com
+465
+use authentication (marcar)
+authentication user (email)
+authentication password (senha)
+use secure authentication (marcar)
+secure connection type (SSL)
+-email message
+include date in message (marcar)
+subject ([Job_Carga_DW] Ocorreu erro!)
+comments (Problemas na execução!)
+-attached Files
+attach file(s) to message (marcar)
+select file (erro)
+
+PERMISSÃO GMAIL
+ENGRENAGEM -> CONFIGURAÇÕES
+CONTAS E IMPORTAÇÃO
+OUTRAS CONFIGURAÇÕES DA CONTA DO GOOGLE
+SEGURANÇA
+ACESSO A APP MENOS SEGURO
+HABILITAR
+
+AULA 86 - GRAVANDO LOGS DE EXECUÇÕES NO BANCO DE DADOS E ARQUIVO.TXT
+abrir os jobs
+job stage
+clicar duas vezes na área em branco
+ir em log
+log connection (plus_stage)
+log schema (public)
+log table ( Logs_etls)
+SQL
+
+job dw
+clicar duas vezes na área em branco
+ir em log
+log connection (plus_stage)
+log schema (public)
+log table ( Logs_etls)
+SQL
+
+AULA 87 - CRIANDO O ARQUIVO.BAT
+
+abrir o arquivo que el disponibilizou
+tem o codigo abaixo
+
+[]\Kitchen.bat /rep:"[]" /job:"[]"
+
+C:\Users\Usuario\Downloads\data-integration\Kitchen.bat /rep:"Projeto" /job:"Job_Principal"
+
+abri cmd como administrador
+pega o caminho do bat
+C:\Material_PDI\ETLs\Bats\Executa_Job_Principal.bat
+
+executar
+
+AULA 88 - COMPLEMENTO O ETL.. CONFERINDO O (SLOWLY CHANGING DIMENSION)
+
+abrir jobcargas_dw
+pegar um nova TRANSFOMATION
+
+LIGAR PRODUTO A TRANSFORMAÇÃO
+STEPS - DUMMY, SQL SCRIPT
+
+SQL SCRIPT
+nome ( deleta SK_Produto )
+connection ( plus_dw )
+
+delete from public.dim_produto where sk_produto = 0
+
+AULA 89 - PROGRAMANDO ABORT
+
+ABORT JOB 2
+
+AULA 90 - AGENDANDO AS TAREFAS DE EXECUÇÃO.
+
+abrir agendador de tarefas
+biblioteca de agendador
+botão direito -> criar tarefa
+-geral
+nome (Executa_Job_Principal)
+configurar para (windows 10)
+-disparadores
+novo...
+uma vez (seleciona dia e hora)	
+-ações
+novo...
+indicar o caminho do .bat
+
+AULA 92 - ATUALIZAÇÃO INCREMENTAL
+
+TRANSFORMAÇÃO
+STEPS - TABLE INPUT, TABLE OUTPUT
+
+TABLE INPUT 1
+nome (vendas_internet_origem)
+connection ( plus_SQLSERVER )
+get sql ( vendas_internet )
+dar um cast na data
+cast ("data as date) as data
+e usar um where
+where data <= '2013-12-31'
+
+TABLE OUTPUT 1
+nome (vendas_internet_destino)
+connection (conn_variados _sqlserver)
+target table (VendasInternet)
+
+TABLE INPUT 2
+nome (UltimaData)
+connection (conn_variados_sqlserver)
+SQL (VendasInternet)
+remover todos os campos menos a data
+
+Max("data")
+
+
+TABLE INPUT 1 - mudar
+nome (vendas_internet_origem)
+connection ( plus_SQLSERVER )
+get sql ( vendas_internet )
+dar um cast na data
+cast ("data as date) as data
+e usar um where
+where data > ?
+replace variables in script (marcar)
+insert data from step (UltimaData)
+
+EXECUTE SQL SCRIPT
+nome
+connection (conn_variados_sqlserver)
+
+DELETE FROM [dbo].[VendasInternet] WHERE DATA > 
+(SELECT DATEADD(day, -30, Max([data])) from [dbo].[VendasInternet])
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

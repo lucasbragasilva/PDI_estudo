@@ -1,0 +1,6 @@
+gmail
+pentaholbs@gmail.com
+lucas_123456
+
+smtp.gmail.com
+465

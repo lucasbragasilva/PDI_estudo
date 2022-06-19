@@ -1,1 +1,1 @@
-[]\Kitchen.bat /rep:"[]" /job:"[]"
+C:\Users\Usuario\Downloads\data-integration\Kitchen.bat /rep:"Projeto" /job:"Job_Principal"
